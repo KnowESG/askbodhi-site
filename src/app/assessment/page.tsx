@@ -553,3 +553,523 @@ export default function AssessmentPage() {
             onClick={goNext}
             style={{
               padding: '12px 32px',
+              fontSize: 16,
+              fontWeight: 600,
+              background: 'var(--color-teal, #0F766E)',
+              color: '#fff',
+              border: 'none',
+              borderRadius: 8,
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+            }}
+          >
+            Start Assessment
+          </motion.button>
+          <p style={{ marginTop: 20, fontSize: 12, color: 'var(--color-stone-400, #A8A29E)' }}>Press Enter to start</p>
+        </motion.div>
+      );
+    }
+
+    if (step.type === 'fields') {
+      return (
+        <motion.div key={`fields-${current}`} {...fadeUp} style={{ maxWidth: 600, width: '100%' }}>
+          {step.num && <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-teal, #0F766E)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Q{step.num}</div>}
+          {step.title && <h2 style={{ fontSize: 24, fontWeight: 600, marginBottom: 8, color: 'var(--color-charcoal, #1C1917)', fontFamily: "var(--font-display, 'Lora', serif)" }}>{step.title}</h2>}
+          {step.hint && <p style={{ fontSize: 14, color: 'var(--color-stone-500, #78716B)', marginBottom: 24 }}>{step.hint}</p>}
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginBottom: 32 }}>
+            {step.fields.map((field, i) => {
+              if (field.row) {
+                return (
+                  <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                    {field.row.map((f) => (
+                      <div key={f.id}>
+                        <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: 'var(--color-stone-700, #44403C)' }}>
+                          {f.label}
+                          {f.required && <span style={{ color: 'var(--color-ember, #EA580C)' }}> *</span>}
+                        </label>
+                        <input
+                          type={f.type || 'text'}
+                          placeholder={f.placeholder}
+                          value={answers[f.id] || ''}
+                          onChange={(e) => setAnswer(f.id, e.target.value)}
+                          style={{
+                            width: '100%',
+                            padding: '10px 12px',
+                            border: '1px solid var(--color-stone-200, #E7E5E4)',
+                            borderRadius: 6,
+                            fontSize: 14,
+                            fontFamily: 'inherit',
+                            transition: 'all 0.2s',
+                            boxSizing: 'border-box',
+                          }}
+                          onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--color-teal, #0F766E)')}
+                          onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--color-stone-200, #E7E5E4)')}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              if (field.single) {
+                const f = field.single;
+                return (
+                  <div key={f.id}>
+                    <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: 'var(--color-stone-700, #44403C)' }}>
+                      {f.label}
+                      {f.required && <span style={{ color: 'var(--color-ember, #EA580C)' }}> *</span>}
+                    </label>
+                    <input
+                      type={f.type || 'text'}
+                      placeholder={f.placeholder}
+                      value={answers[f.id] || ''}
+                      onChange={(e) => setAnswer(f.id, e.target.value)}
+                      style={{
+                        width: '100%',
+                        padding: '10px 12px',
+                        border: '1px solid var(--color-stone-200, #E7E5E4)',
+                        borderRadius: 6,
+                        fontSize: 14,
+                        fontFamily: 'inherit',
+                        transition: 'all 0.2s',
+                        boxSizing: 'border-box',
+                      }}
+                      onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--color-teal, #0F766E)')}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--color-stone-200, #E7E5E4)')}
+                    />
+                  </div>
+                );
+              }
+
+              if (field.autocomplete) {
+                const ac = field.autocomplete;
+                const suggestions = ac.id === 'industry' ? INDUSTRY_SUGGESTIONS : COUNTRY_SUGGESTIONS;
+                return (
+                  <div key={ac.id}>
+                    <label style={{ display: 'block', fontSize: 13, fontWeight: 600, marginBottom: 8, color: 'var(--color-stone-700, #44403C)' }}>
+                      {ac.id === 'industry' ? 'Industry / sector' : 'Primary market'}
+                    </label>
+                    <Autocomplete
+                      id={ac.id}
+                      placeholder={ac.placeholder}
+                      suggestions={suggestions}
+                      value={answers[ac.id] || ''}
+                      onChange={(val) => setAnswer(ac.id, val)}
+                    />
+                  </div>
+                );
+              }
+
+              return null;
+            })}
+          </div>
+
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end' }}>
+            {current > 0 && (
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={goBack}
+                style={{
+                  padding: '10px 24px',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  background: 'var(--color-stone-100, #F5F5F4)',
+                  color: 'var(--color-charcoal, #1C1917)',
+                  border: 'none',
+                  borderRadius: 6,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                }}
+              >
+                Back
+              </motion.button>
+            )}
+            <motion.button
+              whileHover={{ scale: canAdvance ? 1.02 : 1 }}
+              whileTap={{ scale: canAdvance ? 0.98 : 1 }}
+              onClick={goNext}
+              disabled={!canAdvance}
+              style={{
+                padding: '10px 24px',
+                fontSize: 14,
+                fontWeight: 600,
+                background: canAdvance ? 'var(--color-teal, #0F766E)' : 'var(--color-stone-200, #E7E5E4)',
+                color: canAdvance ? '#fff' : 'var(--color-stone-500, #78716B)',
+                border: 'none',
+                borderRadius: 6,
+                cursor: canAdvance ? 'pointer' : 'not-allowed',
+                transition: 'all 0.2s',
+              }}
+            >
+              Next
+            </motion.button>
+          </div>
+        </motion.div>
+      );
+    }
+
+    if (step.type === 'choice') {
+      return (
+        <motion.div key={`choice-${current}`} {...fadeUp} style={{ maxWidth: 600, width: '100%' }}>
+          {step.num && <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-teal, #0F766E)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Q{step.num}</div>}
+          {step.title && <h2 style={{ fontSize: 24, fontWeight: 600, marginBottom: 8, color: 'var(--color-charcoal, #1C1917)', fontFamily: "var(--font-display, 'Lora', serif)" }}>{step.title}</h2>}
+          {step.hint && <p style={{ fontSize: 14, color: 'var(--color-stone-500, #78716B)', marginBottom: 24 }}>{step.hint}</p>}
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
+            {step.options.map((opt, i) => (
+              <motion.div
+                key={opt.key}
+                initial={{ opacity: 0, x: -8 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.06 }}
+                onClick={() => selectOption(step.num!, opt.value)}
+                style={{
+                  padding: '14px 16px',
+                  borderRadius: 8,
+                  border: answers[step.num!] === opt.value ? '2px solid var(--color-teal, #0F766E)' : '1px solid var(--color-stone-200, #E7E5E4)',
+                  background: answers[step.num!] === opt.value ? 'var(--color-teal-pale, #F0FDFA)' : 'var(--color-white, #fff)',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 12,
+                  userSelect: 'none' as const,
+                }}
+              >
+                <div
+                  style={{
+                    width: 18,
+                    height: 18,
+                    borderRadius: '50%',
+                    border: `2px solid ${answers[step.num!] === opt.value ? 'var(--color-teal, #0F766E)' : 'var(--color-stone-300, #D7D3CF)'}`,
+                    background: answers[step.num!] === opt.value ? 'var(--color-teal, #0F766E)' : 'transparent',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    transition: 'all 0.2s',
+                  }}
+                >
+                  {answers[step.num!] === opt.value && (
+                    <div
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: '50%',
+                        background: '#fff',
+                      }}
+                    />
+                  )}
+                </div>
+                <span style={{ fontSize: 15, color: 'var(--color-charcoal, #1C1917)', fontWeight: 500 }}>{opt.text}</span>
+                <span style={{ fontSize: 12, color: 'var(--color-stone-400, #A8A29E)', marginLeft: 'auto', fontWeight: 500 }}>
+                  <kbd style={{ padding: '2px 6px', borderRadius: 3, border: '1px solid currentColor', fontFamily: 'monospace', fontSize: 11 }}>{opt.key}</kbd>
+                </span>
+              </motion.div>
+            ))}
+          </div>
+
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end' }}>
+            {current > 0 && (
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={goBack}
+                style={{
+                  padding: '10px 24px',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  background: 'var(--color-stone-100, #F5F5F4)',
+                  color: 'var(--color-charcoal, #1C1917)',
+                  border: 'none',
+                  borderRadius: 6,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                }}
+              >
+                Back
+              </motion.button>
+            )}
+          </div>
+        </motion.div>
+      );
+    }
+
+    if (step.type === 'text') {
+      return (
+        <motion.div key={`text-${current}`} {...fadeUp} style={{ maxWidth: 600, width: '100%' }}>
+          {step.num && <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-teal, #0F766E)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>Q{step.num}</div>}
+          {step.title && <h2 style={{ fontSize: 24, fontWeight: 600, marginBottom: 8, color: 'var(--color-charcoal, #1C1917)', fontFamily: "var(--font-display, 'Lora', serif)" }}>{step.title}</h2>}
+          {step.hint && <p style={{ fontSize: 14, color: 'var(--color-stone-500, #78716B)', marginBottom: 24 }}>{step.hint}</p>}
+
+          <textarea
+            placeholder={step.field.placeholder}
+            value={answers[step.field.id] || ''}
+            onChange={(e) => setAnswer(step.field.id, e.target.value)}
+            style={{
+              width: '100%',
+              minHeight: 120,
+              padding: '12px',
+              border: '1px solid var(--color-stone-200, #E7E5E4)',
+              borderRadius: 6,
+              fontSize: 14,
+              fontFamily: 'inherit',
+              resize: 'vertical',
+              transition: 'all 0.2s',
+              boxSizing: 'border-box',
+            }}
+            onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--color-teal, #0F766E)')}
+            onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--color-stone-200, #E7E5E4)')}
+          />
+
+          <div style={{ marginTop: 20, display: 'flex', gap: 12, justifyContent: 'flex-end' }}>
+            {current > 0 && (
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={goBack}
+                style={{
+                  padding: '10px 24px',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  background: 'var(--color-stone-100, #F5F5F4)',
+                  color: 'var(--color-charcoal, #1C1917)',
+                  border: 'none',
+                  borderRadius: 6,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                }}
+              >
+                Back
+              </motion.button>
+            )}
+            <motion.button
+              whileHover={{ scale: canAdvance ? 1.02 : 1 }}
+              whileTap={{ scale: canAdvance ? 0.98 : 1 }}
+              onClick={goNext}
+              disabled={!canAdvance}
+              style={{
+                padding: '10px 24px',
+                fontSize: 14,
+                fontWeight: 600,
+                background: canAdvance ? 'var(--color-teal, #0F766E)' : 'var(--color-stone-200, #E7E5E4)',
+                color: canAdvance ? '#fff' : 'var(--color-stone-500, #78716B)',
+                border: 'none',
+                borderRadius: 6,
+                cursor: canAdvance ? 'pointer' : 'not-allowed',
+                transition: 'all 0.2s',
+              }}
+            >
+              {step.optional ? 'Skip' : 'Next'}
+            </motion.button>
+          </div>
+        </motion.div>
+      );
+    }
+
+    if (step.type === 'scan') {
+      return (
+        <motion.div key="scan" {...fadeUp} style={{ maxWidth: 500, margin: '0 auto' }}>
+          <h2 style={{ fontSize: 24, fontWeight: 600, marginBottom: 32, textAlign: 'center', color: 'var(--color-charcoal, #1C1917)', fontFamily: "var(--font-display, 'Lora', serif)" }}>
+            {step.title}
+          </h2>
+
+          {scanPhase === 'scanning' && (
+            <div style={{ padding: '24px', background: 'var(--color-charcoal, #1C1917)', borderRadius: 8, fontFamily: "var(--font-mono, 'Geist Mono', monospace)", fontSize: 14, color: 'var(--color-stone-400, #A8A29E)', marginBottom: 32, minHeight: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <ScanLine text="Analyzing domain authority..." delay={200} />
+              <ScanLine text="Crawling organic keywords..." delay={1000} done={false} />
+              <ScanLine text="Indexing monthly traffic..." delay={1800} done={false} />
+              <ScanLine text="Benchmarking competitors..." delay={2600} done={false} />
+              <ScanLine text="Calculating readiness score..." delay={3400} done={false} />
+            </div>
+          )}
+
+          {scanPhase === 'results' && scanResult && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
+              <MetricCard label="Domain Rating" value={scanResult.domainRating} />
+              <MetricCard label="Organic Keywords" value={scanResult.organicKeywords.toLocaleString()} />
+              <MetricCard label="Monthly Traffic" value={scanResult.monthlyTraffic.toLocaleString()} />
+            </motion.div>
+          )}
+        </motion.div>
+      );
+    }
+
+    if (step.type === 'competitors_ai') {
+      return (
+        <motion.div key="competitors" {...fadeUp} style={{ maxWidth: 600, width: '100%' }}>
+          <h2 style={{ fontSize: 24, fontWeight: 600, marginBottom: 12, color: 'var(--color-charcoal, #1C1917)', fontFamily: "var(--font-display, 'Lora', serif)" }}>
+            {step.title}
+          </h2>
+          {step.hint && <p style={{ fontSize: 14, color: 'var(--color-stone-500, #78716B)', marginBottom: 24 }}>{step.hint}</p>}
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 32 }}>
+            {competitors.map((comp, i) => (
+              <CompetitorChip
+                key={comp.domain}
+                comp={comp}
+                index={i}
+                onToggle={() => {
+                  const updated = competitors.map((c, idx) => (idx === i ? { ...c, checked: !c.checked } : c));
+                  setCompetitors(updated);
+                }}
+              />
+            ))}
+          </div>
+
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'flex-end' }}>
+            {current > 0 && (
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={goBack}
+                style={{
+                  padding: '10px 24px',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  background: 'var(--color-stone-100, #F5F5F4)',
+                  color: 'var(--color-charcoal, #1C1917)',
+                  border: 'none',
+                  borderRadius: 6,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                }}
+              >
+                Back
+              </motion.button>
+            )}
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={goNext}
+              style={{
+                padding: '10px 24px',
+                fontSize: 14,
+                fontWeight: 600,
+                background: 'var(--color-teal, #0F766E)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 6,
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+            >
+              Next
+            </motion.button>
+          </div>
+        </motion.div>
+      );
+    }
+
+    if (step.type === 'result') {
+      const finalScore = computeScore();
+      const dims = computeDimensions();
+
+      return (
+        <motion.div key="result" {...fadeUp} style={{ maxWidth: 600, width: '100%', textAlign: 'center' }}>
+          <h1 style={{ fontSize: 28, fontWeight: 600, marginBottom: 8, color: 'var(--color-charcoal, #1C1917)', fontFamily: "var(--font-display, 'Lora', serif)" }}>
+            Your AI Readiness Score
+          </h1>
+          <p style={{ fontSize: 14, color: 'var(--color-stone-500, #78716B)', marginBottom: 32 }}>
+            Based on your responses and live domain analysis
+          </p>
+
+          <ScoreRing score={finalScore} />
+
+          <div style={{ marginBottom: 32, textAlign: 'left' }}>
+            <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-teal, #0F766E)' }}>
+              Your Dimensions
+            </h3>
+            {dims.map((dim, i) => (
+              <DimBar key={dim.label} dim={dim} delay={i * 150} />
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            style={{
+              padding: '20px',
+              background: 'var(--color-teal-pale, #F0FDFA)',
+              borderRadius: 8,
+              borderLeft: '4px solid var(--color-teal, #0F766E)',
+              marginBottom: 32,
+              textAlign: 'left',
+            }}
+          >
+            <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-teal, #0F766E)', marginBottom: 8 }}>Your Report</div>
+            <p style={{ fontSize: 14, color: 'var(--color-charcoal, #1C1917)', lineHeight: 1.6 }}>
+              Check your inbox for a detailed PDF report with strategic recommendations tailored to your readiness level.
+            </p>
+          </motion.div>
+
+          <Link href="/">
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              style={{
+                padding: '12px 32px',
+                fontSize: 14,
+                fontWeight: 600,
+                background: 'var(--color-stone-100, #F5F5F4)',
+                color: 'var(--color-charcoal, #1C1917)',
+                border: 'none',
+                borderRadius: 6,
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+            >
+              Back to Home
+            </motion.button>
+          </Link>
+        </motion.div>
+      );
+    }
+
+    return null;
+  };
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', background: 'var(--color-white, #fff)' }}>
+      {/* Header */}
+      <div style={{ padding: '20px 24px', borderBottom: '1px solid var(--color-stone-100, #F5F5F4)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <LogoSvg size={24} />
+            <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-charcoal, #1C1917)' }}>AskBodhi</span>
+          </div>
+        </Link>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ fontSize: 12, color: 'var(--color-stone-400, #A8A29E)' }}>
+            {current + 1} of {totalSteps}
+          </span>
+        </div>
+      </div>
+
+      {/* Progress Bar */}
+      <div style={{ height: 3, background: 'var(--color-stone-100, #F5F5F4)', overflow: 'hidden' }}>
+        <motion.div
+          animate={{ width: `${pct}%` }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+          style={{
+            height: '100%',
+            background: 'linear-gradient(90deg, var(--color-teal, #0F766E), var(--color-teal-bright, #14B8A6))',
+            position: 'relative',
+          }}
+        >
+          <div style={{ position: 'absolute', right: -4, top: -2, width: 7, height: 7, background: 'var(--color-teal-bright, #14B8A6)', borderRadius: '50%', boxShadow: '0 0 8px rgba(20, 184, 166, 0.4)' }} />
+        </motion.div>
+      </div>
+
+      {/* Main Content */}
+      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px 24px', overflowY: 'auto' }}>
+        <AnimatePresence mode="wait">
+          {renderStep()}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}
