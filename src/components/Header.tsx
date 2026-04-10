@@ -59,7 +59,7 @@ export default function Header() {
             Approach
           </Link>
           <Link
-            href="/contact"
+            href="/assessment"
             className="text-sm font-semibold no-underline px-5 py-2.5 rounded-lg transition-colors"
             style={{
               fontFamily: "var(--font-body)",
@@ -102,7 +102,7 @@ export default function Header() {
             Approach
           </Link>
           <Link
-            href="/contact"
+            href="/assessment"
             className="text-sm font-semibold no-underline px-5 py-2.5 rounded-lg text-center"
             style={{ backgroundColor: "var(--color-teal)", color: "#fff" }}
             onClick={() => setMenuOpen(false)}
