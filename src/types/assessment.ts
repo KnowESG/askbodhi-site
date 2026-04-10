@@ -80,6 +80,7 @@ export interface ScanResult {
   domainRating: number;
   organicKeywords: number;
   monthlyTraffic: number;
+  source?: string;
 }
 
 export interface CompetitorResult {

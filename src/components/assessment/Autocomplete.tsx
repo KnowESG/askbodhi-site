@@ -3,22 +3,22 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 
 interface AutocompleteProps {
-  id: string;
-  label: string;
-  placeholder: string;
-  suggestions: string[];
+  items: string[];
   value: string;
   onChange: (value: string) => void;
+  placeholder?: string;
+  id?: string;
+  label?: string;
   required?: boolean;
 }
 
 export default function Autocomplete({
-  id,
-  label,
-  placeholder,
-  suggestions,
+  items,
   value,
   onChange,
+  placeholder = 'Start typing...',
+  id,
+  label,
   required,
 }: AutocompleteProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,11 +31,11 @@ export default function Autocomplete({
     (query: string) => {
       if (!query.trim()) return [];
       const q = query.toLowerCase();
-      return suggestions
+      return items
         .filter((s) => s.toLowerCase().includes(q))
         .slice(0, 8);
     },
-    [suggestions]
+    [items]
   );
 
   useEffect(() => {
@@ -72,18 +72,20 @@ export default function Autocomplete({
   // Scroll active item into view
   useEffect(() => {
     if (activeIndex >= 0 && listRef.current) {
-      const items = listRef.current.children;
-      if (items[activeIndex]) {
-        (items[activeIndex] as HTMLElement).scrollIntoView({ block: 'nearest' });
+      const listItems = listRef.current.children;
+      if (listItems[activeIndex]) {
+        (listItems[activeIndex] as HTMLElement).scrollIntoView({ block: 'nearest' });
       }
     }
   }, [activeIndex]);
 
   return (
     <div className="ac-group" style={{ position: 'relative' }}>
-      <label className="ac-label" htmlFor={id}>
-        {label}
-      </label>
+      {label && (
+        <label className="ac-label" htmlFor={id}>
+          {label}
+        </label>
+      )}
       <input
         ref={inputRef}
         className="ac-input"
