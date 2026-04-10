@@ -512,7 +512,6 @@ export default function AssessmentPage() {
       await new Promise((r) => setTimeout(r, 2000)); // Simulate delay
 
       // TODO: Call real Ahrefs endpoint when token available
-      const website = answers['website'] || 'example.com';
       const simulated: ScanResult = {
         domainRating: Math.floor(Math.random() * 60) + 15,
         organicKeywords: Math.floor(Math.random() * 5000) + 100,
@@ -760,7 +759,7 @@ export default function AssessmentPage() {
               <ScanLine text="Resolving domain..." delay={100} />
               <ScanLine text="Querying Ahrefs API..." delay={400} />
               <ScanLine text="Analyzing competitors..." delay={800} />
-              <ScanLine text="Computing metrics..." delay={1200} done={scanPhase === 'results'} />
+              <ScanLine text="Computing metrics..." delay={1200} />
             </div>
           )}
 
@@ -805,7 +804,7 @@ export default function AssessmentPage() {
         <motion.div key="result" {...fadeUp} style={{ maxWidth: 700, margin: '0 auto', textAlign: 'center' }}>
           <h1 style={{ fontSize: 32, fontWeight: 700, color: 'var(--color-charcoal)', marginBottom: 8 }}>Your AI Readiness Score</h1>
           <p style={{ fontSize: 15, color: 'var(--color-stone-600)', marginBottom: 40 }}>
-            Based on your answers and digital footprint analysis, here's how ready you are for AI-driven growth.
+            Based on your answers and digital footprint analysis, here&apos;s how ready you are for AI-driven growth.
           </p>
 
           <ScoreRing score={score} animated={resultAnimated} />
