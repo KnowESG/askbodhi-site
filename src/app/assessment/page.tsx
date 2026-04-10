@@ -127,15 +127,17 @@ function MetricCard({ label, value }: { label: string; value: string | number })
 }
 
 // ─── Competitor Chip ─────────────────────────────────────
-function CompetitorChip({
-  comp,
-  index,
-  onToggle,
-}: {
-  comp: CompetitorResult;
-  index: number;
-  onToggle: () => void;
-}) {
+function CompetitorChip(
+  {
+    comp,
+    index,
+    onToggle,
+  }: {
+    comp: CompetitorResult;
+    index: number;
+    onToggle: () => void;
+  }
+) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -16 }}
@@ -1197,3 +1199,4 @@ export default function AssessmentPage() {
       </div>
     </div>
   );
+}
