@@ -10,183 +10,124 @@ AskBodhi is an AI-led growth consultancy helping B2B companies get found — by 
 2. **Lead magnet** — the `/assessment` page (AI Readiness Assessment) captures prospect data and demonstrates value before a sales conversation
 3. **Positioning vehicle** — communicates the "Luminous Clarity" brand identity
 
-This is NOT a content-heavy blog site. It's a lean, high-quality marketing site that should feel like a premium consultancy, not an agency.
+This is NOT a content-heavy blog site. It’s a lean, high-quality marketing site that should feel like a premium consultancy, not an agency.
 
 ## Target Clients
 
-| Type | Examples |
-|------|----------|
-| B2B companies | SaaS platforms, corporate groups |
-| Fintech | Cross-border payments, compliance tech |
-| E-commerce | Multi-brand retail, D2C |
-| Publishing / media | Digital transformation plays |
-
-**Geography:** Netherlands-based, serving globally. Dual-language ambition (English primary, Dutch secondary — Dutch pages are planned but not yet built).
-
-**Company size:** Small to mid-market. Typically 20-500 employees. Companies that know they need digital growth but don't have in-house SEO/AI capability.
+**Geography:** Netherlands-based, serving globally. English primary, Dutch pages planned.
+**Company size:** Small to mid-market (20–500 employees). Companies that need digital growth but lack in-house SEO/AI capability.
+**Sectors:** B2B SaaS, fintech, e-commerce, publishing/media.
 
 ## Positioning Rules
 
-The website leads with what's proven: **SEO, GEO, organic digital growth, traffic diagnostics.** These are the services that attract clients and that the case studies validate.
-
-AI transformation is the aspirational horizon — presented in a "where this is heading" section, not the hero. The narrative arc: prospect comes in for "help being found" and discovers AskBodhi can transform their whole operation.
+Lead with what’s proven: **SEO, GEO, organic digital growth, traffic diagnostics.** AI transformation is the aspirational horizon — presented in a "where this is heading" section, not the hero.
 
 **Hero message:** "Your company deserves to be found — by humans and AI."
 
-**Service hierarchy (in order of prominence):**
-1. SEO & Generative Engine Optimization (lead with this)
-2. Traffic Architecture Diagnostics
-3. Custom AI Engines
-4. AI-First Transformation (horizon, not hero)
+**Service hierarchy:** (1) SEO & GEO, (2) Traffic Architecture Diagnostics, (3) Custom AI Engines, (4) AI-First Transformation (horizon, not hero).
 
 ## Case Study Rules
 
-Three case studies are used on the homepage. Naming rules are strict:
-
 | Client | Public name | Flag | Sector |
 |--------|------------|------|--------|
-| Boekengilde / Gildeprint | "Leading Dutch Publishing Group" (NEVER name) | NL | Publishing |
-| EximPe | EximPe (can name) | IN | Fintech / Cross-border payments |
-| KnowESG | KnowESG (can name) | NL | ESG Intelligence / SaaS |
+| Boekengilde / Gildeprint | "Leading Dutch Publishing Group" (NEVER name) | 🇳🇱 | Publishing |
+| EximPe | EximPe (can name) | 🇮🇳 | Fintech / Cross-border payments |
+| KnowESG | KnowESG (can name) | 🇳🇱 | ESG Intelligence / SaaS |
 
-**Always include country flag and sector label on case study cards.**
+Always include country flag and sector label on case study cards.
+
+## Homepage Architecture
+
+The homepage is built from 8 composable sections, each a standalone component in `src/components/home/`. All exports via `home/index.ts` barrel file. Page orchestrator: `src/app/page.tsx`.
+
+| # | Section | Component | Purpose |
+|---|---------|-----------|--------|
+| 1 | Hero | (inline in page.tsx) | Pain-point headline + proof bar + HeroVisual |
+| 2 | What We Do | ServicesSection | Pain-point service cards, Core Expertise + horizon labels |
+| 3 | Proven Results | ResultsSection | Case study cards + MirrorCard behavioral checklist |
+| 4 | How We Work | ApproachSection | 3-phase timeline with timeframe tags + de-risk block |
+| 5 | This Is For You If | WhoSection | 2-column behavior checklist, no sector names |
+| 6 | Where This Is Heading | VisionSection | AI progression tags (active/next/future) |
+| 7 | Assessment CTA | AssessmentCTA | 12-question hook, value framing |
+| 8 | FAQ | FAQ + FaqJsonLd | Accordion + FAQPage JSON-LD (GEO schema) |
+
+Supporting components: `ToolBar.tsx` (enterprise tool trust bar), `MirrorCard.tsx` ("Sound familiar?" checklist).
+
+## CSS Architecture
+
+CSS is split into two files (both in `src/app/`, imported by `layout.tsx`):
+
+- **`globals.css`** — Tailwind import, CSS custom properties (Luminous Clarity tokens), base styles, header nav
+- **`components.css`** — Component styles: service cards, case cards, mirror card, tool bar, vision tags, FAQ accordion, assessment overrides
+
+This split exists because MCP `push_files` truncates files >8KB. Keep each CSS file under 8KB.
 
 ## Brand: Luminous Clarity
 
-Every page, component, and visual must follow the Luminous Clarity system.
-
-### Colors
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--color-teal` | `#0F766E` | Primary brand color, CTAs, links, accents |
+| `--color-teal` | `#0F766E` | Primary, CTAs, links |
 | `--color-teal-bright` | `#14B8A6` | Hover states, gradients |
-| `--color-teal-pale` | `#F0FDFA` | Backgrounds, selection highlight |
-| `--color-ember` | `#EA580C` | Secondary accent (sparingly — alerts, highlights) |
+| `--color-teal-pale` | `#F0FDFA` | Backgrounds, highlights |
+| `--color-ember` | `#EA580C` | Secondary accent (sparingly) |
 | `--color-bg` | `#FAFAF9` | Page background (warm stone, NOT pure white) |
-| `--color-charcoal` | `#1C1917` | Headings, strong text |
+| `--color-charcoal` | `#1C1917` | Headings |
 | `--color-stone-600` | `#57534E` | Body text |
 
-### Typography
-- **Headings:** Lora (serif) — `var(--font-display)`
-- **Body:** Instrument Sans — `var(--font-body)`
-- **Data/code:** Geist Mono — `var(--font-mono)`
-
-### Tone
-- Light-first, warm whites, generous whitespace
-- Modern 2026 aesthetic — no dark mode, no heavy shadows
-- Premium consultancy feel, not agency hustle
+**Typography:** Lora (headings), Instrument Sans (body), Geist Mono (data).
+**Tone:** Light-first, warm whites, generous whitespace. Premium consultancy, not agency hustle.
 
 ## Content Tone
 
-Write like a smart colleague, not a PowerPoint deck.
-- Data-first, direct, conversational
-- Never corporate jargon ("synergize", "leverage", "paradigm")
-- Always cite data with sources and dates
-- Deliverables should be developer-ready: file paths, code snippets, exact copy
-- Quick wins separated from strategic work
+Write like a smart colleague, not a PowerPoint deck. Data-first, direct, conversational. Never corporate jargon. Always cite data with sources and dates. Deliverables should be developer-ready: file paths, code snippets, exact copy. Quick wins separated from strategic work.
 
-## Assessment Page (Lead Magnet)
+## Assessment Page
 
-The `/assessment` is an 11-step interactive AI Readiness Assessment, refactored into 10 focused component files under `src/components/assessment/`:
-
-- Prospect answers 12 multiple-choice questions (~5 min)
-- Key input: website URL (registered for analysis — no fake scan metrics)
-- Competitors: user provides their own via textarea (no auto-generated fakes)
-- Scores across 5 dimensions, each out of 20 (total /100)
-- Score bands: AI-Ready (75-100) / Emerging (50-74) / Catching Up (25-49) / Starting Line (0-24)
-- Result shows "What happens next" with real analysis steps (no false email delivery claims)
-- Submissions POST to `/api/assessment` with dedup flag to prevent double-sends
-
-**Important:** This is the primary conversion path. All homepage CTAs route to `/assessment`, not `/contact`.
+The `/assessment` is an 11-step interactive AI Readiness Assessment (10 focused component files under `src/components/assessment/`). Prospect answers 12 questions (~5 min), scores across 5 dimensions (/100). Submissions POST to `/api/assessment` with dedup. This is the primary conversion path — all homepage CTAs route here.
 
 ## SEO & GEO Configuration
 
-**Domain:** `askbodhi.ai` (all canonical URLs, OG tags, sitemap, and robots.txt must use this domain)
+**Domain:** `askbodhi.ai` (all canonical URLs, OG tags, sitemap, robots.txt).
 
-**Key SEO elements:**
-- `metadataBase` in `layout.tsx` → `https://askbodhi.ai`
-- Page-specific OG tags in each route's `layout.tsx`
-- Hreflang tags: `en` + `x-default` for Dutch market
-- Person schema for founder with LinkedIn sameAs
-- No `meta keywords` tag (deprecated, Google ignores)
+**Structured data:** Organization, WebSite, ProfessionalService, Person (founder with LinkedIn sameAs), FAQPage (6 Q&A pairs from `src/data/faq-data.ts` — shared between the FAQ accordion and FaqJsonLd server component).
 
-**GEO (AI engine optimization):**
-- robots.txt explicitly allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended
-- Organization schema with `knowsAbout` array for AI entity building
-- ProfessionalService schema with service catalog
+**GEO:** robots.txt allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended. Organization schema with `knowsAbout` array. ProfessionalService schema with service catalog.
 
-**Google Search Console:** Must be registered as `sc-domain:askbodhi.ai` (domain property) with Cloudflare DNS TXT verification.
-
-## API Routes
-
-Both routes currently log submissions to Vercel function logs. Email delivery (Resend/SendGrid) is a pending integration.
-
-| Route | Method | Purpose |
-|-------|--------|--------|
-| `/api/contact` | POST | Contact form submissions |
-| `/api/assessment` | POST | Assessment results (answers, score, dimensions, competitors) |
-
-## Scope Boundaries
-
-**In scope for this website:**
-- SEO/GEO content and technical optimization
-- Assessment tool maintenance and improvement
-- New service pages and insights articles
-- Dutch-language pages (planned)
-- Schema markup and structured data
-
-**Out of scope:**
-- PPC/advertising management
-- Social media content
-- Major UX redesign (iterate within Luminous Clarity)
-- Third-party CMS integration (the site is static Next.js, keep it that way)
+**Hreflang:** `en` + `x-default` for Dutch market. No `meta keywords` (deprecated).
 
 ## Workflow: Making Changes via Cowork
 
-The site is managed entirely through Cowork sessions. No local dev environment needed (though one works fine too).
-
-### Standard workflow
 ```
-1. Clone repo in sandbox:  git clone https://github.com/KnowESG/askbodhi-site.git
-2. Install:                cd askbodhi-site && npm install
-3. Make changes:           Edit files in sandbox
-4. Validate TypeScript:    npx tsc --noEmit
-5. Validate build:         npx next build
-6. Push via GitHub MCP:    push_files to KnowESG/askbodhi-site, branch: main
-7. Verify deploy:          list_deployments via Vercel MCP → wait for READY
+1. Clone repo:    git clone https://github.com/KnowESG/askbodhi-site.git
+2. Install:       cd askbodhi-site && npm install
+3. Edit files
+4. Type-check:    npx tsc --noEmit
+5. Build:         npx next build
+6. Push via MCP:  push_files to KnowESG/askbodhi-site, branch: main
+7. Verify:        list_deployments via Vercel MCP → wait for READY
 ```
 
-### Known MCP limitations
-- **Files >8KB get truncated** during MCP push via `push_files` or `create_or_update_file`. Split large files into smaller components (this is why the assessment page was refactored from a 48KB monolith into 10 focused files).
-- **`package-lock.json` (229KB) cannot be pushed via MCP.** Needs a local `git push` or GitHub web UI.
-- **File deletion** is not available via GitHub MCP. Use GitHub web UI to delete tracked files.
-- **Sandbox resets between sessions.** Each Cowork session needs to re-clone (~20s) and re-install (~19s).
+### Known MCP Limitations
+
+- **Files >8KB get truncated** during `push_files`. Split large files (this is why CSS is split and the assessment page is 10 component files, not one monolith).
+- **Unicode encoding bug:** `\uXXXX` escape sequences in the JSON content parameter get double-escaped, so `\u2014` renders as literal text instead of an em-dash. **Always use actual UTF-8 characters** (—, –, €, ’, ×, →) in file content, never JS escape sequences.
+- **`package-lock.json` (229KB) cannot be pushed via MCP.** Needs local `git push` or GitHub web UI.
+- **File deletion** not available via GitHub MCP. Use GitHub web UI.
+- **Sandbox resets between sessions.** Re-clone (~20s) + re-install (~19s) each session.
 
 ### Repos
-- **Canonical:** `KnowESG/askbodhi-site` — connected to Vercel, this is the production source
-- **Stale copy:** `aapka4u/askbodhi-site` — personal account, should be archived/deleted
+- **Canonical:** `KnowESG/askbodhi-site` — connected to Vercel, production source
+- **Stale copy:** `aapka4u/askbodhi-site` — should be archived/deleted
 
 ## Future Pages (Roadmap)
 
-Based on the SEO/GEO audit (April 2026), these are prioritized by keyword opportunity:
-
-### Phase 1: Foundation (highest ROI)
-- `/generative-engine-optimization` — Definitive GEO guide (1,500/mo NL volume, KD 2)
-- `/about` — Team/founder page with Person schema (E-E-A-T critical for AI engines)
-- `/services/seo-geo` — Dedicated SEO & GEO service page
-- `/services/ai-engines` — Custom AI engines service page
-
-### Phase 2: Dutch Market
-- `/nl/seo-advies` — Dutch SEO advice page (1,100/mo, KD 5)
-- `/case-studies` — Standalone case studies page
-
-### Phase 3: Authority
-- `/insights/` — Blog/insights section for long-tail keyword content
-- `/ai-readiness-assessment` — SEO-optimized landing for the assessment tool
+**Phase 1:** `/generative-engine-optimization` (GEO guide, 1500/mo KD 2), `/about` (founder, E-E-A-T), `/services/seo-geo`, `/services/ai-engines`
+**Phase 2:** `/nl/seo-advies` (Dutch, 1100/mo KD 5), `/case-studies`
+**Phase 3:** `/insights/` (blog), `/ai-readiness-assessment` (SEO landing for assessment)
 
 ## Pending Cleanup
 
-- [ ] Delete `src/data/assessment_steps.ts` (dead file, snake_case, not imported)
+- [ ] Delete `src/data/assessment_steps.ts` (dead file, snake_case duplicate — active file is `assessment-steps.ts`)
 - [ ] Delete `next-env.d.ts` from git tracking
 - [ ] Wire API routes to email service (Resend recommended for Vercel)
 - [ ] Add brand assets to `/public` (favicon, OG image 1200x630, logo/icon.svg)

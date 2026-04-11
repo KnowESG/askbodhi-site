@@ -17,7 +17,7 @@ AI-Led Growth for Forward-Thinking Companies. Next.js website with the Luminous 
 
 | Route | Purpose |
 |-------|--------|
-| `/` | Homepage — hero, case studies, services, vision |
+| `/` | Homepage — 8-section optimized layout (hero, services, results, approach, who, vision, assessment CTA, FAQ) |
 | `/assessment` | AI Readiness Assessment — 11-step interactive lead magnet |
 | `/contact` | Contact form — free traffic diagnostic request |
 | `/api/assessment` | POST — receives assessment submissions (logs to Vercel) |
@@ -25,11 +25,22 @@ AI-Led Growth for Forward-Thinking Companies. Next.js website with the Luminous 
 | `/robots.txt` | Crawler rules (allows GPTBot, ClaudeBot, PerplexityBot) |
 | `/sitemap.xml` | Dynamic sitemap |
 
+## Homepage Sections (in order)
+
+1. **Hero** — Pain-point headline, proof bar with reframed stats, HeroVisual SVG
+2. **What We Do** (ServicesSection) — Pain-point service cards with Core Expertise + horizon labels
+3. **Proven Results** (ResultsSection) — Cross-sector case studies + MirrorCard behavioral checklist
+4. **How We Work** (ApproachSection) — 3-phase timeline with timeframe tags and de-risk block
+5. **This Is For You If** (WhoSection) — Behavior/situation checklist, 2-column grid, zero sector names
+6. **Where This Is Heading** (VisionSection) — AI progression tags (active/next/future)
+7. **AI Readiness Assessment** (AssessmentCTA) — 12-question hook, value framing
+8. **FAQ** — 6-question accordion with FAQPage JSON-LD schema (GEO)
+
 ## SEO & GEO
 
 - **Domain:** `askbodhi.ai` — all canonical URLs, OG tags, sitemap, robots reference this domain
 - **Hreflang:** `en` + `x-default` configured for Dutch market targeting
-- **Structured data:** Organization (with Person schema for founder), WebSite, ProfessionalService
+- **Structured data:** Organization, WebSite, ProfessionalService, Person (founder), FAQPage
 - **AI crawlers:** Explicitly allowed in robots.txt (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
 - **OpenGraph:** Page-specific OG tags on all routes
 
@@ -55,8 +66,9 @@ Pushes to `main` auto-deploy to Vercel via the KnowESG team project (`prj_zAhLUV
 src/
   app/
     layout.tsx              # Root layout, fonts, metadata, hreflang, JSON-LD
-    page.tsx                # Homepage
-    globals.css             # Luminous Clarity design tokens + nav classes
+    page.tsx                # Homepage (imports home/ section components)
+    globals.css             # Luminous Clarity design tokens + nav styles
+    components.css          # Component styles (cards, tags, FAQ, assessment)
     robots.ts               # Crawler rules (all AI bots allowed)
     sitemap.ts              # Dynamic sitemap (askbodhi.ai)
     assessment/
@@ -69,9 +81,22 @@ src/
       assessment/route.ts   # POST handler for assessment submissions
       contact/route.ts      # POST handler for contact form
   components/
-    Header.tsx              # Site header/navigation (CSS hover classes)
+    Header.tsx              # Site header/navigation
     Footer.tsx              # Site footer
-    JsonLd.tsx              # Organization, WebSite, ProfessionalService schemas
+    JsonLd.tsx              # Organization, WebSite, ProfessionalService, Person schemas
+    FAQ.tsx                 # Accordion FAQ (client component, imports faq-data)
+    FaqJsonLd.tsx           # FAQPage JSON-LD schema (server component)
+    MirrorCard.tsx          # "Sound familiar?" behavioral checklist
+    ToolBar.tsx             # Enterprise tool trust bar (logo chips)
+    home/
+      index.ts              # Barrel export for all home sections
+      ServicesSection.tsx   # Pain-point service cards
+      ResultsSection.tsx    # Case studies + MirrorCard
+      ApproachSection.tsx   # 3-phase timeline
+      WhoSection.tsx        # Behavior/situation checklist
+      VisionSection.tsx     # AI progression tags
+      AssessmentCTA.tsx     # Assessment lead-in CTA
+      HeroVisual.tsx        # Abstract data visualization SVG
     assessment/
       scoring.ts            # Score computation + dimension calculation
       StepProps.ts          # TypeScript interfaces for step components
@@ -83,6 +108,9 @@ src/
       ResultStep.tsx        # Score display + "What happens next" section
       FormSteps.tsx         # Field inputs, choice selectors, text areas
       Autocomplete.tsx      # Industry/country autocomplete input
+  data/
+    faq-data.ts             # FAQ Q&A pairs (shared between FAQ.tsx and FaqJsonLd.tsx)
+    assessment-steps.ts     # Assessment question definitions
   types/
     assessment.ts           # TypeScript interfaces for assessment flow
 ```
