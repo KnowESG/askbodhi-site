@@ -74,3 +74,7 @@ src/
 - **Background:** Warm stone `#FAFAF9`
 - **Display font:** Lora (serif)
 - **Body font:** Instrument Sans
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for business context, target clients, positioning rules, case study naming conventions, brand guidelines, content tone, and the Cowork workflow for making changes.
