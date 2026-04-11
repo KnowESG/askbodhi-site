@@ -1,6 +1,6 @@
 # Contributing to AskBodhi Website
 
-Business context, editorial rules, and workflow for maintaining askbodhi.com.
+Business context, editorial rules, and workflow for maintaining [askbodhi.ai](https://askbodhi.ai).
 
 ## What This Website Is
 
@@ -87,14 +87,44 @@ Write like a smart colleague, not a PowerPoint deck.
 
 ## Assessment Page (Lead Magnet)
 
-The `/assessment` is an 11-step interactive AI Readiness Assessment:
+The `/assessment` is an 11-step interactive AI Readiness Assessment, refactored into 10 focused component files under `src/components/assessment/`:
+
 - Prospect answers 12 multiple-choice questions (~5 min)
-- Key input: website URL (triggers automated analysis)
+- Key input: website URL (registered for analysis — no fake scan metrics)
+- Competitors: user provides their own via textarea (no auto-generated fakes)
 - Scores across 5 dimensions, each out of 20 (total /100)
 - Score bands: AI-Ready (75-100) / Emerging (50-74) / Catching Up (25-49) / Starting Line (0-24)
-- Leads to a report delivered within 5 business days
+- Result shows "What happens next" with real analysis steps (no false email delivery claims)
+- Submissions POST to `/api/assessment` with dedup flag to prevent double-sends
 
 **Important:** This is the primary conversion path. All homepage CTAs route to `/assessment`, not `/contact`.
+
+## SEO & GEO Configuration
+
+**Domain:** `askbodhi.ai` (all canonical URLs, OG tags, sitemap, and robots.txt must use this domain)
+
+**Key SEO elements:**
+- `metadataBase` in `layout.tsx` → `https://askbodhi.ai`
+- Page-specific OG tags in each route's `layout.tsx`
+- Hreflang tags: `en` + `x-default` for Dutch market
+- Person schema for founder with LinkedIn sameAs
+- No `meta keywords` tag (deprecated, Google ignores)
+
+**GEO (AI engine optimization):**
+- robots.txt explicitly allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended
+- Organization schema with `knowsAbout` array for AI entity building
+- ProfessionalService schema with service catalog
+
+**Google Search Console:** Must be registered as `sc-domain:askbodhi.ai` (domain property) with Cloudflare DNS TXT verification.
+
+## API Routes
+
+Both routes currently log submissions to Vercel function logs. Email delivery (Resend/SendGrid) is a pending integration.
+
+| Route | Method | Purpose |
+|-------|--------|--------|
+| `/api/contact` | POST | Contact form submissions |
+| `/api/assessment` | POST | Assessment results (answers, score, dimensions, competitors) |
 
 ## Scope Boundaries
 
@@ -127,19 +157,39 @@ The site is managed entirely through Cowork sessions. No local dev environment n
 ```
 
 ### Known MCP limitations
-- **Large files (>100KB) get truncated** during MCP push. The `package-lock.json` (229KB) cannot be pushed via MCP — it needs a local `git push`.
-- **File deletion** is not available via GitHub MCP. To remove tracked files, use the GitHub web UI.
+- **Files >8KB get truncated** during MCP push via `push_files` or `create_or_update_file`. Split large files into smaller components (this is why the assessment page was refactored from a 48KB monolith into 10 focused files).
+- **`package-lock.json` (229KB) cannot be pushed via MCP.** Needs a local `git push` or GitHub web UI.
+- **File deletion** is not available via GitHub MCP. Use GitHub web UI to delete tracked files.
 - **Sandbox resets between sessions.** Each Cowork session needs to re-clone (~20s) and re-install (~19s).
 
 ### Repos
-- **Canonical:** `KnowESG/askbodhi-site` — this is connected to Vercel
-- **Stale copy:** `aapka4u/askbodhi-site` — personal account, should be deleted
+- **Canonical:** `KnowESG/askbodhi-site` — connected to Vercel, this is the production source
+- **Stale copy:** `aapka4u/askbodhi-site` — personal account, should be archived/deleted
 
-## Future Pages (Planned)
+## Future Pages (Roadmap)
 
-These are stubbed in `sitemap.ts` as comments:
-- `/services/seo-geo` — SEO & GEO service page
+Based on the SEO/GEO audit (April 2026), these are prioritized by keyword opportunity:
+
+### Phase 1: Foundation (highest ROI)
+- `/generative-engine-optimization` — Definitive GEO guide (1,500/mo NL volume, KD 2)
+- `/about` — Team/founder page with Person schema (E-E-A-T critical for AI engines)
+- `/services/seo-geo` — Dedicated SEO & GEO service page
 - `/services/ai-engines` — Custom AI engines service page
-- `/nl/generative-engine-optimization` — Dutch GEO page
-- `/nl/ai-advies` — Dutch AI consulting page
-- `/insights/what-is-geo` — Educational content
+
+### Phase 2: Dutch Market
+- `/nl/seo-advies` — Dutch SEO advice page (1,100/mo, KD 5)
+- `/case-studies` — Standalone case studies page
+
+### Phase 3: Authority
+- `/insights/` — Blog/insights section for long-tail keyword content
+- `/ai-readiness-assessment` — SEO-optimized landing for the assessment tool
+
+## Pending Cleanup
+
+- [ ] Delete `src/data/assessment_steps.ts` (dead file, snake_case, not imported)
+- [ ] Delete `next-env.d.ts` from git tracking
+- [ ] Wire API routes to email service (Resend recommended for Vercel)
+- [ ] Add brand assets to `/public` (favicon, OG image 1200x630, logo/icon.svg)
+- [ ] Archive `aapka4u/askbodhi-site` duplicate repo
+- [ ] Register `askbodhi.ai` in Google Search Console
+- [ ] Set up Google Business Profile (service-area business, Netherlands)
