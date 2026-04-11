@@ -179,27 +179,3 @@ html {
   background: var(--color-teal-pale);
   color: var(--color-charcoal);
 }
-
-/* ===== Assessment page overrides ===== */
-.assessment-page input:focus-visible,
-.assessment-page textarea:focus-visible {
-  outline: none;
-  border-color: var(--color-teal);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.08);
-}
-
-/* Hover states for option cards */
-.option-card:hover {
-  border-color: var(--color-teal) !important;
-  background: var(--color-teal-pale) !important;
-  transform: translateX(4px);
-}
-
-/* Scan terminal scrollbar */
-.scan-terminal::-webkit-scrollbar {
-  width: 4px;
-}
-.scan-terminal::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.2);
-  border-radius: 2px;
-}

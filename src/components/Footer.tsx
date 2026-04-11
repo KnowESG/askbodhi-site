@@ -65,7 +65,7 @@ export default function Footer() {
               Contact
             </p>
             <p className="text-sm" style={{ color: "var(--color-stone-600)" }}>
-              info@knowesg.com
+              info@askbodhi.com
             </p>
             <p className="text-sm mt-1" style={{ color: "var(--color-stone-400)" }}>
               Netherlands &middot; Serving globally

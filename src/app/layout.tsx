@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Geist_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import "./components.css";
 import { OrganizationJsonLd, WebSiteJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 
 const lora = Lora({

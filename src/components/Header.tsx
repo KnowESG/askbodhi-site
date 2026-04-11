@@ -50,6 +50,12 @@ export default function Header() {
             Approach
           </Link>
           <Link
+            href="#faq"
+            className="nav-link text-sm no-underline transition-colors"
+          >
+            FAQ
+          </Link>
+          <Link
             href="/assessment"
             className="nav-cta text-sm font-semibold no-underline px-5 py-2.5 rounded-lg transition-colors"
           >
@@ -84,6 +90,9 @@ export default function Header() {
           </Link>
           <Link href="#approach" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }} onClick={() => setMenuOpen(false)}>
             Approach
+          </Link>
+          <Link href="#faq" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }} onClick={() => setMenuOpen(false)}>
+            FAQ
           </Link>
           <Link
             href="/assessment"
