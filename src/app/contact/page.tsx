@@ -6,6 +6,8 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   return (
     <>
@@ -49,17 +51,39 @@ export default function ContactPage() {
                 Thank you!
               </p>
               <p style={{ color: "var(--color-stone-600)" }}>
-                We&apos;ll review your site and get back to you within 48 hours
-                with your traffic architecture breakdown.
+                We&apos;ve received your details. We&apos;ll review your site and
+                get back to you within 48 hours with your traffic architecture breakdown.
               </p>
             </div>
           ) : (
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                // For now, just show success state.
-                // Later: connect to a form handler (Formspree, Vercel functions, etc.)
-                setSubmitted(true);
+                setSubmitting(true);
+                setError(null);
+
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+
+                try {
+                  const res = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      name: formData.get("name"),
+                      email: formData.get("email"),
+                      website: formData.get("website"),
+                      message: formData.get("message"),
+                    }),
+                  });
+
+                  if (!res.ok) throw new Error("Submission failed");
+                  setSubmitted(true);
+                } catch {
+                  setError("Something went wrong. Please try again or email us directly at info@knowesg.com.");
+                } finally {
+                  setSubmitting(false);
+                }
               }}
               className="space-y-6"
             >
@@ -158,17 +182,24 @@ export default function ContactPage() {
                 />
               </div>
 
+              {error && (
+                <p className="text-sm rounded-lg px-4 py-3" style={{ color: "var(--color-ember)", backgroundColor: "var(--color-ember-soft)" }}>
+                  {error}
+                </p>
+              )}
+
               <button
                 type="submit"
+                disabled={submitting}
                 className="w-full sm:w-auto px-10 py-3.5 rounded-lg text-base font-semibold transition-colors cursor-pointer"
                 style={{
-                  backgroundColor: "var(--color-teal)",
+                  backgroundColor: submitting ? "var(--color-stone-400)" : "var(--color-teal)",
                   color: "#fff",
                   fontFamily: "var(--font-body)",
                   border: "none",
                 }}
               >
-                Request My Free Diagnostic
+                {submitting ? "Sending..." : "Request My Free Diagnostic"}
               </button>
 
               <p className="text-xs" style={{ color: "var(--color-stone-400)" }}>

@@ -33,41 +33,25 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8">
           <Link
             href="#services"
-            className="text-sm no-underline transition-colors"
-            style={{ fontFamily: "var(--font-body)", color: "var(--color-stone-600)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-teal)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-stone-600)")}
+            className="nav-link text-sm no-underline transition-colors"
           >
             Services
           </Link>
           <Link
             href="#results"
-            className="text-sm no-underline transition-colors"
-            style={{ fontFamily: "var(--font-body)", color: "var(--color-stone-600)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-teal)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-stone-600)")}
+            className="nav-link text-sm no-underline transition-colors"
           >
             Results
           </Link>
           <Link
             href="#approach"
-            className="text-sm no-underline transition-colors"
-            style={{ fontFamily: "var(--font-body)", color: "var(--color-stone-600)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-teal)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-stone-600)")}
+            className="nav-link text-sm no-underline transition-colors"
           >
             Approach
           </Link>
           <Link
             href="/assessment"
-            className="text-sm font-semibold no-underline px-5 py-2.5 rounded-lg transition-colors"
-            style={{
-              fontFamily: "var(--font-body)",
-              backgroundColor: "var(--color-teal)",
-              color: "#fff",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "var(--color-teal-bright)")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "var(--color-teal)")}
+            className="nav-cta text-sm font-semibold no-underline px-5 py-2.5 rounded-lg transition-colors"
           >
             Get a Free Diagnostic
           </Link>

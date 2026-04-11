@@ -82,6 +82,26 @@ html {
   color: var(--color-teal);
 }
 
+/* ===== Header Navigation ===== */
+.nav-link {
+  font-family: var(--font-body);
+  color: var(--color-stone-600);
+}
+
+.nav-link:hover {
+  color: var(--color-teal);
+}
+
+.nav-cta {
+  font-family: var(--font-body);
+  background-color: var(--color-teal);
+  color: #fff;
+}
+
+.nav-cta:hover {
+  background-color: var(--color-teal-bright);
+}
+
 /* ===== Autocomplete Component ===== */
 .ac-group {
   position: relative;

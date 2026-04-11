@@ -4,7 +4,8 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     name: "AskBodhi",
     url: "https://askbodhi.com",
-    logo: "https://askbodhi.com/logo.svg",
+    // Logo URL — update when brand assets are added to /public
+    logo: "https://askbodhi.com/icon.svg",
     description:
       "AI-led growth consultancy specializing in SEO, Generative Engine Optimization (GEO), custom AI engines, and digital diagnostics.",
     founder: {
