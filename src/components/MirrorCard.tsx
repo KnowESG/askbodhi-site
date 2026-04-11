@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const mirrorItems = [
-  "You\u2019re the one managing marketing (among everything else)",
-  "Google Ads feels expensive but you can\u2019t turn it off",
+  "You’re the one managing marketing (among everything else)",
+  "Google Ads feels expensive but you can’t turn it off",
   "Your competitors rank above you for your core services",
-  "You\u2019ve tried an agency before and got a PDF nobody read",
-  "You\u2019ve never heard of GEO and now you\u2019re worried you should have",
-  "You know your website should work harder \u2014 you just don\u2019t know where to start",
+  "You’ve tried an agency before and got a PDF nobody read",
+  "You’ve never heard of GEO and now you’re worried you should have",
+  "You know your website should work harder — you just don’t know where to start",
 ];
 
 export default function MirrorCard() {

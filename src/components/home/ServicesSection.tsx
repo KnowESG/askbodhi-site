@@ -2,7 +2,7 @@ const services = [
   {
     title: "SEO & Generative Engine Optimization",
     description:
-      "Most companies pay for Google Ads because their website doesn't rank. We fix that \u2014 and go further. We make sure you show up when people search on ChatGPT, Perplexity, and Google's AI answers too. Because that's where your next customers are already looking.",
+      "Most companies pay for Google Ads because their website doesn't rank. We fix that — and go further. We make sure you show up when people search on ChatGPT, Perplexity, and Google's AI answers too. Because that's where your next customers are already looking.",
     featured: true,
     horizon: false,
     tealIcon: true,
@@ -15,7 +15,7 @@ const services = [
   {
     title: "Traffic Architecture Diagnostics",
     description:
-      "Before we change anything, we break down exactly where your traffic comes from \u2014 and what percentage actually leads to revenue. Most companies discover that 80% of their visitors will never become customers. That's the gap we close.",
+      "Before we change anything, we break down exactly where your traffic comes from — and what percentage actually leads to revenue. Most companies discover that 80% of their visitors will never become customers. That's the gap we close.",
     featured: true,
     horizon: false,
     tealIcon: true,
@@ -28,7 +28,7 @@ const services = [
   {
     title: "Custom AI Engines",
     description:
-      "Purpose-built AI systems for your domain \u2014 product recommendation engines, intelligent content generation, automated workflows. Not ChatGPT wrappers, but engines designed around your specific business logic and data.",
+      "Purpose-built AI systems for your domain — product recommendation engines, intelligent content generation, automated workflows. Not ChatGPT wrappers, but engines designed around your specific business logic and data.",
     featured: false,
     horizon: true,
     tealIcon: false,
@@ -41,7 +41,7 @@ const services = [
   {
     title: "AI-First Transformation",
     description:
-      "The bigger play. Once we've proven impact on your digital presence, we help convert your entire operation into an AI-first architecture \u2014 from how you serve customers to how your team works. A fractional AI transformation lead, embedded in your business.",
+      "The bigger play. Once we've proven impact on your digital presence, we help convert your entire operation into an AI-first architecture — from how you serve customers to how your team works. A fractional AI transformation lead, embedded in your business.",
     featured: false,
     horizon: true,
     tealIcon: false,
@@ -64,8 +64,8 @@ export default function ServicesSection() {
           We make companies the top digital asset in their sector
         </h2>
         <p className="text-base max-w-[600px] mb-12" style={{ color: "var(--color-stone-600)", fontFamily: "var(--font-body)", lineHeight: 1.7 }}>
-          Today, being \u201cfound\u201d means more than Google rankings. Your customers search on ChatGPT,
-          Perplexity, and AI Overviews. We make sure you show up everywhere that matters \u2014 and that the
+          Today, being “found” means more than Google rankings. Your customers search on ChatGPT,
+          Perplexity, and AI Overviews. We make sure you show up everywhere that matters — and that the
           traffic you get actually drives revenue.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

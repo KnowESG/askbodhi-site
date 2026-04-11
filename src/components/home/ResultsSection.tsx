@@ -2,8 +2,8 @@ import MirrorCard from "../MirrorCard";
 
 const cases = [
   {
-    flag: "\ud83c\uddf3\ud83c\uddf1",
-    region: "Netherlands \u00b7 Publishing",
+    flag: "🇳🇱",
+    region: "Netherlands · Publishing",
     title: "Leading Dutch Publishing Group",
     desc: "Spending on ads across multiple brands with no organic strategy. We found that only 25 of their 700 monthly visits had commercial intent. Within 90 days, we restructured the entire organic architecture and built a custom AI engine that lifted paid performance by 56%.",
     gradient: "linear-gradient(90deg, var(--color-teal), var(--color-teal-bright))",
@@ -13,21 +13,21 @@ const cases = [
     ],
   },
   {
-    flag: "\ud83c\uddee\ud83c\uddf3",
-    region: "India \u00b7 Fintech",
+    flag: "🇮🇳",
+    region: "India · Fintech",
     title: "EximPe",
-    desc: "11,000 monthly visitors \u2014 and almost none of them were potential customers. Classic content-traffic mismatch. We rebuilt the content architecture to align traffic with revenue, turning vanity metrics into commercial pipeline.",
+    desc: "11,000 monthly visitors — and almost none of them were potential customers. Classic content-traffic mismatch. We rebuilt the content architecture to align traffic with revenue, turning vanity metrics into commercial pipeline.",
     gradient: "linear-gradient(90deg, var(--color-ember), #F97316)",
     stats: [
       { value: "11K", label: "Visits (zero commercial)", color: "var(--color-ember)" },
-      { value: "Fixed", label: "Content \u2192 revenue aligned", color: "var(--color-teal)" },
+      { value: "Fixed", label: "Content → revenue aligned", color: "var(--color-teal)" },
     ],
   },
   {
-    flag: "\ud83c\uddf3\ud83c\uddf1",
-    region: "Netherlands \u00b7 ESG Intelligence",
+    flag: "🇳🇱",
+    region: "Netherlands · ESG Intelligence",
     title: "KnowESG",
-    desc: "Competing against well-funded incumbents with no organic strategy. We deployed an AI-driven content architecture and entity-rich schema strategy that built organic authority in a regulation-heavy sector \u2014 and made them visible to AI search engines.",
+    desc: "Competing against well-funded incumbents with no organic strategy. We deployed an AI-driven content architecture and entity-rich schema strategy that built organic authority in a regulation-heavy sector — and made them visible to AI search engines.",
     gradient: "linear-gradient(90deg, var(--color-teal-bright), #2DD4BF)",
     stats: [
       { value: "AI-first", label: "Content architecture", color: "var(--color-teal-bright)" },
@@ -48,7 +48,7 @@ export default function ResultsSection() {
         </h2>
         <p className="text-[17px] max-w-[680px] mb-10 italic" style={{ color: "var(--color-stone-600)", lineHeight: 1.8 }}>
           Every engagement starts the same way: a company spending on ads, underperforming on organic,
-          and invisible to AI search. Here\u2019s what happens when you fix it.
+          and invisible to AI search. Here’s what happens when you fix it.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

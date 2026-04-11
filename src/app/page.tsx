@@ -11,7 +11,7 @@ import { FaqJsonLd } from "@/components/FaqJsonLd";
 export const metadata: Metadata = {
   title: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
   description:
-    "Your competitors rank above you. You\u2019re spending on ads because organic isn\u2019t working. AskBodhi fixes SEO, GEO, and AI visibility for companies that depend on being found online.",
+    "Your competitors rank above you. You’re spending on ads because organic isn’t working. AskBodhi fixes SEO, GEO, and AI visibility for companies that depend on being found online.",
   alternates: { canonical: "https://askbodhi.ai" },
 };
 
@@ -86,10 +86,10 @@ export default function Home() {
         <section className="w-full border-y" style={{ borderColor: "var(--color-stone-200)", backgroundColor: "var(--color-white)" }}>
           <div className="max-w-6xl mx-auto px-6 py-9 lg:px-24 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "\u20ac0 \u2192 \u20ac12K", label: "Monthly organic traffic value created", color: "var(--color-teal)" },
+              { value: "€0 → €12K", label: "Monthly organic traffic value created", color: "var(--color-teal)" },
               { value: "13,000", label: "New visitors without ad spend", color: "var(--color-teal)" },
               { value: "47", label: "Untapped keywords found per client (avg)", color: "var(--color-ember)" },
-              { value: "3\u20135\u00d7", label: "ROI vs. equivalent ad spend", color: "var(--color-teal-bright)" },
+              { value: "3–5×", label: "ROI vs. equivalent ad spend", color: "var(--color-teal-bright)" },
             ].map((item) => (
               <div key={item.value} className="px-3">
                 <p className="text-[28px] font-bold" style={{ fontFamily: "var(--font-mono)", color: item.color }}>{item.value}</p>

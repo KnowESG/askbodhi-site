@@ -2,21 +2,21 @@ const phases = [
   {
     step: "01",
     title: "Diagnose",
-    timeframe: "Week 1\u20132",
+    timeframe: "Week 1–2",
     numColor: "var(--color-teal-pale)",
-    desc: "Full digital diagnostic. Traffic architecture breakdown, technical SEO audit, GEO readiness assessment, AI visibility check, and competitive landscape analysis. You get a clear picture of where you stand \u2014 and exactly what to fix first.",
+    desc: "Full digital diagnostic. Traffic architecture breakdown, technical SEO audit, GEO readiness assessment, AI visibility check, and competitive landscape analysis. You get a clear picture of where you stand — and exactly what to fix first.",
   },
   {
     step: "02",
     title: "Build",
-    timeframe: "Month 1\u20133",
+    timeframe: "Month 1–3",
     numColor: "var(--color-ember-soft)",
     desc: "Execute the prioritized fix list. Schema markup, content restructuring, AI engine optimization, GEO implementation. Quick wins first, then strategic moves. Everything developer-ready with file paths, code, and exact copy.",
   },
   {
     step: "03",
     title: "Scale",
-    timeframe: "Month 4\u20136+",
+    timeframe: "Month 4–6+",
     numColor: "var(--color-teal-pale)",
     desc: "Weekly scorecards, monthly strategy, quarterly roadmap. Prove results on one brand, replicate across the group. Expand from SEO/GEO into broader AI-first transformation as trust and results compound.",
   },
@@ -33,8 +33,8 @@ export default function ApproachSection() {
           Diagnose. Build. Scale.
         </h2>
         <p className="text-base max-w-[600px] mb-12" style={{ color: "var(--color-stone-600)", fontFamily: "var(--font-body)", lineHeight: 1.7 }}>
-          We don\u2019t hand over a strategy deck and disappear. We embed alongside your team and
-          execute \u2014 proving the model before scaling.
+          We don’t hand over a strategy deck and disappear. We embed alongside your team and
+          execute — proving the model before scaling.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
@@ -86,9 +86,9 @@ export default function ApproachSection() {
           }}
         >
           <strong style={{ color: "var(--color-charcoal)" }}>
-            You\u2019ll see data in week one. Results in month one. ROI by month three.
+            You’ll see data in week one. Results in month one. ROI by month three.
           </strong>{" "}
-          If it\u2019s not working, you\u2019ll know \u2014 and so will we. No 12-month lock-ins.
+          If it’s not working, you’ll know — and so will we. No 12-month lock-ins.
           No vague promises. Just transparent, measurable progress.
         </div>
       </div>

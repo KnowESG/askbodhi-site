@@ -22,7 +22,7 @@ export default function VisionSection() {
             <p className="text-[15px]" style={{ color: "var(--color-stone-600)", lineHeight: 1.8 }}>
               We start with what's proven: making you the top digital asset in your sector.
               But the relationship doesn't stop at SEO. As your trusted AI partner, we help your
-              company become genuinely AI-first \u2014 in how you serve customers, make decisions, and
+              company become genuinely AI-first — in how you serve customers, make decisions, and
               operate day to day.
             </p>
             <div className="flex flex-wrap gap-2 mt-6">
@@ -38,7 +38,7 @@ export default function VisionSection() {
           </div>
           <div className="text-center">
             <p className="text-[56px] font-bold leading-none" style={{ fontFamily: "var(--font-mono)", color: "var(--color-teal)" }}>
-              10\u2013200
+              10–200
             </p>
             <p className="text-sm mt-2" style={{ color: "var(--color-stone-400)" }}>
               person companies we're built for

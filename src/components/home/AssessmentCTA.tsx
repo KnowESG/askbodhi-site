@@ -20,8 +20,8 @@ export default function AssessmentCTA() {
             </p>
             <p className="text-base mb-6" style={{ color: "var(--color-stone-600)", lineHeight: 1.7 }}>
               You answer 12 questions about your business. We analyze your website's traffic architecture,
-              AI visibility, and competitive position using the same tools enterprise agencies charge \u20ac5K to run.
-              You get a scored report with specific recommendations \u2014 not a sales pitch.
+              AI visibility, and competitive position using the same tools enterprise agencies charge €5K to run.
+              You get a scored report with specific recommendations — not a sales pitch.
             </p>
             <Link
               href="/assessment"
@@ -35,8 +35,8 @@ export default function AssessmentCTA() {
             <ul className="list-none p-0 m-0">
               {[
                 { num: "1", bg: "var(--color-teal)", text: "You invest 5 minutes answering 12 honest questions about your business, traffic, and growth challenges." },
-                { num: "2", bg: "var(--color-ember)", text: "We analyze your digital footprint \u2014 traffic architecture, AI engine visibility, competitive positioning, and content quality using enterprise-grade tools." },
-                { num: "3", bg: "var(--color-teal-bright)", text: "You get a scored AI readiness report with specific, prioritized recommendations \u2014 not a sales pitch disguised as advice." },
+                { num: "2", bg: "var(--color-ember)", text: "We analyze your digital footprint — traffic architecture, AI engine visibility, competitive positioning, and content quality using enterprise-grade tools." },
+                { num: "3", bg: "var(--color-teal-bright)", text: "You get a scored AI readiness report with specific, prioritized recommendations — not a sales pitch disguised as advice." },
               ].map((step) => (
                 <li key={step.num} className="flex items-start gap-3 text-sm mb-4" style={{ color: "var(--color-stone-600)", lineHeight: 1.6 }}>
                   <span
