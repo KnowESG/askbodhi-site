@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lora, Geist_Mono } from "next/font/google";
+import { Lora, Geist_Mono, Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import { OrganizationJsonLd, WebSiteJsonLd, ServiceJsonLd } from "@/components/JsonLd";
 
@@ -14,6 +14,13 @@ const lora = Lora({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -66,19 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lora.variable} ${geistMono.variable}`}>
-      <head>
-        {/* Instrument Sans from Fontsource CDN */}
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${lora.variable} ${geistMono.variable} ${instrumentSans.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
         <OrganizationJsonLd />
         <WebSiteJsonLd />
