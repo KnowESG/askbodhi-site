@@ -25,30 +25,27 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://askbodhi.com"),
+  metadataBase: new URL("https://askbodhi.ai"),
   title: {
     default: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
     template: "%s | AskBodhi",
   },
   description:
     "AskBodhi helps companies grow through AI-led SEO, Generative Engine Optimization, custom AI engines, and digital diagnostics. Based in the Netherlands, serving globally.",
-  keywords: [
-    "AI consulting",
-    "generative engine optimization",
-    "GEO",
-    "SEO advies",
-    "AI-led growth",
-    "ai consultant",
-    "seo consultant",
-    "ai agency",
-  ],
-  authors: [{ name: "Rajul", url: "https://askbodhi.com/about" }],
+  authors: [{ name: "Rajul", url: "https://askbodhi.ai/about" }],
   creator: "AskBodhi",
+  alternates: {
+    canonical: "https://askbodhi.ai",
+    languages: {
+      "en": "https://askbodhi.ai",
+      "x-default": "https://askbodhi.ai",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
     alternateLocale: "nl_NL",
-    url: "https://askbodhi.com",
+    url: "https://askbodhi.ai",
     siteName: "AskBodhi",
     title: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
     description:

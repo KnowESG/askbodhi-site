@@ -25,6 +25,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://askbodhi.com/sitemap.xml",
+    sitemap: "https://askbodhi.ai/sitemap.xml",
   };
 }

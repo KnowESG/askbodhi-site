@@ -3,15 +3,17 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "AskBodhi",
-    url: "https://askbodhi.com",
-    // Logo URL — update when brand assets are added to /public
-    logo: "https://askbodhi.com/icon.svg",
+    url: "https://askbodhi.ai",
+    logo: "https://askbodhi.ai/icon.svg",
     description:
       "AI-led growth consultancy specializing in SEO, Generative Engine Optimization (GEO), custom AI engines, and digital diagnostics.",
     founder: {
       "@type": "Person",
       name: "Rajul",
       jobTitle: "Founder & Lead Consultant",
+      sameAs: [
+        "https://www.linkedin.com/in/rajul/",
+      ],
     },
     areaServed: [
       { "@type": "Country", name: "Netherlands" },
@@ -28,7 +30,7 @@ export function OrganizationJsonLd() {
     sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
-      email: "info@knowesg.com",
+      email: "info@askbodhi.ai",
       contactType: "customer service",
     },
   };
@@ -46,7 +48,7 @@ export function WebSiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "AskBodhi",
-    url: "https://askbodhi.com",
+    url: "https://askbodhi.ai",
     description:
       "AI-Led Growth for Forward-Thinking Companies. SEO & GEO optimization, custom AI engines, digital diagnostics, and growth strategy.",
     publisher: {
@@ -68,7 +70,7 @@ export function ServiceJsonLd() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "AskBodhi",
-    url: "https://askbodhi.com",
+    url: "https://askbodhi.ai",
     description:
       "AI-led growth consultancy offering SEO & GEO optimization, custom AI engine development, digital diagnostics, and growth strategy.",
     priceRange: "$$",
