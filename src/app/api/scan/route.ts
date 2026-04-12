@@ -35,16 +35,16 @@ interface AhrefsCompetitor {
 
 interface PageSpeedResult {
   performanceScore: number;
-  lcp: number;
-  cls: number;
-  fcp: number;
+  lcp: number;       // Largest Contentful Paint (ms)
+  cls: number;       // Cumulative Layout Shift
+  fcp: number;       // First Contentful Paint (ms)
   speedIndex: number;
 }
 
 interface AiVisibilityResult {
   mentioned: boolean;
-  context: string;
-  citations: string[];
+  context: string;       // snippet of what the AI said
+  citations: string[];   // URLs cited alongside the brand
 }
 
 interface ScanResponse {
@@ -54,7 +54,7 @@ interface ScanResponse {
   pageSpeed: PageSpeedResult | null;
   aiVisibility: AiVisibilityResult | null;
   scannedAt: string;
-  errors: string[];
+  errors: string[];      // transparent about what failed
 }
 
 // ─── Helpers ───────────────────────────────────────────────────
@@ -83,9 +83,10 @@ function todayStr(): string {
 async function fetchAhrefs(domain: string): Promise<{
   metrics: AhrefsMetrics | null;
   competitors: AhrefsCompetitor[];
+  error?: string;
 }> {
   const token = process.env.AHREFS_API_TOKEN;
-  if (!token) return { metrics: null, competitors: [] };
+  if (!token) return { metrics: null, competitors: [], error: 'AHREFS_API_TOKEN not configured' };
 
   const baseUrl = 'https://api.ahrefs.com/v3/site-explorer';
   const headers = {
@@ -103,33 +104,42 @@ async function fetchAhrefs(domain: string): Promise<{
       ),
       fetch(
         `${baseUrl}/metrics?` +
-          new URLSearchParams({ target: domain, date, mode: 'subdomains' }).toString(),
+          new URLSearchParams({
+            target: domain,
+            date,
+            mode: 'subdomains',
+          }).toString(),
         { headers, signal: AbortSignal.timeout(10000) }
       ),
       fetch(
         `${baseUrl}/backlinks-stats?` +
-          new URLSearchParams({ target: domain, date, mode: 'subdomains' }).toString(),
+          new URLSearchParams({
+            target: domain,
+            date,
+            mode: 'subdomains',
+          }).toString(),
         { headers, signal: AbortSignal.timeout(10000) }
       ),
       fetch(
         `${baseUrl}/organic-competitors?` +
           new URLSearchParams({
-            target: domain, date, mode: 'subdomains',
+            target: domain,
+            date,
+            mode: 'subdomains',
             select: 'competitor_domain,domain_rating,keywords_common',
-            country: 'us', limit: '5',
+            country: 'us',
+            limit: '5',
           }).toString(),
         { headers, signal: AbortSignal.timeout(10000) }
       ),
     ]);
 
-    // API returns: { "domain_rating": { "domain_rating": 46.0, "ahrefs_rank": 912037 } }
     let domainRating = 0;
     if (drRes.status === 'fulfilled' && drRes.value.ok) {
       const drData = await drRes.value.json();
       domainRating = drData.domain_rating?.domain_rating ?? 0;
     }
 
-    // API returns: { "metrics": { "org_keywords": 962, "org_traffic": 2176, ... } }
     let organicKeywords = 0;
     let monthlyTraffic = 0;
     if (metricsRes.status === 'fulfilled' && metricsRes.value.ok) {
@@ -138,14 +148,12 @@ async function fetchAhrefs(domain: string): Promise<{
       monthlyTraffic = Math.round(mData.metrics?.org_traffic ?? 0);
     }
 
-    // API returns: { "metrics": { "live": 8134, "all_time": 18662, ... } }
     let backlinks = 0;
     if (blRes.status === 'fulfilled' && blRes.value.ok) {
       const blData = await blRes.value.json();
       backlinks = blData.metrics?.live ?? 0;
     }
 
-    // API returns: { "competitors": [{ "competitor_domain": "...", "domain_rating": 88, "keywords_common": 91 }] }
     const competitors: AhrefsCompetitor[] = [];
     if (compRes.status === 'fulfilled' && compRes.value.ok) {
       const cData = await compRes.value.json();
@@ -164,39 +172,65 @@ async function fetchAhrefs(domain: string): Promise<{
       competitors,
     };
   } catch (err) {
-    console.error('[Ahrefs] Failed:', err);
-    return { metrics: null, competitors: [] };
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('[Ahrefs] Failed:', msg);
+    return { metrics: null, competitors: [], error: `Ahrefs: ${msg}` };
   }
 }
 
 // ─── Google PageSpeed Insights ─────────────────────────────────
-async function fetchPageSpeed(url: string): Promise<PageSpeedResult | null> {
+async function fetchPageSpeed(url: string): Promise<{
+  result: PageSpeedResult | null;
+  error?: string;
+}> {
   try {
     const apiKey = process.env.PAGESPEED_API_KEY;
-    const params = new URLSearchParams({ url, strategy: 'mobile', category: 'performance' });
+    const params = new URLSearchParams({
+      url,
+      strategy: 'mobile',
+      category: 'performance',
+    });
     if (apiKey) params.set('key', apiKey);
 
     const res = await fetch(
       `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?${params.toString()}`,
       { signal: AbortSignal.timeout(30000) }
     );
-    if (!res.ok) return null;
+
+    if (!res.ok) {
+      const errBody = await res.text().catch(() => '');
+      const errMsg = `PageSpeed returned ${res.status}`;
+      try {
+        const errJson = JSON.parse(errBody);
+        const googleMsg = errJson.error?.message || '';
+        if (googleMsg.includes('Quota')) {
+          return { result: null, error: 'PageSpeed: API key required (quota exceeded). Add PAGESPEED_API_KEY to env vars.' };
+        }
+        return { result: null, error: `${errMsg}: ${googleMsg.slice(0, 100)}` };
+      } catch {
+        return { result: null, error: errMsg };
+      }
+    }
 
     const data = await res.json();
     const lighthouse = data.lighthouseResult;
-    if (!lighthouse) return null;
+    if (!lighthouse) return { result: null, error: 'PageSpeed: No Lighthouse data in response' };
+
     const audits = lighthouse.audits ?? {};
 
     return {
-      performanceScore: Math.round((lighthouse.categories?.performance?.score ?? 0) * 100),
-      lcp: Math.round(audits['largest-contentful-paint']?.numericValue ?? 0),
-      cls: parseFloat((audits['cumulative-layout-shift']?.numericValue ?? 0).toFixed(3)),
-      fcp: Math.round(audits['first-contentful-paint']?.numericValue ?? 0),
-      speedIndex: Math.round(audits['speed-index']?.numericValue ?? 0),
+      result: {
+        performanceScore: Math.round((lighthouse.categories?.performance?.score ?? 0) * 100),
+        lcp: Math.round(audits['largest-contentful-paint']?.numericValue ?? 0),
+        cls: parseFloat((audits['cumulative-layout-shift']?.numericValue ?? 0).toFixed(3)),
+        fcp: Math.round(audits['first-contentful-paint']?.numericValue ?? 0),
+        speedIndex: Math.round(audits['speed-index']?.numericValue ?? 0),
+      },
     };
   } catch (err) {
-    console.error('[PageSpeed] Failed:', err);
-    return null;
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('[PageSpeed] Failed:', msg);
+    return { result: null, error: `PageSpeed: ${msg}` };
   }
 }
 
@@ -204,9 +238,12 @@ async function fetchPageSpeed(url: string): Promise<PageSpeedResult | null> {
 async function fetchAiVisibility(
   domain: string,
   companyName?: string
-): Promise<AiVisibilityResult | null> {
+): Promise<{
+  result: AiVisibilityResult | null;
+  error?: string;
+}> {
   const apiKey = process.env.PERPLEXITY_API_KEY;
-  if (!apiKey) return null;
+  if (!apiKey) return { result: null, error: 'PERPLEXITY_API_KEY not configured' };
 
   try {
     const query = companyName
@@ -215,34 +252,62 @@ async function fetchAiVisibility(
 
     const res = await fetch('https://api.perplexity.ai/chat/completions', {
       method: 'POST',
-      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         model: 'sonar',
         messages: [
-          { role: 'system', content: 'You are a research assistant. Give a brief, factual answer about this company. If you cannot find information, say so clearly. Keep your answer under 100 words.' },
+          {
+            role: 'system',
+            content:
+              'You are a research assistant. Give a brief, factual answer about this company. If you cannot find information, say so clearly. Keep your answer under 100 words.',
+          },
           { role: 'user', content: query },
         ],
         max_tokens: 200,
       }),
       signal: AbortSignal.timeout(15000),
     });
-    if (!res.ok) return null;
+
+    if (!res.ok) {
+      const errBody = await res.text().catch(() => '');
+      const errMsg = `Perplexity returned ${res.status}`;
+      try {
+        const errJson = JSON.parse(errBody);
+        return { result: null, error: `${errMsg}: ${errJson.error?.message || errJson.detail || errBody.slice(0, 100)}` };
+      } catch {
+        return { result: null, error: `${errMsg}: ${errBody.slice(0, 100)}` };
+      }
+    }
 
     const data = await res.json();
     const content: string = data.choices?.[0]?.message?.content ?? '';
     const citations: string[] = data.citations ?? [];
+
     const lowerContent = content.toLowerCase();
+    const domainLower = domain.toLowerCase();
+    const companyLower = (companyName ?? domain).toLowerCase();
+
     const mentioned =
       !lowerContent.includes('i could not find') &&
       !lowerContent.includes('no information') &&
-      !lowerContent.includes("i don't have") &&
+      !lowerContent.includes('i don\'t have') &&
       !lowerContent.includes('unable to find') &&
-      (lowerContent.includes(domain.toLowerCase()) || lowerContent.includes((companyName ?? domain).toLowerCase()));
+      (lowerContent.includes(domainLower) || lowerContent.includes(companyLower));
 
-    return { mentioned, context: content.slice(0, 300), citations: citations.slice(0, 5) };
+    return {
+      result: {
+        mentioned,
+        context: content.slice(0, 300),
+        citations: citations.slice(0, 5),
+      },
+    };
   } catch (err) {
-    console.error('[Perplexity] Failed:', err);
-    return null;
+    const msg = err instanceof Error ? err.message : String(err);
+    console.error('[Perplexity] Failed:', msg);
+    return { result: null, error: `Perplexity: ${msg}` };
   }
 }
 
@@ -254,50 +319,85 @@ export async function POST(req: NextRequest) {
     const companyName = body.companyName || '';
 
     if (!rawDomain) {
-      return NextResponse.json({ error: 'Missing domain' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Missing domain' },
+        { status: 400 }
+      );
     }
 
     const domain = cleanDomain(rawDomain);
     const fullUrl = ensureUrl(rawDomain);
 
+    // ── Rate limiting ──
     const clientIp =
       req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-      req.headers.get('x-real-ip') || 'unknown';
+      req.headers.get('x-real-ip') ||
+      'unknown';
     const lastScan = rateLimitMap.get(clientIp) ?? 0;
     if (Date.now() - lastScan < RATE_LIMIT_MS) {
-      return NextResponse.json({ error: 'Rate limited. Please wait a few minutes.' }, { status: 429 });
+      return NextResponse.json(
+        { error: 'Rate limited. Please wait a few minutes.' },
+        { status: 429 }
+      );
     }
     rateLimitMap.set(clientIp, Date.now());
 
+    // ── Cache check ──
     const cached = domainCache.get(domain);
     if (cached && Date.now() - cached.ts < CACHE_TTL_MS) {
       return NextResponse.json(cached.data);
     }
 
+    // ── Fire all three APIs in parallel ──
     const [ahrefsResult, pageSpeedResult, aiVisResult] = await Promise.allSettled([
       fetchAhrefs(domain),
       fetchPageSpeed(fullUrl),
       fetchAiVisibility(domain, companyName),
     ]);
 
+    // ── Assemble response ──
     const errors: string[] = [];
-    const ahrefs = ahrefsResult.status === 'fulfilled' ? ahrefsResult.value.metrics : null;
-    if (!ahrefs) errors.push('Domain metrics temporarily unavailable');
-    const competitors = ahrefsResult.status === 'fulfilled' ? ahrefsResult.value.competitors : [];
-    const pageSpeed = pageSpeedResult.status === 'fulfilled' ? pageSpeedResult.value : null;
-    if (!pageSpeed) errors.push('PageSpeed analysis timed out');
-    const aiVisibility = aiVisResult.status === 'fulfilled' ? aiVisResult.value : null;
-    if (!aiVisibility) errors.push('AI visibility check unavailable');
+
+    const ahrefsData = ahrefsResult.status === 'fulfilled' ? ahrefsResult.value : null;
+    const ahrefs = ahrefsData?.metrics ?? null;
+    if (!ahrefs) {
+      errors.push(ahrefsData?.error || 'Domain metrics temporarily unavailable');
+    }
+    const competitors = ahrefsData?.competitors ?? [];
+
+    const psData = pageSpeedResult.status === 'fulfilled' ? pageSpeedResult.value : null;
+    const pageSpeed = psData?.result ?? null;
+    if (!pageSpeed) {
+      errors.push(psData?.error || 'PageSpeed analysis failed');
+    }
+
+    const aiData = aiVisResult.status === 'fulfilled' ? aiVisResult.value : null;
+    const aiVisibility = aiData?.result ?? null;
+    if (!aiVisibility) {
+      errors.push(aiData?.error || 'AI visibility check failed');
+    }
 
     const response: ScanResponse = {
-      domain, ahrefs, competitors, pageSpeed, aiVisibility,
-      scannedAt: new Date().toISOString(), errors,
+      domain,
+      ahrefs,
+      competitors,
+      pageSpeed,
+      aiVisibility,
+      scannedAt: new Date().toISOString(),
+      errors,
     };
 
-    domainCache.set(domain, { data: response, ts: Date.now() });
+    // ── Cache result (only if at least one API succeeded) ──
+    if (ahrefs || pageSpeed || aiVisibility) {
+      domainCache.set(domain, { data: response, ts: Date.now() });
+    }
+
     return NextResponse.json(response);
   } catch (err) {
     console.error('[Scan] Unexpected error:', err);
-    return NextResponse.json({ error: 'Scan failed. Please try again.' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Scan failed. Please try again.' },
+      { status: 500 }
+    );
   }
 }
