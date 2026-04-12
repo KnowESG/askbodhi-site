@@ -27,7 +27,7 @@ const getServiceIcons = () => ({
 
 export default function ServicesSection() {
   const t = useTranslations();
-  const serviceItems = t.raw("services.items") as Array<{ title: string; description: string }>;
+  const serviceItems = (t.raw("services.items") || []) as Array<{ title: string; description: string }>;
   const icons = getServiceIcons();
   const iconKeys = ["seo", "architecture", "engines", "transformation"] as const;
 

@@ -8,16 +8,16 @@
   },
   "hero": {
     "label": "AI-Gedreven Groeiconsultancy",
-    "title": "Uw bedrijf verdient om gevonden te worden — door mensen én AI.",
+    "title": "Uw bedrijf verdient om gevonden te worden \u2014 door mensen \u00e9n AI.",
     "subtitle": "U geeft geld uit aan advertenties omdat organisch niet werkt. Uw concurrenten scoren beter. AI-zoeken verandert alles en u bent niet in beeld. We repareren het allemaal.",
     "primaryCta": "Gratis Diagnose Uitvoeren",
     "secondaryCta": "Bekijk Onze Werkwijze",
-    "secondaryLink": "Bekijk hoe wij een bedrijf zoals het uwe hebben gediagnosticeerd →"
+    "secondaryLink": "Bekijk hoe wij een bedrijf zoals het uwe hebben gediagnosticeerd \u2192"
   },
   "proofBar": {
     "items": [
       {
-        "value": "€0 → €12K",
+        "value": "\u20ac0 \u2192 \u20ac12K",
         "label": "Waarde organisch traffic per maand"
       },
       {
@@ -29,7 +29,7 @@
         "label": "Ongebruikte zoekwoorden per klant (gem.)"
       },
       {
-        "value": "3–5×",
+        "value": "3\u20135\u00d7",
         "label": "ROI vs. gelijkwaardig advertentiebudget"
       }
     ]
@@ -37,23 +37,23 @@
   "services": {
     "label": "Wat We Doen",
     "title": "We maken bedrijven tot het topdigitale bezit in hun sector",
-    "description": "Vandaag de dag gaat 'gevonden worden' verder dan Google-rankings. Uw klanten zoeken op ChatGPT, Perplexity en AI Overviews. We zorgen ervoor dat u overal verschijnt waar het toe doet — en dat het verkeer dat u krijgt daadwerkelijk opbrengsten oplevert.",
+    "description": "Vandaag de dag gaat 'gevonden worden' verder dan Google-rankings. Uw klanten zoeken op ChatGPT, Perplexity en AI Overviews. We zorgen ervoor dat u overal verschijnt waar het toe doet \u2014 en dat het verkeer dat u krijgt daadwerkelijk opbrengsten oplevert.",
     "items": [
       {
         "title": "SEO & Generative Engine Optimization",
-        "description": "De meeste bedrijven betalen voor Google Ads omdat hun website niet in de ranking staat. Wij repareren dat — en gaan verder. We zorgen ervoor dat u wordt gevonden bij zoekopdrachten op ChatGPT, Perplexity en Google's AI-antwoorden. Want daar zoeken uw volgende klanten."
+        "description": "De meeste bedrijven betalen voor Google Ads omdat hun website niet in de ranking staat. Wij repareren dat \u2014 en gaan verder. We zorgen ervoor dat u wordt gevonden bij zoekopdrachten op ChatGPT, Perplexity en Google's AI-antwoorden. Want daar zoeken uw volgende klanten."
       },
       {
         "title": "Traffic Architecture Diagnostics",
-        "description": "Voordat we iets veranderen, breken we exact uit waar uw traffic vandaan komt — en welk percentage echt tot inkomsten leidt. De meeste bedrijven ontdekken dat 80% van hun bezoekers nooit klant wordt. Dat gat dichten we."
+        "description": "Voordat we iets veranderen, breken we exact uit waar uw traffic vandaan komt \u2014 en welk percentage echt tot inkomsten leidt. De meeste bedrijven ontdekken dat 80% van hun bezoekers nooit klant wordt. Dat gat dichten we."
       },
       {
         "title": "Custom AI Engines",
-        "description": "Speciaal gebouwde AI-systemen voor uw domein — productaanbevelingsengines, intelligente contentgeneratie, geautomatiseerde workflows. Geen ChatGPT-wrappers, maar engines ontworpen rond uw specifieke bedrijfslogica en gegevens."
+        "description": "Speciaal gebouwde AI-systemen voor uw domein \u2014 productaanbevelingsengines, intelligente contentgeneratie, geautomatiseerde workflows. Geen ChatGPT-wrappers, maar engines ontworpen rond uw specifieke bedrijfslogica en gegevens."
       },
       {
         "title": "AI-First Transformation",
-        "description": "De grote stap. Zodra we impact op uw digitale aanwezigheid hebben bewezen, helpen we uw hele bedrijf om te zetten naar een AI-first architectuur — van hoe u klanten bedient tot hoe uw team werkt. Een fractionele AI-transformatielead, ingebed in uw bedrijf."
+        "description": "De grote stap. Zodra we impact op uw digitale aanwezigheid hebben bewezen, helpen we uw hele bedrijf om te zetten naar een AI-first architectuur \u2014 van hoe u klanten bedient tot hoe uw team werkt. Een fractionele AI-transformatielead, ingebed in uw bedrijf."
       }
     ]
   },
@@ -63,22 +63,32 @@
     "description": "Elke samenwerking start hetzelfde: een bedrijf dat adverteert, slecht presteert organisch en onzichtbaar is voor AI-zoeken. Dit gebeurt als u het fixt.",
     "items": [
       {
-        "flag": "🇳🇱",
-        "region": "Nederland · Uitgeverij",
+        "flag": "\ud83c\uddf3\ud83c\uddf1",
+        "region": "Nederland \u00b7 Uitgeverij",
         "title": "Toonaangevende Nederlandse Uitgeverijgroep",
-        "description": "Adverteert over meerdere merken heen zonder organische strategie. We ontdekten dat slechts 25 van hun 700 maandelijkse bezoekers commerciële intent hebben. In 90 dagen herstructureerden we de hele organische architectuur en bouwden een custom AI-engine die de betaalde prestaties met 56% omhoog bracht."
+        "description": "Adverteert over meerdere merken heen zonder organische strategie. We ontdekten dat slechts 25 van hun 700 maandelijkse bezoekers commerci\u00eble intent hebben. In 90 dagen herstructureerden we de hele organische architectuur en bouwden een custom AI-engine die de betaalde prestaties met 56% omhoog bracht.",
+        "stats": [
+          {
+            "value": "+56%",
+            "label": "Betaalde prestatieverbetering"
+          },
+          {
+            "value": "13K",
+            "label": "Organische klikken / 90 dagen"
+          }
+        ]
       },
       {
-        "flag": "🇮🇳",
-        "region": "India · Fintech",
+        "flag": "\ud83c\uddee\ud83c\uddf3",
+        "region": "India \u00b7 Fintech",
         "title": "EximPe",
-        "description": "11.000 maandelijkse bezoekers — en bijna geen potentiële klanten. Klassiek geval van content-traffic mismatch. We herbouwden de content-architectuur om traffic op inkomsten af te stemmen, vanity metrics omzetten in commerciële pijplijn."
+        "description": "11.000 maandelijkse bezoekers \u2014 en bijna geen potenti\u00eble klanten. Klassiek geval van content-traffic mismatch. We herbouwden de content-architectuur om traffic op inkomsten af te stemmen, vanity metrics omzetten in commerci\u00eble pijplijn."
       },
       {
-        "flag": "🇳🇱",
-        "region": "Nederland · ESG Intelligence",
+        "flag": "\ud83c\uddf3\ud83c\uddf1",
+        "region": "Nederland \u00b7 ESG Intelligence",
         "title": "KnowESG",
-        "description": "Concurreert tegen goed gefinancierde concurrenten zonder organische strategie. We lanceerden een AI-gedreven content-architectuur en entity-rich schema-strategie die organische autoriteit opbouwde in een regelzware sector — en maakte hen zichtbaar voor AI-zoekmachines."
+        "description": "Concurreert tegen goed gefinancierde concurrenten zonder organische strategie. We lanceerden een AI-gedreven content-architectuur en entity-rich schema-strategie die organische autoriteit opbouwde in een regelzware sector \u2014 en maakte hen zichtbaar voor AI-zoekmachines."
       }
     ]
   },
@@ -90,35 +100,35 @@
       "Uw concurrenten scoren hoger voor uw kernservices",
       "U hebt eerder een bureau geprobeerd en kreeg een PDF die niemand las",
       "U hebt nog nooit van GEO gehoord en nu maakt u zich zorgen dat u het had moeten kennen",
-      "U weet dat uw website harder zou moeten werken — u weet alleen niet waar u moet beginnen"
+      "U weet dat uw website harder zou moeten werken \u2014 u weet alleen niet waar u moet beginnen"
     ],
-    "cta": "Ontdek waar u staat — duurt maar 5 minuten →"
+    "cta": "Ontdek waar u staat \u2014 duurt maar 5 minuten \u2192"
   },
   "approach": {
     "label": "Hoe We Werken",
     "title": "Diagnosticeer. Bouw. Schaal.",
-    "description": "We overhandigen geen strategiedeck en verdwijnen. We werken naast uw team en voeren uit — we bewijzen het model voordat we schalen.",
+    "description": "We overhandigen geen strategiedeck en verdwijnen. We werken naast uw team en voeren uit \u2014 we bewijzen het model voordat we schalen.",
     "items": [
       {
         "step": "01",
         "title": "Diagnosticeer",
-        "timeframe": "Week 1–2",
-        "description": "Volledige digitale diagnose. Traffic architecture breakdown, technische SEO-audit, GEO-readiness assessment, AI visibility check, en concurrentschaplandschapanalyse. U krijgt een helder beeld van waar u staat — en exact wat u eerst moet repareren."
+        "timeframe": "Week 1\u20132",
+        "description": "Volledige digitale diagnose. Traffic architecture breakdown, technische SEO-audit, GEO-readiness assessment, AI visibility check, en concurrentschaplandschapanalyse. U krijgt een helder beeld van waar u staat \u2014 en exact wat u eerst moet repareren."
       },
       {
         "step": "02",
         "title": "Bouw",
-        "timeframe": "Maand 1–3",
+        "timeframe": "Maand 1\u20133",
         "description": "Voer de geprioriteerde reparatielijst uit. Schema markup, content restructuring, AI engine optimization, GEO implementation. Eerst snelle wins, dan strategische stappen. Alles developer-ready met bestandspaden, code en exacte copy."
       },
       {
         "step": "03",
         "title": "Schaal",
-        "timeframe": "Maand 4–6+",
-        "description": "Wekelijkse scorecards, maandelijkse strategie, driemaandelijkse roadmap. Bewijs resultaten op één merk, repliceer over de hele groep. Breid uit van SEO/GEO naar bredere AI-first transformation naarmate vertrouwen en resultaten groeien."
+        "timeframe": "Maand 4\u20136+",
+        "description": "Wekelijkse scorecards, maandelijkse strategie, driemaandelijkse roadmap. Bewijs resultaten op \u00e9\u00e9n merk, repliceer over de hele groep. Breid uit van SEO/GEO naar bredere AI-first transformation naarmate vertrouwen en resultaten groeien."
       }
     ],
-    "callout": "U ziet gegevens in week één. Resultaten in maand één. ROI in maand drie. Als het niet werkt, weet u het — en wij ook. Geen 12-maands lockins. Geen vage beloften. Alleen transparante, meetbare voortgang."
+    "callout": "U ziet gegevens in week \u00e9\u00e9n. Resultaten in maand \u00e9\u00e9n. ROI in maand drie. Als het niet werkt, weet u het \u2014 en wij ook. Geen 12-maands lockins. Geen vage beloften. Alleen transparante, meetbare voortgang."
   },
   "toolbar": {
     "description": "We gokken niet. Elke aanbeveling wordt ondersteund door dezelfde dataplatforms die enterprise groeiteams gebruiken."
@@ -128,19 +138,20 @@
     "title": "U herkent het als u het ziet",
     "description": "We werken niet met een sector. We werken met een situatie. Als de punten hieronder uw dinsdagochtend beschrijven, moeten we praten.",
     "items": [
-      "U bent oprichter, directeur of partner — en marketing belandt op uw bureau omdat er niemand anders is",
-      "U geeft €2K–8K per maand uit aan Google Ads en u weet niet zeker of het werkt",
+      "U bent oprichter, directeur of partner \u2014 en marketing belandt op uw bureau omdat er niemand anders is",
+      "U geeft \u20ac2K\u20138K per maand uit aan Google Ads en u weet niet zeker of het werkt",
       "Uw concurrenten scoren beter dan u voor de termen die het meest uitmaken",
       "U hebt over AI-zoeken gehoord maar hebt geen idee hoe u erin verschijnt",
       "U wilt een partner die ingebed is, niet nog een bureau dat rapporten stuurt die u niet leest",
-      "Uw bedrijf genereert €1M–20M inkomsten en groei hangt af van online gevonden worden"
+      "Uw bedrijf genereert \u20ac1M\u201320M inkomsten en groei hangt af van online gevonden worden"
     ]
   },
   "vision": {
     "label": "Waar Dit Naar Toe Gaat",
     "title": "Het begint met gevonden worden. Het leidt tot iets groters.",
-    "description": "We beginnen met wat bewezen werkt: u tot het topdigitale bezit in uw sector maken. Maar de relatie stopt niet bij SEO. Als uw vertrouwde AI-partner helpen we uw bedrijf om echt AI-first te worden — in hoe u klanten bedient, beslissingen neemt en dagelijks werkt.",
-    "scale": "Bedrijven van 10–200 personen waarvoor wij gebouwd zijn",
+    "description": "We beginnen met wat bewezen werkt: u tot het topdigitale bezit in uw sector maken. Maar de relatie stopt niet bij SEO. Als uw vertrouwde AI-partner helpen we uw bedrijf om echt AI-first te worden \u2014 in hoe u klanten bedient, beslissingen neemt en dagelijks werkt.",
+    "scale": "10\u2013200",
+    "scaleSubtitle": "personen bedrijven waarvoor wij gebouwd zijn",
     "tags": [
       { "label": "SEO & GEO", "type": "active" },
       { "label": "Content Architecture", "type": "active" },
@@ -154,8 +165,8 @@
     "label": "AI-Gereedschapsrapport",
     "title": "12 vragen. 5 minuten. We doen de rest.",
     "highlight": "Wat als 40% van uw Google Ads-budget kon worden vervangen door organisch traffic?",
-    "description": "U beantwoordt 12 vragen over uw bedrijf. We analyseren uw website's traffic architecture, AI visibility, en concurrentiële positie met dezelfde tools waar enterprise-agentschappen €5K voor rekenen. U krijgt een scored rapport met specifieke aanbevelingen — geen sales pitch.",
-    "cta": "Gratis Diagnose Uitvoeren →",
+    "description": "U beantwoordt 12 vragen over uw bedrijf. We analyseren uw website's traffic architecture, AI visibility, en concurrenti\u00eble positie met dezelfde tools waar enterprise-agentschappen \u20ac5K voor rekenen. U krijgt een scored rapport met specifieke aanbevelingen \u2014 geen sales pitch.",
+    "cta": "Gratis Diagnose Uitvoeren \u2192",
     "steps": [
       {
         "num": "1",
@@ -163,11 +174,11 @@
       },
       {
         "num": "2",
-        "text": "We analyseren uw digitale voetafdruk — traffic architecture, AI engine visibility, concurrentiële positie en content kwaliteit met enterprise-tools."
+        "text": "We analyseren uw digitale voetafdruk \u2014 traffic architecture, AI engine visibility, concurrenti\u00eble positie en content kwaliteit met enterprise-tools."
       },
       {
         "num": "3",
-        "text": "U krijgt een scored AI-readiness rapport met specifieke, geprioriteerde aanbevelingen — geen sales pitch in vermomming."
+        "text": "U krijgt een scored AI-readiness rapport met specifieke, geprioriteerde aanbevelingen \u2014 geen sales pitch in vermomming."
       }
     ]
   },
@@ -177,32 +188,32 @@
     "items": [
       {
         "q": "We hebben al een SEO-bureau. Waarom zouden we overstappen?",
-        "a": "De meeste SEO-bureaus optimaliseren alleen voor Google-rankings. We gaan verder — we optimaliseren voor AI-engine citaten (ChatGPT, Perplexity, Google AI Overviews) via Generative Engine Optimization. Bovendien starten we elke samenwerking met een traffic architecture diagnostic die laat zien welk percentage van uw traffic echt inkomsten oplevert. De meeste bureaus slaan deze stap helemaal over."
+        "a": "De meeste SEO-bureaus optimaliseren alleen voor Google-rankings. We gaan verder \u2014 we optimaliseren voor AI-engine citaten (ChatGPT, Perplexity, Google AI Overviews) via Generative Engine Optimization. Bovendien starten we elke samenwerking met een traffic architecture diagnostic die laat zien welk percentage van uw traffic echt inkomsten oplevert. De meeste bureaus slaan deze stap helemaal over."
       },
       {
         "q": "Hoe verschilt dit van het inhuren van een freelance SEO-consultant?",
         "a": "Een freelance consultant geeft u advies. Wij geven u uitvoering. AskBodhi werkt als een fractioneel groeiteam ingebed in uw bedrijf, met enterprise-tools als Ahrefs, Google Search Console, GA4 en AI visibility monitoring. U krijgt de vuuurkracht van een volledig marketingdepartement zonder er een in te huren."
       },
       {
-        "q": "We zijn een klein team — we hebben geen capaciteit voor een groot project.",
-        "a": "Dat is precies wie we voor gebouwd hebben. De meeste van onze klanten hebben geen marketingdepartement — de oprichter of directeur beheert digitaal naast alles anders. We voeren uit, niet alleen advies geven. U investeert 5 minuten in een diagnose, wij doen de zware analytische tillen, en elk deliverable komt developer-ready met exacte bestandspaden, code en copy."
+        "q": "We zijn een klein team \u2014 we hebben geen capaciteit voor een groot project.",
+        "a": "Dat is precies wie we voor gebouwd hebben. De meeste van onze klanten hebben geen marketingdepartement \u2014 de oprichter of directeur beheert digitaal naast alles anders. We voeren uit, niet alleen advies geven. U investeert 5 minuten in een diagnose, wij doen de zware analytische tillen, en elk deliverable komt developer-ready met exacte bestandspaden, code en copy."
       },
       {
         "q": "Wat is GEO en waarom zou ik erom geven?",
-        "a": "GEO staat voor Generative Engine Optimization — de discipline van gezien worden door AI-assistenten als ChatGPT, Perplexity en Google's AI Overviews. Deze platforms vervangen snel traditionele zoeken voor veel zoekopdrachten. Als uw bedrijf niet voor AI-engines is geoptimaliseerd, bent u onzichtbaar voor een groeiend deel van uw potentiële klanten."
+        "a": "GEO staat voor Generative Engine Optimization \u2014 de discipline van gezien worden door AI-assistenten als ChatGPT, Perplexity en Google's AI Overviews. Deze platforms vervangen snel traditionele zoeken voor veel zoekopdrachten. Als uw bedrijf niet voor AI-engines is geoptimaliseerd, bent u onzichtbaar voor een groeiend deel van uw potenti\u00eble klanten."
       },
       {
         "q": "Hoe snel zien we resultaten?",
-        "a": "U ziet gegevens in week één — onze diagnose toont exact waar u staat. Quick wins (technische fixes, schema markup, content restructuring) leveren in maand één. Meetbare ROI tegen uw advertentiebudget normaal gesproken in maand drie. We tracken alles transparant zodat u altijd weet wat werkt."
+        "a": "U ziet gegevens in week \u00e9\u00e9n \u2014 onze diagnose toont exact waar u staat. Quick wins (technische fixes, schema markup, content restructuring) leveren in maand \u00e9\u00e9n. Meetbare ROI tegen uw advertentiebudget normaal gesproken in maand drie. We tracken alles transparant zodat u altijd weet wat werkt."
       },
       {
         "q": "Werken jullie met bedrijven buiten Nederland?",
-        "a": "Ja. We zijn gevestigd in Nederland en werken met klanten in heel Europa en Azië. De methodologie werkt overal waar zoekmachines en AI-assistenten bestaan. Onze huidige portfolio beslaat Nederland, India en globale ESG-markten."
+        "a": "Ja. We zijn gevestigd in Nederland en werken met klanten in heel Europa en Azi\u00eb. De methodologie werkt overal waar zoekmachines en AI-assistenten bestaan. Onze huidige portfolio beslaat Nederland, India en globale ESG-markten."
       }
     ]
   },
   "footer": {
-    "tagline": "Uw bedrijf verdient om gevonden te worden — door mensen én AI.",
+    "tagline": "Uw bedrijf verdient om gevonden te worden \u2014 door mensen \u00e9n AI.",
     "services": "Diensten",
     "serviceLinks": [
       { "name": "SEO & GEO Optimization", "href": "/#services" },
@@ -212,13 +223,13 @@
     ],
     "contact": "Contact",
     "email": "info@askbodhi.ai",
-    "location": "Nederland · Wereldwijd actief",
-    "copyright": "© {year} AskBodhi. Alle rechten voorbehouden."
+    "location": "Nederland \u00b7 Wereldwijd actief",
+    "copyright": "\u00a9 {year} AskBodhi. Alle rechten voorbehouden."
   },
   "contact": {
     "label": "Gratis Diagnose",
     "title": "Laten we uitzoeken waar uw traffic echt naar toe gaat",
-    "description": "Vul uw gegevens in en wij sturen u een gratis traffic architecture breakdown — met het percentage organisch traffic dat daadwerkelijk opbrengsten oplevert.",
+    "description": "Vul uw gegevens in en wij sturen u een gratis traffic architecture breakdown \u2014 met het percentage organisch traffic dat daadwerkelijk opbrengsten oplevert.",
     "successTitle": "Dank u wel!",
     "successMessage": "We hebben uw gegevens ontvangen. We zullen uw site controleren en u binnen 48 uur contacteren met uw traffic architecture breakdown.",
     "form": {
@@ -240,8 +251,8 @@
     "label": "AI-Readiness Assessment",
     "title": "12 vragen. 5 minuten. We doen de rest.",
     "question": "Wat als 40% van uw Google Ads-budget kon worden vervangen door organisch traffic?",
-    "description": "U beantwoordt 12 vragen over uw bedrijf. We analyseren uw website's traffic architecture, AI visibility, en concurrentiële positie met dezelfde tools waar enterprise-agentschappen €5K voor rekenen. U krijgt een scored rapport met specifieke aanbevelingen — geen sales pitch.",
-    "cta": "Gratis Diagnose Uitvoeren →",
+    "description": "U beantwoordt 12 vragen over uw bedrijf. We analyseren uw website's traffic architecture, AI visibility, en concurrenti\u00eble positie met dezelfde tools waar enterprise-agentschappen \u20ac5K voor rekenen. U krijgt een scored rapport met specifieke aanbevelingen \u2014 geen sales pitch.",
+    "cta": "Gratis Diagnose Uitvoeren \u2192",
     "steps": [
       {
         "num": "1",
@@ -250,12 +261,12 @@
       },
       {
         "num": "2",
-        "text": "We analyseren uw digitale voetafdruk — traffic architecture, AI engine visibility, concurrentiële positie en content kwaliteit met enterprise-tools.",
+        "text": "We analyseren uw digitale voetafdruk \u2014 traffic architecture, AI engine visibility, concurrenti\u00eble positie en content kwaliteit met enterprise-tools.",
         "bg": "var(--color-ember)"
       },
       {
         "num": "3",
-        "text": "U krijgt een scored AI-readiness rapport met specifieke, geprioriteerde aanbevelingen — geen sales pitch in vermomming.",
+        "text": "U krijgt een scored AI-readiness rapport met specifieke, geprioriteerde aanbevelingen \u2014 geen sales pitch in vermomming.",
         "bg": "var(--color-teal-bright)"
       }
     ],

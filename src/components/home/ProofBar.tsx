@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 export default function ProofBar() {
   const t = useTranslations();
-  const items = t.raw("proofBar.items") as Array<{ value: string; label: string }>;
+  const items = (t.raw("proofBar.items") || []) as Array<{ value: string; label: string }>;
 
   return (
     <section className="w-full border-y" style={{ borderColor: "var(--color-stone-200)", backgroundColor: "var(--color-white)" }}>

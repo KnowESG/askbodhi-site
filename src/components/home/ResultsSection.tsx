@@ -34,11 +34,11 @@ export default function ResultsSection() {
     { stat1: colors.tealBright, stat2: colors.teal },
   ];
 
-  const cases = caseItems.map((item, idx) => ({
+  const cases = (caseItems || []).map((item, idx) => ({
     ...item,
     desc: item.description,
     gradient: gradients[gradientKeys[idx]],
-    stats: item.stats.map((stat, statIdx) => ({
+    stats: (item.stats || []).map((stat, statIdx) => ({
       ...stat,
       color: colorPairs[idx][statIdx === 0 ? "stat1" : "stat2"],
     })),

@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 export default function FAQ() {
   const t = useTranslations();
-  const faqItems = t.raw("faq.items") as Array<{ q: string; a: string }>;
+  const faqItems = (t.raw("faq.items") || []) as Array<{ q: string; a: string }>;
 
   return (
     <section className="faq-section" id="faq" style={{ padding: "80px 0", backgroundColor: "var(--color-bg)" }}>

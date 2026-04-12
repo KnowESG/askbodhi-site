@@ -1,35 +1,15 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { ServicesSection, ResultsSection, ApproachSection, WhoSection, VisionSection, AssessmentCTA } from "@/components/home";
-import HeroSection from "@/components/home/HeroSection";
-import ProofBar from "@/components/home/ProofBar";
-import ToolBar from "@/components/ToolBar";
-import FAQ from "@/components/FAQ";
-import { FaqJsonLd } from "@/components/FaqJsonLd";
+import { setRequestLocale } from "next-intl/server";
+import HomeContent from "./HomeContent";
 
 export const dynamic = "force-dynamic";
 
-export default function Home() {
-  return (
-    <>
-      <Header />
-      {/* <FaqJsonLd /> */}
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
 
-      <main className="flex-1">
-        <HeroSection />
-        <ProofBar />
-
-        <ServicesSection />
-        <ResultsSection />
-        <ApproachSection />
-        <ToolBar />
-        <WhoSection />
-        <VisionSection />
-        <FAQ />
-        <AssessmentCTA />
-      </main>
-
-      <Footer />
-    </>
-  );
+  return <HomeContent />;
 }

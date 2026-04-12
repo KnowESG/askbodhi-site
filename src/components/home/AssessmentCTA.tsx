@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 export default function AssessmentCTA() {
   const t = useTranslations();
-  const steps = t.raw("assessment.steps") as Array<{ num: string; text: string; bg: string }>;
+  const steps = (t.raw("assessment.steps") || []) as Array<{ num: string; text: string; bg: string }>;
 
   return (
     <section id="assessment" className="w-full py-20" style={{ backgroundColor: "var(--color-teal-pale)" }}>

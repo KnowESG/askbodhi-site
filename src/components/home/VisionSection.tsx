@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 export default function VisionSection() {
   const t = useTranslations();
-  const tags = t.raw("vision.tags") as Array<{ label: string; type: string }>;
+  const tags = (t.raw("vision.tags") || []) as Array<{ label: string; type: string }>;
 
   return (
     <section className="w-full py-14" style={{ backgroundColor: "var(--color-stone-100)", borderTop: "1px solid var(--color-stone-200)" }}>

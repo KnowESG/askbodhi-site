@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 export default function WhoSection() {
   const t = useTranslations();
-  const items = t.raw("who.items") as string[];
+  const items = (t.raw("who.items") || []) as string[];
 
   return (
     <section className="w-full py-16" style={{ backgroundColor: "var(--color-ember-soft)", borderTop: "3px solid var(--color-ember)" }}>

@@ -9,7 +9,7 @@ const getColors = () => ({
 
 export default function ApproachSection() {
   const t = useTranslations();
-  const phaseItems = t.raw("approach.items") as Array<{
+  const phaseItems = (t.raw("approach.items") || []) as Array<{
     step: string;
     title: string;
     timeframe: string;
