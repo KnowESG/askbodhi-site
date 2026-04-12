@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { STEPS } from '@/data/assessment-steps';
-import type { Answers, ScanResult, CompetitorResult } from '@/types/assessment';
+import type { Answers, ScanResult, CompetitorResult, PageSpeedResult, AiVisibilityResult } from '@/types/assessment';
 import { STEP_KEY_MAP, computeScore, computeDimensions } from '@/components/assessment/scoring';
 import { LogoSvg } from '@/components/assessment/AssessmentUI';
 import { IntroStep } from '@/components/assessment/IntroStep';
@@ -14,7 +14,8 @@ import { CompetitorsStep } from '@/components/assessment/CompetitorsStep';
 import { ResultStep } from '@/components/assessment/ResultStep';
 
 /* ======================================================
-   AskBodhi AI Readiness Assessment v4
+   AskBodhi AI Readiness Assessment v5 — Live Data
+   (non-locale fallback route)
    ====================================================== */
 
 export default function AssessmentPage() {
@@ -24,13 +25,14 @@ export default function AssessmentPage() {
   const [scanResult, setScanResult] = useState<ScanResult | null>(null);
   const [scanPhase, setScanPhase] = useState<'scanning' | 'results'>('scanning');
   const [competitors, setCompetitors] = useState<CompetitorResult[]>([]);
+  const [pageSpeed, setPageSpeed] = useState<PageSpeedResult | null>(null);
+  const [aiVisibility, setAiVisibility] = useState<AiVisibilityResult | null>(null);
   const autoAdvanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const step = STEPS[current];
   const totalSteps = STEPS.length;
   const pct = current <= 0 ? 0 : current >= totalSteps - 1 ? 100 : Math.round((current / (totalSteps - 1)) * 100);
 
-  // Navigate
   const goNext = useCallback(() => {
     if (current >= STEPS.length - 1) return;
     setDirection(1);
@@ -57,7 +59,6 @@ export default function AssessmentPage() {
     [setAnswer, goNext]
   );
 
-  // Field completeness checks
   const fieldsComplete = useCallback(() => {
     if (step.type !== 'fields') return true;
     for (const f of step.fields) {
@@ -84,7 +85,6 @@ export default function AssessmentPage() {
     (step.type === 'fields' && fieldsComplete()) ||
     (step.type === 'text' && textComplete());
 
-  // Keyboard shortcuts
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === 'Enter' && !e.shiftKey) {
@@ -106,25 +106,54 @@ export default function AssessmentPage() {
     return () => window.removeEventListener('keydown', handler);
   }, [step, canAdvance, goNext, selectOption]);
 
-  // Scan effect
+  // ── Real scan effect — calls /api/scan with Ahrefs + PageSpeed + Perplexity ──
   useEffect(() => {
     if (step.type !== 'scan') return;
     const runScan = async () => {
       setScanPhase('scanning');
-      await new Promise((r) => setTimeout(r, 4800));
-      const website = answers.website || 'example.com';
-      void website;
-      setScanResult({ domainRating: 0, organicKeywords: 0, monthlyTraffic: 0, source: 'pending' });
-      setCompetitors([]);
-      await new Promise((r) => setTimeout(r, 800));
+      const website = answers.website || '';
+      if (!website) {
+        setScanResult({ domainRating: 0, organicKeywords: 0, monthlyTraffic: 0, backlinks: 0, source: 'fallback' });
+        setScanPhase('results');
+        await new Promise((r) => setTimeout(r, 2000));
+        goNext();
+        return;
+      }
+      try {
+        const res = await fetch('/api/scan', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ domain: website, companyName: answers.company || '' }),
+        });
+        const data = await res.json();
+        if (data.error) {
+          setScanResult({ domainRating: 0, organicKeywords: 0, monthlyTraffic: 0, backlinks: 0, source: 'fallback' });
+        } else {
+          setScanResult({
+            domainRating: data.ahrefs?.domainRating ?? 0,
+            organicKeywords: data.ahrefs?.organicKeywords ?? 0,
+            monthlyTraffic: data.ahrefs?.monthlyTraffic ?? 0,
+            backlinks: data.ahrefs?.backlinks ?? 0,
+            source: 'live',
+          });
+          if (data.competitors?.length) {
+            setCompetitors(data.competitors.map((c: { domain: string; dr: number; commonKeywords: number }) => ({
+              domain: c.domain, dr: c.dr, commonKeywords: c.commonKeywords, checked: true,
+            })));
+          }
+          setPageSpeed(data.pageSpeed ?? null);
+          setAiVisibility(data.aiVisibility ?? null);
+        }
+      } catch {
+        setScanResult({ domainRating: 0, organicKeywords: 0, monthlyTraffic: 0, backlinks: 0, source: 'fallback' });
+      }
       setScanPhase('results');
-      await new Promise((r) => setTimeout(r, 2200));
+      await new Promise((r) => setTimeout(r, 2500));
       goNext();
     };
     runScan();
-  }, [step, answers.website, goNext]);
+  }, [step, answers.website, answers.company, goNext]);
 
-  // Submit to API on result step
   useEffect(() => {
     if (step.type !== 'result') return;
     if (answers._submitted) return;
@@ -134,11 +163,10 @@ export default function AssessmentPage() {
     fetch('/api/assessment', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ answers, score, dimensions: dims, competitors, timestamp: new Date().toISOString() }),
+      body: JSON.stringify({ answers, score, dimensions: dims, competitors, scanResult, pageSpeed, aiVisibility, timestamp: new Date().toISOString() }),
     }).catch(() => {});
-  }, [step, answers, competitors]);
+  }, [step, answers, competitors, scanResult, pageSpeed, aiVisibility]);
 
-  // Shared props
   const formProps = { step, answers, answerKey, canAdvance, setAnswer, selectOption, goNext, goBack };
 
   const renderStep = () => {
@@ -147,7 +175,7 @@ export default function AssessmentPage() {
       case 'fields': return <FieldsStep {...formProps} />;
       case 'choice': return <ChoiceStep {...formProps} />;
       case 'text': return <TextStep {...formProps} />;
-      case 'scan': return <ScanStep scanPhase={scanPhase} scanResult={scanResult} />;
+      case 'scan': return <ScanStep scanPhase={scanPhase} scanResult={scanResult} pageSpeed={pageSpeed} aiVisibility={aiVisibility} />;
       case 'competitors_ai': return <CompetitorsStep answers={answers} setAnswer={setAnswer} goNext={goNext} goBack={goBack} />;
       case 'result': return <ResultStep score={computeScore(answers)} dimensions={computeDimensions(answers)} scanResult={scanResult} competitors={competitors} answers={answers} />;
       default: return null;

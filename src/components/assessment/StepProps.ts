@@ -1,4 +1,4 @@
-import type { Answers, ScanResult, CompetitorResult, DimensionScore } from '@/types/assessment';
+import type { Answers, ScanResult, CompetitorResult, DimensionScore, PageSpeedResult, AiVisibilityResult } from '@/types/assessment';
 import type { Step } from '@/types/assessment';
 
 export interface BaseStepProps {
@@ -18,6 +18,8 @@ export interface ChoiceStepProps extends BaseStepProps {
 export interface ScanStepProps {
   scanPhase: 'scanning' | 'results';
   scanResult: ScanResult | null;
+  pageSpeed?: PageSpeedResult | null;
+  aiVisibility?: AiVisibilityResult | null;
 }
 
 export interface CompetitorsStepProps extends BaseStepProps {
