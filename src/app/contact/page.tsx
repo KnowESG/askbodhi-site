@@ -39,10 +39,7 @@ export default function ContactPage() {
           {submitted ? (
             <div
               className="rounded-xl border p-10 text-center"
-              style={{
-                borderColor: "var(--color-stone-200)",
-                backgroundColor: "var(--color-teal-pale)",
-              }}
+              style={{ borderColor: "var(--color-stone-200)", backgroundColor: "var(--color-teal-pale)" }}
             >
               <p
                 className="text-2xl font-bold mb-2"
@@ -61,10 +58,8 @@ export default function ContactPage() {
                 e.preventDefault();
                 setSubmitting(true);
                 setError(null);
-
                 const form = e.currentTarget;
                 const formData = new FormData(form);
-
                 try {
                   const res = await fetch("/api/contact", {
                     method: "POST",
@@ -76,11 +71,10 @@ export default function ContactPage() {
                       message: formData.get("message"),
                     }),
                   });
-
                   if (!res.ok) throw new Error("Submission failed");
                   setSubmitted(true);
                 } catch {
-                  setError("Something went wrong. Please try again or email us directly at info@knowesg.com.");
+                  setError("Something went wrong. Please try again or email us at info@askbodhi.ai.");
                 } finally {
                   setSubmitting(false);
                 }
@@ -88,98 +82,47 @@ export default function ContactPage() {
               className="space-y-6"
             >
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-1.5"
-                  style={{ color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}
-                >
+                <label htmlFor="name" className="block text-sm font-medium mb-1.5"
+                  style={{ color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}>
                   Your name
                 </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
+                <input id="name" name="name" type="text" required
                   className="w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors focus:ring-2"
-                  style={{
-                    borderColor: "var(--color-stone-200)",
-                    backgroundColor: "var(--color-white)",
-                    color: "var(--color-charcoal)",
-                    fontFamily: "var(--font-body)",
-                  }}
-                  placeholder="Rajul"
-                />
+                  style={{ borderColor: "var(--color-stone-200)", backgroundColor: "var(--color-white)", color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}
+                  placeholder="Your name" />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-1.5"
-                  style={{ color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}
-                >
+                <label htmlFor="email" className="block text-sm font-medium mb-1.5"
+                  style={{ color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}>
                   Email
                 </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
+                <input id="email" name="email" type="email" required
                   className="w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors focus:ring-2"
-                  style={{
-                    borderColor: "var(--color-stone-200)",
-                    backgroundColor: "var(--color-white)",
-                    color: "var(--color-charcoal)",
-                    fontFamily: "var(--font-body)",
-                  }}
-                  placeholder="you@company.com"
-                />
+                  style={{ borderColor: "var(--color-stone-200)", backgroundColor: "var(--color-white)", color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}
+                  placeholder="you@company.com" />
               </div>
 
               <div>
-                <label
-                  htmlFor="website"
-                  className="block text-sm font-medium mb-1.5"
-                  style={{ color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}
-                >
+                <label htmlFor="website" className="block text-sm font-medium mb-1.5"
+                  style={{ color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}>
                   Website URL
                 </label>
-                <input
-                  id="website"
-                  name="website"
-                  type="url"
-                  required
+                <input id="website" name="website" type="url" required
                   className="w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors focus:ring-2"
-                  style={{
-                    borderColor: "var(--color-stone-200)",
-                    backgroundColor: "var(--color-white)",
-                    color: "var(--color-charcoal)",
-                    fontFamily: "var(--font-body)",
-                  }}
-                  placeholder="https://yourcompany.com"
-                />
+                  style={{ borderColor: "var(--color-stone-200)", backgroundColor: "var(--color-white)", color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}
+                  placeholder="https://yourcompany.com" />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-1.5"
-                  style={{ color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}
-                >
+                <label htmlFor="message" className="block text-sm font-medium mb-1.5"
+                  style={{ color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}>
                   What&apos;s your biggest growth challenge right now?
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
+                <textarea id="message" name="message" rows={4}
                   className="w-full rounded-lg border px-4 py-3 text-sm outline-none transition-colors focus:ring-2 resize-y"
-                  style={{
-                    borderColor: "var(--color-stone-200)",
-                    backgroundColor: "var(--color-white)",
-                    color: "var(--color-charcoal)",
-                    fontFamily: "var(--font-body)",
-                  }}
-                  placeholder="e.g., We get traffic but it doesn't convert, we're invisible in AI search results, our competitors outrank us..."
-                />
+                  style={{ borderColor: "var(--color-stone-200)", backgroundColor: "var(--color-white)", color: "var(--color-charcoal)", fontFamily: "var(--font-body)" }}
+                  placeholder="e.g., We get traffic but it doesn't convert, we're invisible in AI search results, our competitors outrank us..." />
               </div>
 
               {error && (
@@ -188,17 +131,9 @@ export default function ContactPage() {
                 </p>
               )}
 
-              <button
-                type="submit"
-                disabled={submitting}
+              <button type="submit" disabled={submitting}
                 className="w-full sm:w-auto px-10 py-3.5 rounded-lg text-base font-semibold transition-colors cursor-pointer"
-                style={{
-                  backgroundColor: submitting ? "var(--color-stone-400)" : "var(--color-teal)",
-                  color: "#fff",
-                  fontFamily: "var(--font-body)",
-                  border: "none",
-                }}
-              >
+                style={{ backgroundColor: submitting ? "var(--color-stone-400)" : "var(--color-teal)", color: "#fff", fontFamily: "var(--font-body)", border: "none" }}>
                 {submitting ? "Sending..." : "Request My Free Diagnostic"}
               </button>
 
