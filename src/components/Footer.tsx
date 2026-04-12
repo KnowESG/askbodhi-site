@@ -17,10 +17,7 @@ export default function Footer() {
               AskBodhi
             </p>
             <p className="text-sm" style={{ color: "var(--color-stone-400)" }}>
-              AI-Led Growth for Forward-Thinking Companies
-            </p>
-            <p className="text-sm mt-1" style={{ color: "var(--color-stone-400)" }}>
-              See clearly. Act decisively. Grow intelligently.
+              Your company deserves to be found — by humans and AI.
             </p>
           </div>
 
@@ -34,23 +31,23 @@ export default function Footer() {
             </p>
             <ul className="space-y-2 list-none p-0 m-0">
               <li>
-                <Link href="#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
-                  SEO &amp; GEO Optimization
+                <Link href="/#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
+                  SEO & GEO Optimization
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
+                <Link href="/#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
+                  Traffic Architecture Diagnostics
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
                   Custom AI Engines
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
-                  Digital Diagnostics
-                </Link>
-              </li>
-              <li>
-                <Link href="#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
-                  Growth Strategy
+                <Link href="/#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
+                  AI-First Transformation
                 </Link>
               </li>
             </ul>
@@ -65,7 +62,7 @@ export default function Footer() {
               Contact
             </p>
             <p className="text-sm" style={{ color: "var(--color-stone-600)" }}>
-              info@askbodhi.com
+              <a href="mailto:info@askbodhi.ai" className="no-underline" style={{ color: "var(--color-stone-600)" }}>info@askbodhi.ai</a>
             </p>
             <p className="text-sm mt-1" style={{ color: "var(--color-stone-400)" }}>
               Netherlands &middot; Serving globally

@@ -60,7 +60,7 @@ CSS is split into two files (both in `src/app/`, imported by `layout.tsx`):
 - **`globals.css`** — Tailwind import, CSS custom properties (Luminous Clarity tokens), base styles, header nav
 - **`components.css`** — Component styles: service cards, case cards, mirror card, tool bar, vision tags, FAQ accordion, assessment overrides
 
-This split exists because MCP `push_files` truncates files >8KB. Keep each CSS file under 8KB.
+This split exists because the GitHub MCP `push_files` truncates files >8KB. Keep each CSS file under 8KB.
 
 ## Brand: Luminous Clarity
 
@@ -89,13 +89,13 @@ The `/assessment` is an 11-step interactive AI Readiness Assessment (10 focused 
 
 **Domain:** `askbodhi.ai` (all canonical URLs, OG tags, sitemap, robots.txt).
 
-**Structured data:** Organization, WebSite, ProfessionalService, Person (founder with LinkedIn sameAs), FAQPage (6 Q&A pairs from `src/data/faq-data.ts` — shared between the FAQ accordion and FaqJsonLd server component).
+**Structured data:** Organization, WebSite, ProfessionalService, Person (founder), FAQPage (6 Q&A pairs from `src/data/faq-data.ts` — shared between the FAQ accordion and FaqJsonLd server component).
 
 **GEO:** robots.txt allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended. Organization schema with `knowsAbout` array. ProfessionalService schema with service catalog.
 
 **Hreflang:** `en` + `x-default` for Dutch market. No `meta keywords` (deprecated).
 
-## Workflow: Making Changes via Cowork
+## Workflow: Making Changes
 
 ```
 1. Clone repo:    git clone https://github.com/KnowESG/askbodhi-site.git
@@ -107,13 +107,12 @@ The `/assessment` is an 11-step interactive AI Readiness Assessment (10 focused 
 7. Verify:        list_deployments via Vercel MCP → wait for READY
 ```
 
-### Known MCP Limitations
+### Known Limitations
 
 - **Files >8KB get truncated** during `push_files`. Split large files (this is why CSS is split and the assessment page is 10 component files, not one monolith).
 - **Unicode encoding bug:** `\uXXXX` escape sequences in the JSON content parameter get double-escaped, so `\u2014` renders as literal text instead of an em-dash. **Always use actual UTF-8 characters** (—, –, €, ’, ×, →) in file content, never JS escape sequences.
 - **`package-lock.json` (229KB) cannot be pushed via MCP.** Needs local `git push` or GitHub web UI.
 - **File deletion** not available via GitHub MCP. Use GitHub web UI.
-- **Sandbox resets between sessions.** Re-clone (~20s) + re-install (~19s) each session.
 
 ### Repos
 - **Canonical:** `KnowESG/askbodhi-site` — connected to Vercel, production source

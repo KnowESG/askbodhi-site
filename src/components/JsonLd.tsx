@@ -9,10 +9,10 @@ export function OrganizationJsonLd() {
       "AI-led growth consultancy specializing in SEO, Generative Engine Optimization (GEO), custom AI engines, and digital diagnostics.",
     founder: {
       "@type": "Person",
-      name: "Rajul",
+      name: "RM",
       jobTitle: "Founder & Lead Consultant",
       sameAs: [
-        "https://www.linkedin.com/in/rajul/",
+        "https://www.linkedin.com/company/knowesg/",
       ],
     },
     areaServed: [
@@ -27,7 +27,9 @@ export function OrganizationJsonLd() {
       "Digital Marketing",
       "Content Strategy",
     ],
-    sameAs: [],
+    sameAs: [
+      "https://www.linkedin.com/company/knowesg/",
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       email: "info@askbodhi.ai",

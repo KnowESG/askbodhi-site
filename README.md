@@ -125,4 +125,4 @@ src/
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for business context, target clients, positioning rules, case study naming conventions, brand guidelines, content tone, and the Cowork workflow for making changes.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for business context, target clients, positioning rules, case study naming conventions, brand guidelines, content tone, and the workflow for making changes.

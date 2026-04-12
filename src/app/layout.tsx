@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   description:
     "AskBodhi helps companies grow through AI-led SEO, Generative Engine Optimization, custom AI engines, and digital diagnostics. Based in the Netherlands, serving globally.",
-  authors: [{ name: "Rajul", url: "https://askbodhi.ai/about" }],
+  authors: [{ name: "RM", url: "https://askbodhi.ai" }],
   creator: "AskBodhi",
   alternates: {
     canonical: "https://askbodhi.ai",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "AskBodhi",
     title: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
     description:
-      "SEO & GEO optimization, custom AI engines, digital diagnostics, and growth strategy. See clearly. Act decisively. Grow intelligently.",
+      "SEO & GEO optimization, custom AI engines, digital diagnostics, and growth strategy for companies that deserve to be found.",
   },
   twitter: {
     card: "summary_large_image",
