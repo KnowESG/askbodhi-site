@@ -1,10 +1,13 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const t = useTranslations();
 
   return (
     <header className="w-full border-b" style={{ borderColor: "var(--color-stone-200)", backgroundColor: "var(--color-bg)" }}>
@@ -35,31 +38,33 @@ export default function Header() {
             href="#services"
             className="nav-link text-sm no-underline transition-colors"
           >
-            Services
+            {t("nav.services")}
           </Link>
           <Link
             href="#results"
             className="nav-link text-sm no-underline transition-colors"
           >
-            Results
+            {t("nav.results")}
           </Link>
           <Link
             href="#approach"
             className="nav-link text-sm no-underline transition-colors"
           >
-            Approach
+            {t("nav.approach")}
           </Link>
           <Link
             href="#faq"
             className="nav-link text-sm no-underline transition-colors"
           >
-            FAQ
+            {t("nav.faq")}
           </Link>
+          <div className="h-5 w-px" style={{ backgroundColor: "var(--color-stone-200)" }} />
+          <LanguageSwitcher />
           <Link
             href="/assessment"
             className="nav-cta text-sm font-semibold no-underline px-5 py-2.5 rounded-lg transition-colors"
           >
-            Get a Free Diagnostic
+            {t("nav.getFreeDiagnostic")}
           </Link>
         </nav>
 
@@ -83,24 +88,31 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden border-t px-6 py-4 flex flex-col gap-4" style={{ borderColor: "var(--color-stone-200)" }}>
           <Link href="#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }} onClick={() => setMenuOpen(false)}>
-            Services
+            {t("nav.services")}
           </Link>
           <Link href="#results" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }} onClick={() => setMenuOpen(false)}>
-            Results
+            {t("nav.results")}
           </Link>
           <Link href="#approach" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }} onClick={() => setMenuOpen(false)}>
-            Approach
+            {t("nav.approach")}
           </Link>
           <Link href="#faq" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }} onClick={() => setMenuOpen(false)}>
-            FAQ
+            {t("nav.faq")}
           </Link>
+          <div
+            className="h-px w-full"
+            style={{ backgroundColor: "var(--color-stone-200)" }}
+          />
+          <div className="flex gap-2">
+            <LanguageSwitcher />
+          </div>
           <Link
             href="/assessment"
             className="text-sm font-semibold no-underline px-5 py-2.5 rounded-lg text-center"
             style={{ backgroundColor: "var(--color-teal)", color: "#fff" }}
             onClick={() => setMenuOpen(false)}
           >
-            Get a Free Diagnostic
+            {t("nav.getFreeDiagnostic")}
           </Link>
         </div>
       )}

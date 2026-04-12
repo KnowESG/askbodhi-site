@@ -1,6 +1,12 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations();
+  const serviceLinks = t.raw("footer.serviceLinks") as Array<{ name: string; href: string }>;
+
   return (
     <footer
       className="w-full border-t mt-auto"
@@ -17,7 +23,7 @@ export default function Footer() {
               AskBodhi
             </p>
             <p className="text-sm" style={{ color: "var(--color-stone-400)" }}>
-              Your company deserves to be found — by humans and AI.
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -27,29 +33,16 @@ export default function Footer() {
               className="text-xs font-semibold uppercase tracking-wider mb-3"
               style={{ fontFamily: "var(--font-body)", color: "var(--color-stone-400)" }}
             >
-              Services
+              {t("footer.services")}
             </p>
             <ul className="space-y-2 list-none p-0 m-0">
-              <li>
-                <Link href="/#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
-                  SEO & GEO Optimization
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
-                  Traffic Architecture Diagnostics
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
-                  Custom AI Engines
-                </Link>
-              </li>
-              <li>
-                <Link href="/#services" className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
-                  AI-First Transformation
-                </Link>
-              </li>
+              {serviceLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm no-underline" style={{ color: "var(--color-stone-600)" }}>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -59,13 +52,13 @@ export default function Footer() {
               className="text-xs font-semibold uppercase tracking-wider mb-3"
               style={{ fontFamily: "var(--font-body)", color: "var(--color-stone-400)" }}
             >
-              Contact
+              {t("footer.contact")}
             </p>
             <p className="text-sm" style={{ color: "var(--color-stone-600)" }}>
-              <a href="mailto:info@askbodhi.ai" className="no-underline" style={{ color: "var(--color-stone-600)" }}>info@askbodhi.ai</a>
+              <a href={`mailto:${t("footer.email")}`} className="no-underline" style={{ color: "var(--color-stone-600)" }}>{t("footer.email")}</a>
             </p>
             <p className="text-sm mt-1" style={{ color: "var(--color-stone-400)" }}>
-              Netherlands &middot; Serving globally
+              {t("footer.location")}
             </p>
           </div>
         </div>
@@ -75,7 +68,7 @@ export default function Footer() {
           style={{ borderColor: "var(--color-stone-200)" }}
         >
           <p className="text-xs" style={{ color: "var(--color-stone-400)" }}>
-            &copy; {new Date().getFullYear()} AskBodhi. All rights reserved.
+            {t("footer.copyright", { year: 2026 })}
           </p>
         </div>
       </div>
