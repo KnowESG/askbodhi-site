@@ -1,40 +1,41 @@
-const phases = [
-  {
-    step: "01",
-    title: "Diagnose",
-    timeframe: "Week 1–2",
-    numColor: "var(--color-teal-pale)",
-    desc: "Full digital diagnostic. Traffic architecture breakdown, technical SEO audit, GEO readiness assessment, AI visibility check, and competitive landscape analysis. You get a clear picture of where you stand — and exactly what to fix first.",
-  },
-  {
-    step: "02",
-    title: "Build",
-    timeframe: "Month 1–3",
-    numColor: "var(--color-ember-soft)",
-    desc: "Execute the prioritized fix list. Schema markup, content restructuring, AI engine optimization, GEO implementation. Quick wins first, then strategic moves. Everything developer-ready with file paths, code, and exact copy.",
-  },
-  {
-    step: "03",
-    title: "Scale",
-    timeframe: "Month 4–6+",
-    numColor: "var(--color-teal-pale)",
-    desc: "Weekly scorecards, monthly strategy, quarterly roadmap. Prove results on one brand, replicate across the group. Expand from SEO/GEO into broader AI-first transformation as trust and results compound.",
-  },
-];
+"use client";
+
+import { useTranslations } from "next-intl";
+
+const getColors = () => ({
+  tealPale: "var(--color-teal-pale)",
+  emberSoft: "var(--color-ember-soft)",
+});
 
 export default function ApproachSection() {
+  const t = useTranslations();
+  const phaseItems = t.raw("approach.items") as Array<{
+    step: string;
+    title: string;
+    timeframe: string;
+    description: string;
+  }>;
+
+  const colors = getColors();
+  const colorSequence = [colors.tealPale, colors.emberSoft, colors.tealPale];
+
+  const phases = phaseItems.map((item, idx) => ({
+    ...item,
+    desc: item.description,
+    numColor: colorSequence[idx],
+  }));
+
   return (
     <section id="approach" className="w-full" style={{ backgroundColor: "var(--color-bg)" }}>
       <div className="max-w-6xl mx-auto px-6 py-20 lg:px-24">
         <p className="text-[13px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "var(--color-teal)", fontFamily: "var(--font-body)" }}>
-          How We Work
+          {t("approach.label")}
         </p>
         <h2 className="text-[28px] md:text-[34px] font-bold mb-4" style={{ fontFamily: "var(--font-display)", color: "var(--color-charcoal)" }}>
-          Diagnose. Build. Scale.
+          {t("approach.title")}
         </h2>
         <p className="text-base max-w-[600px] mb-12" style={{ color: "var(--color-stone-600)", fontFamily: "var(--font-body)", lineHeight: 1.7 }}>
-          We don’t hand over a strategy deck and disappear. We embed alongside your team and
-          execute — proving the model before scaling.
+          {t("approach.description")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
@@ -85,11 +86,7 @@ export default function ApproachSection() {
             lineHeight: 1.7,
           }}
         >
-          <strong style={{ color: "var(--color-charcoal)" }}>
-            You’ll see data in week one. Results in month one. ROI by month three.
-          </strong>{" "}
-          If it’s not working, you’ll know — and so will we. No 12-month lock-ins.
-          No vague promises. Just transparent, measurable progress.
+          <p>{t("approach.callout")}</p>
         </div>
       </div>
     </section>

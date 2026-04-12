@@ -1,54 +1,60 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import MirrorCard from "../MirrorCard";
 
-const cases = [
-  {
-    flag: "🇳🇱",
-    region: "Netherlands · Publishing",
-    title: "Leading Dutch Publishing Group",
-    desc: "Spending on ads across multiple brands with no organic strategy. We found that only 25 of their 700 monthly visits had commercial intent. Within 90 days, we restructured the entire organic architecture and built a custom AI engine that lifted paid performance by 56%.",
-    gradient: "linear-gradient(90deg, var(--color-teal), var(--color-teal-bright))",
-    stats: [
-      { value: "+56%", label: "Paid performance lift", color: "var(--color-teal)" },
-      { value: "13K", label: "Organic clicks / 90 days", color: "var(--color-teal-bright)" },
-    ],
-  },
-  {
-    flag: "🇮🇳",
-    region: "India · Fintech",
-    title: "EximPe",
-    desc: "11,000 monthly visitors — and almost none of them were potential customers. Classic content-traffic mismatch. We rebuilt the content architecture to align traffic with revenue, turning vanity metrics into commercial pipeline.",
-    gradient: "linear-gradient(90deg, var(--color-ember), #F97316)",
-    stats: [
-      { value: "11K", label: "Visits (zero commercial)", color: "var(--color-ember)" },
-      { value: "Fixed", label: "Content → revenue aligned", color: "var(--color-teal)" },
-    ],
-  },
-  {
-    flag: "🇳🇱",
-    region: "Netherlands · ESG Intelligence",
-    title: "KnowESG",
-    desc: "Competing against well-funded incumbents with no organic strategy. We deployed an AI-driven content architecture and entity-rich schema strategy that built organic authority in a regulation-heavy sector — and made them visible to AI search engines.",
-    gradient: "linear-gradient(90deg, var(--color-teal-bright), #2DD4BF)",
-    stats: [
-      { value: "AI-first", label: "Content architecture", color: "var(--color-teal-bright)" },
-      { value: "GEO", label: "AI engine visibility", color: "var(--color-teal)" },
-    ],
-  },
-];
+const getGradients = () => ({
+  teal: "linear-gradient(90deg, var(--color-teal), var(--color-teal-bright))",
+  ember: "linear-gradient(90deg, var(--color-ember), #F97316)",
+  tealBright: "linear-gradient(90deg, var(--color-teal-bright), #2DD4BF)",
+});
+
+const getColors = () => ({
+  teal: "var(--color-teal)",
+  tealBright: "var(--color-teal-bright)",
+  ember: "var(--color-ember)",
+});
 
 export default function ResultsSection() {
+  const t = useTranslations();
+  const caseItems = t.raw("results.items") as Array<{
+    flag: string;
+    region: string;
+    title: string;
+    description: string;
+    stats: Array<{ value: string; label: string }>;
+  }>;
+
+  const gradients = getGradients();
+  const colors = getColors();
+  const gradientKeys = ["teal", "ember", "tealBright"] as const;
+  const colorPairs = [
+    { stat1: colors.teal, stat2: colors.tealBright },
+    { stat1: colors.ember, stat2: colors.teal },
+    { stat1: colors.tealBright, stat2: colors.teal },
+  ];
+
+  const cases = caseItems.map((item, idx) => ({
+    ...item,
+    desc: item.description,
+    gradient: gradients[gradientKeys[idx]],
+    stats: item.stats.map((stat, statIdx) => ({
+      ...stat,
+      color: colorPairs[idx][statIdx === 0 ? "stat1" : "stat2"],
+    })),
+  }));
+
   return (
     <section id="results" className="w-full" style={{ backgroundColor: "var(--color-stone-100)" }}>
       <div className="max-w-6xl mx-auto px-6 py-20 lg:px-24">
         <p className="text-[13px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "var(--color-teal)", fontFamily: "var(--font-body)" }}>
-          Proven Results
+          {t("results.label")}
         </p>
         <h2 className="text-[28px] md:text-[34px] font-bold mb-4" style={{ fontFamily: "var(--font-display)", color: "var(--color-charcoal)" }}>
-          The sectors are different. The pattern is identical.
+          {t("results.title")}
         </h2>
         <p className="text-[17px] max-w-[680px] mb-10 italic" style={{ color: "var(--color-stone-600)", lineHeight: 1.8 }}>
-          Every engagement starts the same way: a company spending on ads, underperforming on organic,
-          and invisible to AI search. Here’s what happens when you fix it.
+          {t("results.description")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
