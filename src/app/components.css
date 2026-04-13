@@ -253,3 +253,88 @@
   background: rgba(255,255,255,0.2);
   border-radius: 2px;
 }
+
+/* ===== Hero Data Visualization Animations ===== */
+@keyframes drawLine {
+  from { stroke-dashoffset: 300; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes barGrow {
+  from { height: 0; }
+}
+.hero-bar {
+  transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-line {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+}
+.hero-line.animate {
+  animation: drawLine 1.5s ease-out forwards;
+}
+.hero-dot {
+  transform: scale(0);
+  opacity: 0;
+}
+.hero-dot.animate {
+  animation: popIn 0.4s ease-out forwards;
+}
+
+/* ===== Trusted By Bar ===== */
+.trust-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--color-stone-100);
+  border: 1px solid var(--color-stone-200);
+  transition: all 0.2s ease;
+}
+.trust-chip:hover {
+  border-color: var(--color-teal);
+  background: var(--color-teal-pale);
+}
+
+/* ===== Pull Quote ===== */
+.pull-quote-mark {
+  font-family: var(--font-display);
+  font-size: 60px;
+  line-height: 1;
+  color: var(--color-teal);
+  opacity: 0.3;
+}
+
+/* ===== Approach Watermark Numbers ===== */
+.approach-watermark {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-family: var(--font-mono);
+  font-size: 72px;
+  font-weight: 700;
+  opacity: 0.08;
+  line-height: 1;
+  color: var(--color-charcoal);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+@media (min-width: 768px) {
+  .approach-watermark {
+    font-size: 80px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line, .hero-dot {
+    stroke-dashoffset: 0;
+    transform: scale(1);
+    opacity: 1;
+    animation: none;
+  }
+}
