@@ -44,11 +44,6 @@ export function ResultStep({ score, dimensions, answers }: ResultStepProps) {
             <li key={idx}>{item}</li>
           ))}
         </ul>
-        <div style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid var(--color-stone-100, #F5F5F4)', fontSize: 13, color: 'var(--color-stone-600, #57534E)', lineHeight: 1.6 }}>
-          {t.rich('result.nextTimeline', {
-            strong: (chunks) => <strong style={{ color: 'var(--color-charcoal, #1C1917)' }}>{chunks}</strong>,
-          })}
-        </div>
       </motion.div>
 
       {/* Dimensions */}
