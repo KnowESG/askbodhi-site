@@ -2,6 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import MirrorCard from "../MirrorCard";
+import PullQuote from "./PullQuote";
+import { useScrollFadeUp } from "@/hooks/useScrollFadeUp";
 
 const getGradients = () => ({
   teal: "linear-gradient(90deg, var(--color-teal), var(--color-teal-bright))",
@@ -17,6 +19,7 @@ const getColors = () => ({
 
 export default function ResultsSection() {
   const t = useTranslations();
+  const [ref, isVisible] = useScrollFadeUp(0.1);
   const caseItems = t.raw("results.items") as Array<{
     flag: string;
     region: string;
@@ -45,7 +48,12 @@ export default function ResultsSection() {
   }));
 
   return (
-    <section id="results" className="w-full" style={{ backgroundColor: "var(--color-stone-100)" }}>
+    <section
+      id="results"
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`w-full fade-up ${isVisible ? "visible" : ""}`}
+      style={{ backgroundColor: "var(--color-stone-100)" }}
+    >
       <div className="max-w-6xl mx-auto px-6 py-20 lg:px-24">
         <p className="text-[13px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "var(--color-teal)", fontFamily: "var(--font-body)" }}>
           {t("results.label")}
@@ -88,6 +96,9 @@ export default function ResultsSection() {
             </div>
           ))}
         </div>
+
+        {/* Pull quote — editorial break between case studies and mirror */}
+        <PullQuote />
 
         <div className="mt-5">
           <MirrorCard />
