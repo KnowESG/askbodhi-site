@@ -34,6 +34,21 @@
       }
     ]
   },
+  "trustedBy": {
+    "label": "Vertrouwd in diverse sectoren",
+    "sectors": [
+      { "flag": "🇳🇱", "label": "Juridisch & Notariaat" },
+      { "flag": "🇳🇱", "label": "Uitgeverijen" },
+      { "flag": "🇮🇳", "label": "FinTech" },
+      { "flag": "🇳🇱", "label": "ESG & Duurzaamheid" },
+      { "flag": "🇳🇱", "label": "Specialty F&B" },
+      { "flag": "🇳🇱", "label": "Gezondheidszorg" }
+    ]
+  },
+  "pullQuote": {
+    "text": "We optimaliseren niet alleen uw rankings — we zorgen dat uw bedrijf het antwoord is wanneer AI over uw sector spreekt.",
+    "attribution": "— De AskBodhi-aanpak"
+  },
   "services": {
     "label": "Wat We Doen",
     "title": "We maken bedrijven tot het topdigitale bezit in hun sector",

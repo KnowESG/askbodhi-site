@@ -34,6 +34,21 @@
       }
     ]
   },
+  "trustedBy": {
+    "label": "Trusted across sectors",
+    "sectors": [
+      { "flag": "🇳🇱", "label": "Legal & Notary" },
+      { "flag": "🇳🇱", "label": "Publishing" },
+      { "flag": "🇮🇳", "label": "FinTech" },
+      { "flag": "🇳🇱", "label": "ESG & Sustainability" },
+      { "flag": "🇳🇱", "label": "Specialty F&B" },
+      { "flag": "🇳🇱", "label": "Healthcare" }
+    ]
+  },
+  "pullQuote": {
+    "text": "We don't just optimise your rankings — we make your company the answer when AI talks about your industry.",
+    "attribution": "— The AskBodhi approach"
+  },
   "services": {
     "label": "What We Do",
     "title": "We make companies the top digital asset in their sector",
