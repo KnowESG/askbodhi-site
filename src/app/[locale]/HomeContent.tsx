@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { ServicesSection, ResultsSection, ApproachSection, WhoSection, VisionSection, AssessmentCTA } from "@/components/home";
 import HeroSection from "@/components/home/HeroSection";
 import ProofBar from "@/components/home/ProofBar";
+import TrustedByBar from "@/components/home/TrustedByBar";
 import ToolBar from "@/components/ToolBar";
 import FAQ from "@/components/FAQ";
 
@@ -16,6 +17,7 @@ export default function HomeContent() {
       <main className="flex-1">
         <HeroSection />
         <ProofBar />
+        <TrustedByBar />
 
         <ServicesSection />
         <ResultsSection />
