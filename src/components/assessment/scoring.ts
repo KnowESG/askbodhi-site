@@ -43,27 +43,27 @@ export function computeScore(answers: Answers): number {
 export function computeDimensions(answers: Answers): DimensionScore[] {
   return [
     {
-      label: 'Search Visibility',
+      label: 'searchVisibility',
       value: Math.min(100, 30 + (answers.discovery === 'google' ? 40 : 20)),
       max: 100, color: 'var(--color-teal, #0F766E)',
     },
     {
-      label: 'AI Readiness',
+      label: 'aiReadiness',
       value: Math.min(100, answers.aiMaturity === 'embedded' ? 80 : answers.aiMaturity === 'some' ? 60 : 30),
       max: 100, color: 'var(--color-teal-bright, #14B8A6)',
     },
     {
-      label: 'Technical Foundation',
+      label: 'technicalFoundation',
       value: Math.min(100, answers.schemaMarkup === 'yes_ext' ? 85 : answers.schemaMarkup === 'some' ? 55 : 25),
       max: 100, color: 'var(--color-ember, #EA580C)',
     },
     {
-      label: 'Content Strategy',
+      label: 'contentStrategy',
       value: Math.min(100, answers.challenge === 'no_strategy' ? 40 : 65),
       max: 100, color: 'var(--color-teal, #0F766E)',
     },
     {
-      label: 'Competitive Position',
+      label: 'competitivePosition',
       value: Math.min(100, 45 + (answers.companySize === '200+' ? 30 : 15)),
       max: 100, color: 'var(--color-teal-bright, #14B8A6)',
     },
