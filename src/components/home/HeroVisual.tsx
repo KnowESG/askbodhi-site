@@ -27,15 +27,13 @@ export default function HeroVisual() {
         }}
       >
         <Image
-          src="/hero-organic-visibility.png"
-          alt="Organic Visibility — the convergence of SEO (Google 90%, Bing 4.3%, Yahoo 1.2%) and AI engines (ChatGPT 68%, Gemini 18%, Perplexity 2%, Claude 3%). AI Overviews triggers on 48% of Google searches, bridging traditional search and AI discovery."
-          width={2400}
-          height={1400}
+          src="/hero-organic-visibility.jpg"
+          alt="Organic Visibility — the convergence of SEO (Google 90%, Bing 4.3%, Yahoo 1.2%) and AI engines (ChatGPT 68%, Gemini 18%, Perplexity 2%, Claude 3%). AskBodhi helps you dominate both."
+          width={1200}
+          height={700}
           priority
           className="w-full h-auto"
-          style={{
-            display: "block",
-          }}
+          style={{ display: "block" }}
         />
       </div>
     </div>
