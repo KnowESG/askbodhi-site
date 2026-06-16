@@ -4,15 +4,15 @@
     "results": "Results",
     "approach": "Approach",
     "faq": "FAQ",
-    "getFreeDiagnostic": "Get a Free Diagnostic"
+    "getFreeDiagnostic": "Take the Free Assessment"
   },
   "hero": {
-    "label": "AI-Led Growth Consultancy",
-    "title": "Your company deserves to be found — by humans and AI.",
-    "subtitle": "You're spending on ads because organic isn't working. Your competitors rank above you. AI search is changing the game and you're not in it. We fix all three.",
+    "label": "Your AI Growth Partner",
+    "title": "Your rankings are slipping. Your rivals are showing up in ChatGPT. We don't just fix that — we future-proof how you grow.",
+    "subtitle": "AskBodhi is the strategic partner that rebuilds how your company is found — by humans and AI — then engineers a custom Bodhi Engine that compounds your growth, outpaces competitors, and turns visibility into real revenue. Long after the project ends.",
     "primaryCta": "Take the Free Assessment",
     "secondaryCta": "See How We Work",
-    "secondaryLink": "See how we diagnosed a company like yours →"
+    "secondaryLink": "See how we mapped a company like yours →"
   },
   "proofBar": {
     "items": [
@@ -35,23 +35,22 @@
     ]
   },
   "trustedBy": {
-    "label": "Trusted across sectors",
+    "label": "Built for sectors like",
     "sectors": [
-      { "flag": "🇳🇱", "label": "Legal & Notary" },
       { "flag": "🇳🇱", "label": "Publishing" },
-      { "flag": "🇮🇳", "label": "FinTech" },
+      { "flag": "🇳🇱", "label": "Specialty Retail" },
+      { "flag": "🇳🇱", "label": "Wine & Specialty F&B" },
       { "flag": "🇳🇱", "label": "ESG & Sustainability" },
-      { "flag": "🇳🇱", "label": "Specialty F&B" },
-      { "flag": "🇳🇱", "label": "Healthcare" }
+      { "flag": "🇮🇳", "label": "FinTech" }
     ]
   },
   "pullQuote": {
-    "text": "We don't just optimise your rankings — we make your company the answer when AI talks about your industry.",
+    "text": "We don't just optimise your rankings — we make your company the answer when AI talks about your industry, and we build the Engine that keeps it that way.",
     "attribution": "— The AskBodhi approach"
   },
   "services": {
     "label": "What We Do",
-    "title": "We make companies the top digital asset in their sector",
+    "title": "We make your company the answer when AI talks about your industry",
     "description": "Today, being \"found\" means more than Google rankings. Your customers search on ChatGPT, Perplexity, and AI Overviews. We make sure you show up everywhere that matters — and that the traffic you get actually drives revenue.",
     "items": [
       {
@@ -63,12 +62,12 @@
         "description": "Before we change anything, we break down exactly where your traffic comes from — and what percentage actually leads to revenue. Most companies discover that 80% of their visitors will never become customers. That's the gap we close."
       },
       {
-        "title": "Custom AI Engines",
-        "description": "Purpose-built AI systems for your domain — product recommendation engines, intelligent content generation, automated workflows. Not ChatGPT wrappers, but engines designed around your specific business logic and data."
+        "title": "The Bodhi Engine",
+        "description": "A custom AI engine, built for your business — trained on your products, customers and sector. Not a ChatGPT wrapper. It activates once your SEO/GEO foundation is working (around month 7), and from there every new ranking, citation and content piece feeds a system that gets sharper over time. You license access; we own and maintain it. Your growth compounds while your spend doesn't."
       },
       {
-        "title": "AI-First Transformation",
-        "description": "The bigger play. Once we've proven impact on your digital presence, we help convert your entire operation into an AI-first architecture — from how you serve customers to how your team works. A fractional AI transformation lead, embedded in your business."
+        "title": "A Future-Proof AI Partnership",
+        "description": "Once your discoverability layer compounds, the relationship grows with you: conversion and content architecture, competitive monitoring, and a steady hand on where AI reshapes how you serve customers and make decisions. A strategic partner inside your business — not another vendor sending reports."
       }
     ]
   },
@@ -97,7 +96,7 @@
         "flag": "🇮🇳",
         "region": "India · Fintech",
         "title": "EximPe",
-        "description": "11,000 monthly visitors — and almost none of them were potential customers. Classic content-traffic mismatch. We rebuilt the content architecture to align traffic with revenue, turning vanity metrics into commercial pipeline."
+        "description": "Around 13,000 organic visits a month — and the top queries were customs lookups like \"bill of entry status\", not buyers. A classic content-traffic mismatch. We rebuilt the content architecture to align traffic with revenue, turning vanity metrics into commercial pipeline. (GSC, May 2026)"
       },
       {
         "flag": "🇳🇱",
@@ -121,7 +120,7 @@
   },
   "approach": {
     "label": "How We Work",
-    "title": "Diagnose. Build. Scale.",
+    "title": "Diagnose. Build. Compound.",
     "description": "We don't hand over a strategy deck and disappear. We embed alongside your team and execute — proving the model before scaling.",
     "items": [
       {
@@ -133,17 +132,17 @@
       {
         "step": "02",
         "title": "Build",
-        "timeframe": "Month 1–3",
+        "timeframe": "Month 1–6",
         "description": "Execute the prioritized fix list. Schema markup, content restructuring, AI engine optimization, GEO implementation. Quick wins first, then strategic moves. Everything developer-ready with file paths, code, and exact copy."
       },
       {
         "step": "03",
-        "title": "Scale",
-        "timeframe": "Month 4–6+",
-        "description": "Weekly scorecards, monthly strategy, quarterly roadmap. Prove results on one brand, replicate across the group. Expand from SEO/GEO into broader AI-first transformation as trust and results compound."
+        "title": "Compound",
+        "timeframe": "Month 7+",
+        "description": "The Bodhi Engine activates on top of a working foundation, so every win feeds the next and your growth compounds without rising spend. From here we stay on as your senior partner — weekly scorecards, monthly strategy, and a steady hand where AI reshapes how you operate."
       }
     ],
-    "callout": "You'll see data in week one. Results in month one. ROI by month three. If it's not working, you'll know — and so will we. No 12-month lock-ins. No vague promises. Just transparent, measurable progress."
+    "callout": "You'll see data in week one, quick wins in month one, and you'll typically see measurable movement from month two. Six-month engagements, not throwaway audits — with a month-4 exit if life genuinely gets in the way. Founder-led and senior-only — no junior handoff, ever."
   },
   "toolbar": {
     "description": "We don't guess. Every recommendation is backed by the same data platforms used by enterprise growth teams."
@@ -164,7 +163,7 @@
   "vision": {
     "label": "Where This Is Heading",
     "title": "It starts with being found. It leads to something bigger.",
-    "description": "We start with what's proven: making you the top digital asset in your sector. But the relationship doesn't stop at SEO. As your trusted AI partner, we help your company become genuinely AI-first — in how you serve customers, make decisions, and operate day to day.",
+    "description": "We start with what's proven: making you the answer AI gives in your sector. But the relationship doesn't stop at SEO. As your strategic AI partner, we help future-proof how you serve customers, make decisions, and operate day to day.",
     "scale": "10–200",
     "scaleSubtitle": "person companies we're built for",
     "tags": [
@@ -181,7 +180,7 @@
         "type": "next"
       },
       {
-        "label": "Custom AI Engines",
+        "label": "The Bodhi Engine",
         "type": "next"
       },
       {
@@ -241,7 +240,7 @@
       },
       {
         "q": "How quickly will we see results?",
-        "a": "You'll see data in week one — our diagnostic reveals exactly where you stand. Quick wins (technical fixes, schema markup, content restructuring) start delivering in month one. Measurable ROI against your ad spend typically shows by month three. We track everything transparently so you always know what's working."
+        "a": "You'll see data in week one — our diagnostic reveals exactly where you stand. Quick wins (technical fixes, schema markup, content restructuring) start delivering in month one. You'll typically see measurable movement from month two. We track everything transparently so you always know what's working."
       },
       {
         "q": "Do you work with companies outside the Netherlands?",
@@ -250,7 +249,7 @@
     ]
   },
   "footer": {
-    "tagline": "Your company deserves to be found — by humans and AI.",
+    "tagline": "Get found, trusted, and chosen — by humans and AI.",
     "services": "Services",
     "serviceLinks": [
       {
@@ -262,11 +261,11 @@
         "href": "/#services"
       },
       {
-        "name": "Custom AI Engines",
+        "name": "The Bodhi Engine",
         "href": "/#services"
       },
       {
-        "name": "AI-First Transformation",
+        "name": "AI Growth Partnership",
         "href": "/#services"
       }
     ],
