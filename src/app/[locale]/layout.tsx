@@ -31,11 +31,11 @@ const instrumentSans = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://askbodhi.ai"),
   title: {
-    default: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
+    default: "AskBodhi — Strategic AI Growth Partner | SEO, GEO & the Bodhi Engine",
     template: "%s | AskBodhi",
   },
   description:
-    "AskBodhi helps companies grow through AI-led SEO, Generative Engine Optimization, custom AI engines, and digital diagnostics. Based in the Netherlands, serving globally.",
+    "Your rankings are slipping and your competitors are showing up in ChatGPT. AskBodhi is the strategic partner that future-proofs how your company grows — found by humans and AI, then compounded by a custom Bodhi Engine. Based in the Netherlands.",
   authors: [{ name: "RM", url: "https://askbodhi.ai" }],
   creator: "AskBodhi",
   alternates: {
@@ -52,15 +52,15 @@ export const metadata: Metadata = {
     alternateLocale: "nl_NL",
     url: "https://askbodhi.ai",
     siteName: "AskBodhi",
-    title: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
+    title: "AskBodhi — Strategic AI Growth Partner | SEO, GEO & the Bodhi Engine",
     description:
-      "SEO & GEO optimization, custom AI engines, digital diagnostics, and growth strategy for companies that deserve to be found.",
+      "SEO and GEO foundations, then a custom Bodhi Engine that compounds. The strategic AI growth partner for Dutch mid-market companies — found, trusted, and chosen by humans and AI.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
+    title: "AskBodhi — Strategic AI Growth Partner | SEO, GEO & the Bodhi Engine",
     description:
-      "SEO & GEO optimization, custom AI engines, digital diagnostics, and growth strategy.",
+      "The strategic AI growth partner — found by humans and AI, then compounded by a custom Bodhi Engine.",
   },
   robots: {
     index: true,
