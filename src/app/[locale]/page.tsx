@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Hero, Approach, Engine, Clients, Working, NotUs, Faq, FinalCta } from "@/components/home/HomeSections";
+import { Hero, Approach, Engine, Working, NotUs, Faq, FinalCta } from "@/components/home/HomeSections";
+import { Clients } from "@/components/home/Clients";
 import { FaqJsonLd, WebPageJsonLd } from "@/components/JsonLd";
 import { absoluteUrl, pageMetadata } from "@/lib/seo";
 
