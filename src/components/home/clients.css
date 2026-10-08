@@ -1,0 +1,44 @@
+/* Client showcase: four equal cards, 2 × 2. Each card shows platform, the problem, what we did. */
+.ab-cl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 44px; }
+.ab-cl {
+  background: var(--color-white); border: 1px solid var(--color-stone-200); border-radius: 18px;
+  padding: 28px; display: flex; flex-direction: column; gap: 12px; min-width: 0;
+}
+.ab-cl__top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.ab-cl__platform {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-body); font-size: 13px; font-weight: 600; color: var(--color-charcoal);
+  border: 1px solid var(--color-stone-200); background: var(--color-bg); padding: 4px 10px 4px 8px; border-radius: 8px;
+}
+.ab-cl__platform img { display: block; width: 16px; height: 16px; }
+.ab-cl__top .ab-cl__sector { margin: 0; }
+.ab-cl__status {
+  font-family: var(--font-mono); font-size: 11px; color: var(--color-teal); background: var(--color-teal-pale);
+  border: 1px solid var(--color-teal-line); padding: 2px 9px; border-radius: 999px; white-space: nowrap;
+}
+.ab-cl__sector { font-family: var(--font-mono); font-size: 12px; color: var(--color-stone-600); margin: 4px 0 0; }
+.ab-cl h3 { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1.25; margin: 0; color: var(--color-charcoal); text-wrap: balance; }
+.ab-cl__text { font-size: 15px; line-height: 1.6; color: var(--color-stone-700); margin: 0; }
+
+.ab-cl__entries { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.ab-cl__entries li { padding: 10px 0; border-top: 1px solid var(--color-stone-200); display: flex; flex-direction: column; gap: 2px; }
+.ab-cl__entry-sector { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--color-charcoal); }
+.ab-cl__entry-text { font-size: 15px; color: var(--color-stone-700); }
+
+.ab-cl__highlight { margin: 0; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ab-cl__highlight strong { font-family: var(--font-mono); font-size: 30px; font-weight: 500; color: var(--color-teal); line-height: 1; font-variant-numeric: tabular-nums; }
+.ab-cl__highlight span { font-size: 14px; color: var(--color-stone-600); }
+
+.ab-cl__open { margin: 0; font-size: 14px; color: var(--color-stone-700); background: var(--color-stone-100); border-radius: 10px; padding: 10px 14px; }
+.ab-cl__open span { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--color-charcoal); margin-right: 4px; }
+
+.ab-cl__did { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-stone-200); display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+.ab-cl__did-label { font-family: var(--font-mono); font-size: 11px; color: var(--color-stone-600); }
+.ab-cl__did ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.ab-cl__did li { font-family: var(--font-mono); font-size: 11px; color: var(--color-teal); background: var(--color-teal-pale); border-radius: 999px; padding: 3px 10px; }
+
+@media (max-width: 760px) {
+  .ab-cl-grid { grid-template-columns: minmax(0, 1fr); }
+  .ab-cl { padding: 22px; }
+  .ab-cl h3 { font-size: 20px; }
+}
