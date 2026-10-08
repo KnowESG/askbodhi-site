@@ -1,299 +1,353 @@
 {
+  "meta": {
+    "home": {
+      "title": "AskBodhi | Grow without the waste with SEO, GEO and AI",
+      "description": "AI-first growth partner for Dutch SMEs. We find where you lose money and time in search, conversion and operations, and fix it. Take the free scan."
+    },
+    "contact": {
+      "title": "Book an intro call",
+      "description": "Tell us briefly where your company stands. We reply with a proposal for a 30-minute intro call, without a sales pitch."
+    },
+    "assessment": {
+      "title": "Free scan: where is your company leaking money?",
+      "description": "Twelve questions, about ten minutes. See where the biggest waste sits in search, AI visibility and operations, and what to tackle first."
+    },
+    "privacy": {
+      "title": "Privacy statement",
+      "description": "How AskBodhi (64 B.V.) processes personal data you share through this website: which data, why, for how long, and your rights."
+    },
+    "terms": {
+      "title": "Terms and conditions",
+      "description": "Engagements with AskBodhi (64 B.V.) are governed by our general terms and conditions, version 1.2. How that works and how to request them."
+    },
+    "colofon": {
+      "title": "Company details",
+      "description": "Company details of AskBodhi.ai, a trade name of 64 B.V. in Hilversum: address, Chamber of Commerce number, VAT number and contact."
+    }
+  },
   "nav": {
-    "services": "Services",
-    "results": "Results",
+    "leaks": "Where it leaks",
     "approach": "Approach",
+    "engine": "Bodhi Engine",
+    "clients": "Clients",
     "faq": "FAQ",
-    "getFreeDiagnostic": "Get a Free Diagnostic"
+    "cta": "Take the free scan",
+    "menu": "Open or close menu",
+    "home": "AskBodhi.ai, go to the homepage",
+    "languageLabel": "Language"
   },
-  "hero": {
-    "label": "AI-Led Growth Consultancy",
-    "title": "Your company deserves to be found — by humans and AI.",
-    "subtitle": "You're spending on ads because organic isn't working. Your competitors rank above you. AI search is changing the game and you're not in it. We fix all three.",
-    "primaryCta": "Take the Free Assessment",
-    "secondaryCta": "See How We Work",
-    "secondaryLink": "See how we diagnosed a company like yours →"
-  },
-  "proofBar": {
-    "items": [
-      {
-        "value": "€0 → €12K",
-        "label": "Monthly organic traffic value created"
+  "home": {
+    "hero": {
+      "badge": "AI-first growth partner for Dutch SMEs",
+      "titleA": "Grow without",
+      "titleB": "the waste.",
+      "sub": "Organic traffic is thin or falling, so you pay for every click. The visitors who do come rarely buy. And your team spends hours on work AI could do.",
+      "promise": "We find where it leaks and fix it. In that order.",
+      "ctaPrimary": "Take the free scan",
+      "ctaSecondary": "How we work",
+      "trust": [
+        "Senior team",
+        "A handful of clients at a time",
+        "Exit after three months"
+      ]
+    },
+    "leaks": {
+      "label": "Where it leaks",
+      "question": "Recognise one?",
+      "order": "Three leaks. We fix them in this order.",
+      "illustration": "Illustration",
+      "clientData": "Client data",
+      "one": {
+        "tag": "01 · Search traffic",
+        "title": "Organic barely shows up",
+        "points": [
+          "Hardly any organic traffic",
+          "Organic traffic falling for months",
+          "Nearly all of it via ads: budget off, phone quiet"
+        ],
+        "chartOrganic": "organic",
+        "chartAds": "via ads",
+        "chartAlt": "Illustration: organic traffic falls while traffic from ads rises"
       },
-      {
-        "value": "13,000",
-        "label": "New visitors without ad spend"
+      "two": {
+        "tag": "02 · Conversion",
+        "title": "Visitors who never buy",
+        "text": "The dashboard grows, revenue doesn't. And when a buyer asks ChatGPT for advice, it names your competitor.",
+        "figure": "of ~700 intended to buy",
+        "legend": "1 dot ≈ 7 visitors · publishing group, 2026",
+        "dotsAlt": "One hundred dots, four of them teal: about 4 percent of visitors had buying intent"
       },
-      {
-        "value": "47",
-        "label": "Untapped keywords found per client (avg)"
-      },
-      {
-        "value": "3–5×",
-        "label": "ROI vs. equivalent ad spend"
+      "three": {
+        "tag": "03 · Operations",
+        "title": "Hours on work that adds nothing",
+        "text": "Retyping data between systems, the same email for the tenth time, reports nobody reads. Work AI can do.",
+        "week": "A working week",
+        "days": [
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri"
+        ],
+        "value": "work with value",
+        "waste": "work without value",
+        "weekAlt": "Illustration: a working week where a large share of every day goes to work that adds no value"
       }
-    ]
-  },
-  "trustedBy": {
-    "label": "Trusted across sectors",
-    "sectors": [
-      { "flag": "🇳🇱", "label": "Legal & Notary" },
-      { "flag": "🇳🇱", "label": "Publishing" },
-      { "flag": "🇮🇳", "label": "FinTech" },
-      { "flag": "🇳🇱", "label": "ESG & Sustainability" },
-      { "flag": "🇳🇱", "label": "Specialty F&B" },
-      { "flag": "🇳🇱", "label": "Healthcare" }
-    ]
-  },
-  "pullQuote": {
-    "text": "We don't just optimise your rankings — we make your company the answer when AI talks about your industry.",
-    "attribution": "— The AskBodhi approach"
-  },
-  "services": {
-    "label": "What We Do",
-    "title": "We make companies the top digital asset in their sector",
-    "description": "Today, being \"found\" means more than Google rankings. Your customers search on ChatGPT, Perplexity, and AI Overviews. We make sure you show up everywhere that matters — and that the traffic you get actually drives revenue.",
-    "items": [
-      {
-        "title": "SEO & Generative Engine Optimization",
-        "description": "Most companies pay for Google Ads because their website doesn't rank. We fix that — and go further. We make sure you show up when people search on ChatGPT, Perplexity, and Google's AI answers too. Because that's where your next customers are already looking."
-      },
-      {
-        "title": "Traffic Architecture Diagnostics",
-        "description": "Before we change anything, we break down exactly where your traffic comes from — and what percentage actually leads to revenue. Most companies discover that 80% of their visitors will never become customers. That's the gap we close."
-      },
-      {
-        "title": "Custom AI Engines",
-        "description": "Purpose-built AI systems for your domain — product recommendation engines, intelligent content generation, automated workflows. Not ChatGPT wrappers, but engines designed around your specific business logic and data."
-      },
-      {
-        "title": "AI-First Transformation",
-        "description": "The bigger play. Once we've proven impact on your digital presence, we help convert your entire operation into an AI-first architecture — from how you serve customers to how your team works. A fractional AI transformation lead, embedded in your business."
-      }
-    ]
-  },
-  "results": {
-    "label": "Proven Results",
-    "title": "The sectors are different. The pattern is identical.",
-    "description": "Every engagement starts the same way: a company spending on ads, underperforming on organic, and invisible to AI search. Here's what happens when you fix it.",
-    "items": [
-      {
-        "flag": "🇳🇱",
-        "region": "Netherlands · Publishing",
-        "title": "Leading Dutch Publishing Group",
-        "description": "Spending on ads across multiple brands with no organic strategy. We found that only 25 of their 700 monthly visits had commercial intent. Within 90 days, we restructured the entire organic architecture and built a custom AI engine that lifted paid performance by 56%.",
-        "stats": [
-          {
-            "value": "+56%",
-            "label": "Paid performance lift"
-          },
-          {
-            "value": "13K",
-            "label": "Organic clicks / 90 days"
-          }
-        ]
-      },
-      {
-        "flag": "🇮🇳",
-        "region": "India · Fintech",
-        "title": "EximPe",
-        "description": "11,000 monthly visitors — and almost none of them were potential customers. Classic content-traffic mismatch. We rebuilt the content architecture to align traffic with revenue, turning vanity metrics into commercial pipeline."
-      },
-      {
-        "flag": "🇳🇱",
-        "region": "Netherlands · ESG Intelligence",
-        "title": "KnowESG",
-        "description": "Competing against well-funded incumbents with no organic strategy. We deployed an AI-driven content architecture and entity-rich schema strategy that built organic authority in a regulation-heavy sector — and made them visible to AI search engines."
-      }
-    ]
-  },
-  "mirror": {
-    "title": "Sound familiar?",
-    "items": [
-      "You're the one managing marketing (among everything else)",
-      "Google Ads feels expensive but you can't turn it off",
-      "Your competitors rank above you for your core services",
-      "You've tried an agency before and got a PDF nobody read",
-      "You've never heard of GEO and now you're worried you should have",
-      "You know your website should work harder — you just don't know where to start"
-    ],
-    "cta": "Find out where you stand — takes 5 minutes →"
-  },
-  "approach": {
-    "label": "How We Work",
-    "title": "Diagnose. Build. Scale.",
-    "description": "We don't hand over a strategy deck and disappear. We embed alongside your team and execute — proving the model before scaling.",
-    "items": [
-      {
-        "step": "01",
-        "title": "Diagnose",
-        "timeframe": "Week 1–2",
-        "description": "Full digital diagnostic. Traffic architecture breakdown, technical SEO audit, GEO readiness assessment, AI visibility check, and competitive landscape analysis. You get a clear picture of where you stand — and exactly what to fix first."
-      },
-      {
-        "step": "02",
-        "title": "Build",
-        "timeframe": "Month 1–3",
-        "description": "Execute the prioritized fix list. Schema markup, content restructuring, AI engine optimization, GEO implementation. Quick wins first, then strategic moves. Everything developer-ready with file paths, code, and exact copy."
-      },
-      {
-        "step": "03",
-        "title": "Scale",
-        "timeframe": "Month 4–6+",
-        "description": "Weekly scorecards, monthly strategy, quarterly roadmap. Prove results on one brand, replicate across the group. Expand from SEO/GEO into broader AI-first transformation as trust and results compound."
-      }
-    ],
-    "callout": "You'll see data in week one. Results in month one. ROI by month three. If it's not working, you'll know — and so will we. No 12-month lock-ins. No vague promises. Just transparent, measurable progress."
-  },
-  "toolbar": {
-    "description": "We don't guess. Every recommendation is backed by the same data platforms used by enterprise growth teams."
-  },
-  "who": {
-    "label": "This Is For You If...",
-    "title": "You'll know it when you see it",
-    "description": "We don't work with a sector. We work with a situation. If the lines below describe your Tuesday morning, we should talk.",
-    "items": [
-      "You're the founder, director, or partner — and marketing lands on your desk because there's no one else",
-      "You spend €2K–8K/month on Google Ads and you're not sure it's working",
-      "Your competitors rank above you for the terms that matter most",
-      "You've heard about AI search but have no idea how to show up in it",
-      "You want an embedded partner, not another agency that sends reports you don't read",
-      "Your company does €1M–20M in revenue and growth depends on being found online"
-    ]
-  },
-  "vision": {
-    "label": "Where This Is Heading",
-    "title": "It starts with being found. It leads to something bigger.",
-    "description": "We start with what's proven: making you the top digital asset in your sector. But the relationship doesn't stop at SEO. As your trusted AI partner, we help your company become genuinely AI-first — in how you serve customers, make decisions, and operate day to day.",
-    "scale": "10–200",
-    "scaleSubtitle": "person companies we're built for",
-    "tags": [
-      {
-        "label": "SEO & GEO",
-        "type": "active"
-      },
-      {
-        "label": "Content Architecture",
-        "type": "active"
-      },
-      {
-        "label": "AI Workflows",
-        "type": "next"
-      },
-      {
-        "label": "Custom AI Engines",
-        "type": "next"
-      },
-      {
-        "label": "AI-First Operations",
-        "type": "future"
-      },
-      {
-        "label": "Product AI",
-        "type": "future"
-      }
-    ]
-  },
-  "assessmentCta": {
-    "label": "AI Readiness Assessment",
-    "title": "12 questions. 5 minutes. We do the rest.",
-    "highlight": "What if 40% of your Google Ads budget could be replaced by organic traffic?",
-    "description": "You answer 12 questions about your business. We analyze your website's traffic architecture, AI visibility, and competitive position using the same tools enterprise agencies charge €5K to run. You get a scored report with specific recommendations — not a sales pitch.",
-    "cta": "Take the Free Assessment →",
-    "steps": [
-      {
-        "num": "1",
-        "text": "You invest 5 minutes answering 12 honest questions about your business, traffic, and growth challenges.",
-        "bg": "var(--color-teal)"
-      },
-      {
-        "num": "2",
-        "text": "We analyze your digital footprint — traffic architecture, AI engine visibility, competitive positioning, and content quality using enterprise-grade tools.",
-        "bg": "var(--color-ember)"
-      },
-      {
-        "num": "3",
-        "text": "You get a scored AI readiness report with specific, prioritized recommendations — not a sales pitch disguised as advice.",
-        "bg": "var(--color-teal-bright)"
-      }
-    ],
-    "headerLabel": "AI Readiness Assessment"
-  },
-  "faq": {
-    "label": "Frequently Asked",
-    "title": "Questions we hear in every first call",
-    "items": [
-      {
-        "q": "We already have an SEO agency. Why would we switch?",
-        "a": "Most SEO agencies optimize for Google rankings alone. We go further — we optimize for AI engine citations (ChatGPT, Perplexity, Google AI Overviews) through Generative Engine Optimization. Plus, we start every engagement with a traffic architecture diagnostic that shows what percentage of your traffic actually drives revenue. Most agencies skip this step entirely."
-      },
-      {
-        "q": "How is this different from hiring a freelance SEO consultant?",
-        "a": "A freelance consultant gives you advice. We give you execution. AskBodhi operates as a fractional growth team embedded in your business, using enterprise-grade tools like Ahrefs, Google Search Console, GA4, and AI visibility monitoring. You get the firepower of a full marketing department without hiring one."
-      },
-      {
-        "q": "We're a small team — we don't have bandwidth for a big project.",
-        "a": "That's exactly who we're built for. Most of our clients don't have a marketing department — the founder or director handles digital alongside everything else. We execute, not just advise. You invest 5 minutes in an assessment, we do the heavy analytical lifting, and every deliverable comes developer-ready with exact file paths, code, and copy."
-      },
-      {
-        "q": "What's GEO and why should I care?",
-        "a": "GEO stands for Generative Engine Optimization — the discipline of getting your company cited by AI assistants like ChatGPT, Perplexity, and Google's AI Overviews. These platforms are rapidly replacing traditional search for many queries. If your company isn't optimized for AI engines, you're invisible to a growing share of your potential customers."
-      },
-      {
-        "q": "How quickly will we see results?",
-        "a": "You'll see data in week one — our diagnostic reveals exactly where you stand. Quick wins (technical fixes, schema markup, content restructuring) start delivering in month one. Measurable ROI against your ad spend typically shows by month three. We track everything transparently so you always know what's working."
-      },
-      {
-        "q": "Do you work with companies outside the Netherlands?",
-        "a": "Yes. We're based in the Netherlands and serve clients across Europe and Asia. The methodology works wherever search engines and AI assistants exist. Our current portfolio spans the Netherlands, India, and global ESG markets."
-      }
-    ]
+    },
+    "approach": {
+      "label": "Our approach",
+      "title": "Three steps. Always in this order.",
+      "intro": "AskBodhi is an AI-first growth partner for Dutch SMEs. We combine SEO, GEO (findability in ChatGPT, Perplexity and Google AI Overviews) and SEA with process optimisation. We start where results are measurable fastest, and only go a step further once that works.",
+      "noticeLabel": "What you notice",
+      "steps": [
+        {
+          "num": "01",
+          "when": "Months 1–6",
+          "tag": "SEO · GEO · SEA",
+          "title": "Stop the waste in search",
+          "text": "We map which traffic actually brings in revenue. Then we rebuild how Google and AI assistants like ChatGPT and Perplexity find you. Ads stay only where they pay for themselves.",
+          "notice": "Organic traffic growing again, less reliance on ads, and more enquiries from the right customers. First movement typically in month two."
+        },
+        {
+          "num": "02",
+          "when": "From month 7",
+          "tag": "The Bodhi Engine",
+          "title": "Hand over the repetitive work",
+          "text": "Once the foundation is in place, we build a digital colleague on your business. It drafts, watches your market and reports in plain language. Your team approves and stays in charge.",
+          "notice": "Marketing keeps moving when your team is busy. Without hiring."
+        },
+        {
+          "num": "03",
+          "when": "Once growth is proven",
+          "tag": "Processes · AI architecture",
+          "title": "Cut what adds no value",
+          "text": "We walk through the rest of the business with you: quotes, customer questions, admin, hand-offs between people and systems. What adds no value disappears or goes to AI. What stays gets simpler.",
+          "notice": "Your people spend their time on customers and craft, not on retyping and chasing."
+        }
+      ]
+    },
+    "engine": {
+      "label": "The Bodhi Engine",
+      "titleA": "A digital colleague.",
+      "titleB": "And it's yours.",
+      "text": "Not a chatbot and not a subscription to someone else's software. We build it on your data, teach it how your company communicates and hand you the keys. If we ever stop working together, it stays with you.",
+      "roles": [
+        {
+          "title": "It writes",
+          "text": "Pages, articles, FAQs and the structured data AI assistants read. Nothing goes live without your team's approval."
+        },
+        {
+          "title": "It keeps watch",
+          "text": "Your Google positions every week, whether ChatGPT and Perplexity name you or a competitor, and a plain-language summary once a month."
+        }
+      ]
+    },
+    "clients": {
+      "label": "Who we work for",
+      "title": "A handful of companies at a time. These are they.",
+      "intro": "From a rug gallery to a financial adviser, local and national. Different sectors, the same pattern every time.",
+      "note": "Clients are named only with their consent. Figures: AskBodhi diagnostics, 2026.",
+      "items": [
+        {
+          "flag": "🇳🇱",
+          "sector": "Oriental rugs · 3 galleries",
+          "status": "Ongoing",
+          "title": "Found in Amstelveen, Hilversum and Groningen",
+          "text": "Local findability per gallery, in Google and in AI assistants. Content around what buyers search before they walk into a gallery."
+        },
+        {
+          "flag": "🇳🇱",
+          "sector": "Wine webshop · Amsterdam",
+          "status": "Ongoing",
+          "title": "Nationally findable with a curated range",
+          "text": "A small, sharp collection of European wine. We build findability where the big webshops aren't looking."
+        },
+        {
+          "flag": "🇳🇱",
+          "sector": "Publishing and print group",
+          "status": "Second engagement",
+          "title": "From plateau to growth across several brands",
+          "text": "Earlier engagement: structure, content and paid search working together. A second engagement is now running.",
+          "metric": "13K",
+          "metricLabel": "organic clicks in the earlier engagement"
+        },
+        {
+          "flag": "🇳🇱",
+          "sector": "Financial adviser · 't Gooi",
+          "status": "Ongoing",
+          "title": "A new website in three months",
+          "text": "Built server-side, local pages for six towns, and an AFM check on every page before it goes live."
+        },
+        {
+          "flag": "🇮🇳",
+          "sector": "EximPe · cross-border payments",
+          "status": "Earlier engagement",
+          "title": "Lots of traffic, almost no buyers",
+          "text": "Around 13,000 visits a month on informational blogs, disconnected from what the business sells. We restructured the blog and rebuilt internal links toward the commercial pages.",
+          "metric": "~13K",
+          "metricLabel": "visits a month, almost no buying intent"
+        }
+      ]
+    },
+    "working": {
+      "label": "Working together",
+      "title": "No licences. No small print. You can stop after three months.",
+      "steps": [
+        {
+          "when": "Month 1",
+          "title": "Diagnose",
+          "text": "Where your money and time go, and what they bring back. In writing."
+        },
+        {
+          "when": "Months 2–6",
+          "title": "Fix and build",
+          "text": "Biggest leaks first. Every month you see what changed and what it delivered."
+        },
+        {
+          "when": "Month 3",
+          "title": "Review",
+          "text": "We go through the results. Not happy? Give written notice and we stop. It's in the contract.",
+          "accent": true
+        },
+        {
+          "when": "Month 7 onwards",
+          "title": "Keep building",
+          "text": "Your Bodhi Engine takes over the repetitive work. Then we turn to your processes."
+        }
+      ],
+      "price": "Partnerships from approx. €2,450 a month",
+      "priceNote": "Nine-month term, exit after three. Excl. VAT."
+    },
+    "notUs": {
+      "label": "What we don't do",
+      "title": "Better to be clear up front.",
+      "text": "We work with a handful of Dutch companies at a time, often without their own marketing or IT team. If it's not a fit, we'll say so on the first call.",
+      "items": [
+        "Not an SEO shop that only chases rankings",
+        "Not an ad agency earning on your media budget",
+        "Not a software vendor. We don't sell licences",
+        "No standalone audits that end up in a drawer",
+        "No automation before growth is in place",
+        "No social media, logo design or one-off articles"
+      ]
+    },
+    "faq": {
+      "label": "Questions",
+      "title": "What business owners ask us first",
+      "items": [
+        {
+          "q": "What exactly does AskBodhi do?",
+          "a": "AskBodhi is an AI-first growth partner for Dutch SMEs. We find where your company loses money and time and fix it in a fixed order: first findability in Google and AI assistants (SEO, GEO and SEA), then a digital colleague of your own for the repetitive work, then cutting work that adds no value."
+        },
+        {
+          "q": "What exactly do you mean by waste?",
+          "a": "Anything you put money or time into that doesn't bring in customers or revenue. An ad budget doing the job of organic traffic that's missing or falling, visitors who never buy, and manual work a system or AI does better."
+        },
+        {
+          "q": "What is GEO?",
+          "a": "GEO stands for Generative Engine Optimization: making sure AI assistants such as ChatGPT, Perplexity and Google AI Overviews name your company when someone asks for advice. It builds on a sound SEO foundation, which is why we do the two together."
+        },
+        {
+          "q": "Isn't this just an SEO agency?",
+          "a": "We start with findability because that's where results show fastest. But we don't stop there: next we take over the repetitive work, then we look at your processes."
+        },
+        {
+          "q": "Do you run Google Ads?",
+          "a": "We decide together when ads are worth it and plan them alongside organic. The goal is a lower ad bill, not a higher one."
+        },
+        {
+          "q": "We don't have a CTO or a marketing team. Is that a problem?",
+          "a": "No, that's when we're most useful. We take on the growth and AI decisions that otherwise sit with nobody. As an external partner, not an interim hire."
+        },
+        {
+          "q": "Who owns the Bodhi Engine?",
+          "a": "You do. Your content, your data, your website and the engine we build on them. No licence that stops when we stop."
+        },
+        {
+          "q": "When will we see results?",
+          "a": "First measurable movement typically shows in month two. In month one we agree what we measure; in month three we decide together whether it's working."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Where is your company leaking money?",
+      "text": "Twelve questions, about ten minutes. You see where the biggest waste sits and what to tackle first. Free, and no sales call afterwards.",
+      "primary": "Take the free scan",
+      "secondary": "Book an intro call"
+    }
   },
   "footer": {
-    "tagline": "Your company deserves to be found — by humans and AI.",
-    "services": "Services",
+    "tagline": "Grow without the waste.",
+    "services": "Approach",
     "serviceLinks": [
       {
-        "name": "SEO & GEO Optimization",
-        "href": "/#services"
+        "name": "Stop the waste in search",
+        "href": "/#approach"
       },
       {
-        "name": "Traffic Architecture Diagnostics",
-        "href": "/#services"
+        "name": "The Bodhi Engine",
+        "href": "/#engine"
       },
       {
-        "name": "Custom AI Engines",
-        "href": "/#services"
+        "name": "Cut what adds no value",
+        "href": "/#approach"
+      }
+    ],
+    "company": "Company",
+    "companyLinks": [
+      {
+        "name": "Clients",
+        "href": "/#clients"
       },
       {
-        "name": "AI-First Transformation",
-        "href": "/#services"
+        "name": "Free scan",
+        "href": "/assessment"
+      },
+      {
+        "name": "Intro call",
+        "href": "/contact"
+      }
+    ],
+    "legal": "Legal",
+    "legalLinks": [
+      {
+        "name": "Privacy",
+        "href": "/privacy"
+      },
+      {
+        "name": "Terms",
+        "href": "/voorwaarden"
+      },
+      {
+        "name": "Company details",
+        "href": "/colofon"
       }
     ],
     "contact": "Contact",
     "email": "info@askbodhi.ai",
-    "location": "Netherlands · Serving globally",
-    "copyright": "© {year} AskBodhi. All rights reserved."
+    "location": "Hilversum, the Netherlands",
+    "companyLine": "AskBodhi.ai is a trade name of 64 B.V. · Chamber of Commerce (KvK) 42104155 · VAT NL869749481B01",
+    "copyright": "© {year} 64 B.V. All rights reserved."
   },
   "contact": {
-    "label": "Free Diagnostic",
-    "title": "Let's find out where your traffic really goes",
-    "description": "Fill in your details and we'll send you a free traffic architecture breakdown — showing what percentage of your organic traffic actually drives revenue.",
-    "successTitle": "Thank you!",
-    "successMessage": "We've received your details. We'll review your site and get back to you within 48 hours with your traffic architecture breakdown.",
+    "label": "Intro call",
+    "title": "Book an intro call",
+    "description": "Tell us briefly where your company stands. We reply with a proposal for a 30-minute call. No sales pitch: if it's not a fit, we'll say so.",
+    "successTitle": "Thank you.",
+    "successMessage": "We've received your message and will be in touch to schedule a time.",
     "form": {
       "nameLabel": "Your name",
       "namePlaceholder": "Your name",
       "emailLabel": "Email",
       "emailPlaceholder": "you@company.com",
-      "websiteLabel": "Website URL",
+      "websiteLabel": "Website",
       "websitePlaceholder": "https://yourcompany.com",
-      "messageLabel": "What's your biggest growth challenge right now?",
-      "messagePlaceholder": "e.g., We get traffic but it doesn't convert, we're invisible in AI search results, our competitors outrank us...",
-      "submitButton": "Request My Free Diagnostic",
-      "submittingButton": "Sending...",
-      "disclaimer": "No spam, no sales pitch. Just a data-driven breakdown of your traffic architecture.",
-      "error": "Something went wrong. Please try again or email us at info@askbodhi.ai."
+      "messageLabel": "What would you like to talk about?",
+      "messagePlaceholder": "For example: our organic traffic is falling, we depend on ads, or we want to know what AI can do for us.",
+      "submitButton": "Send",
+      "submittingButton": "Sending…",
+      "disclaimer": "We only use your details to reply to your message. See our privacy statement.",
+      "error": "Something went wrong while sending. Please try again or email info@askbodhi.ai."
     }
   },
   "assessment": {

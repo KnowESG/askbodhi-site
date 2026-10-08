@@ -1,69 +1,48 @@
 "use client";
 
-import { usePathname, useRouter } from "@/i18n/navigation";
-import { useLocale } from "next-intl";
-import { useCallback } from "react";
+import { Link, usePathname } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
+const LOCALES = [
+  { code: "nl", label: "NL", name: "Nederlands" },
+  { code: "en", label: "EN", name: "English" },
+] as const;
+
+function rememberLocale(code: string) {
+  try {
+    document.cookie = `NEXT_LOCALE=${code}; max-age=${60 * 60 * 24 * 180}; path=/; SameSite=Lax`;
+  } catch {
+    /* cookie blocked: the link still works */
+  }
+}
+
+/** Real links to the same page in the other language, so crawlers and keyboard users can follow them. */
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
-
-  const handleLocaleChange = useCallback((newLocale: string) => {
-    // Persist locale preference to cookie (7-day expiry)
-    const date = new Date();
-    date.setTime(date.getTime() + 7 * 24 * 60 * 60 * 1000);
-    const expires = `expires=${date.toUTCString()}`;
-    document.cookie = `NEXT_LOCALE=${newLocale}; ${expires}; path=/; SameSite=Lax`;
-
-    // Navigate to the same pathname with new locale
-    router.push(pathname, { locale: newLocale });
-  }, [pathname, router]);
+  const t = useTranslations("nav");
 
   return (
-    <div className="flex items-center gap-2">
-      <button
-        onClick={() => handleLocaleChange("nl")}
-        className={`text-xs font-medium px-2.5 py-1.5 rounded transition-colors ${
-          locale === "nl"
-            ? "bg-teal-100 text-teal-700"
-            : "text-stone-600 hover:text-stone-800"
-        }`}
-        style={
-          locale === "nl"
-            ? {
-                backgroundColor: "var(--color-teal-pale)",
-                color: "var(--color-teal)",
-              }
-            : {
-                color: "var(--color-stone-600)",
-              }
-        }
-        title="Switch to Dutch"
-      >
-        NL
-      </button>
-      <button
-        onClick={() => handleLocaleChange("en")}
-        className={`text-xs font-medium px-2.5 py-1.5 rounded transition-colors ${
-          locale === "en"
-            ? "bg-teal-100 text-teal-700"
-            : "text-stone-600 hover:text-stone-800"
-        }`}
-        style={
-          locale === "en"
-            ? {
-                backgroundColor: "var(--color-teal-pale)",
-                color: "var(--color-teal)",
-              }
-            : {
-                color: "var(--color-stone-600)",
-              }
-        }
-        title="Switch to English"
-      >
-        EN
-      </button>
-    </div>
+    <nav className="ab-lang" aria-label={t("languageLabel")}>
+      {LOCALES.map((l) =>
+        l.code === locale ? (
+          <span key={l.code} aria-current="true" lang={l.code} title={l.name}>
+            {l.label}
+          </span>
+        ) : (
+          <Link
+            key={l.code}
+            href={pathname}
+            locale={l.code}
+            hrefLang={l.code}
+            lang={l.code}
+            title={l.name}
+            onClick={() => rememberLocale(l.code)}
+          >
+            {l.label}
+          </Link>
+        )
+      )}
+    </nav>
   );
 }

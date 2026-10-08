@@ -46,7 +46,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all pathnames except those starting with underscore or containing a dot
-    "/((?!_next|.*\\..*|api).*)",
+    // Match all pathnames except Next internals, API routes, generated icons and files with an extension
+    "/((?!_next|api|apple-icon|.*\\..*).*)",
   ],
 };

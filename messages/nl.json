@@ -1,295 +1,353 @@
 {
+  "meta": {
+    "home": {
+      "title": "AskBodhi | Groeien zonder verspilling met SEO, GEO en AI",
+      "description": "AI-first groeipartner voor het mkb. We vinden waar u geld en tijd verliest in zoeken, conversie en bedrijfsvoering, en dichten het. Doe de gratis scan."
+    },
+    "contact": {
+      "title": "Plan een kennismaking",
+      "description": "Vertel kort waar uw bedrijf staat. We reageren met een voorstel voor een kennismaking van 30 minuten, zonder verkooppraatje."
+    },
+    "assessment": {
+      "title": "Gratis scan: waar lekt uw bedrijf geld?",
+      "description": "Twaalf vragen, ongeveer tien minuten. U ziet waar de grootste verspilling zit in zoeken, AI-vindbaarheid en bedrijfsvoering, en wat u eerst aanpakt."
+    },
+    "privacy": {
+      "title": "Privacyverklaring",
+      "description": "Hoe AskBodhi (64 B.V.) persoonsgegevens verwerkt die u via deze website deelt: welke gegevens, waarom, hoe lang en welke rechten u heeft."
+    },
+    "terms": {
+      "title": "Algemene voorwaarden",
+      "description": "Op opdrachten van AskBodhi (64 B.V.) zijn onze algemene voorwaarden versie 1.2 van toepassing. Hier leest u hoe dat werkt en hoe u ze opvraagt."
+    },
+    "colofon": {
+      "title": "Colofon",
+      "description": "Bedrijfsgegevens van AskBodhi.ai, een handelsnaam van 64 B.V. in Hilversum: adres, KvK-nummer, btw-nummer en contact."
+    }
+  },
   "nav": {
-    "services": "Diensten",
-    "results": "Resultaten",
+    "leaks": "Waar het lekt",
     "approach": "Aanpak",
-    "faq": "Veelgestelde vragen",
-    "getFreeDiagnostic": "Gratis Diagnose"
+    "engine": "Bodhi Engine",
+    "clients": "Klanten",
+    "faq": "Vragen",
+    "cta": "Doe de gratis scan",
+    "menu": "Menu openen of sluiten",
+    "home": "AskBodhi.ai, naar de homepage",
+    "languageLabel": "Taal"
   },
-  "hero": {
-    "label": "AI-Gedreven Groeiconsultancy",
-    "title": "Uw bedrijf verdient om gevonden te worden — door mensen én AI.",
-    "subtitle": "U geeft geld uit aan advertenties omdat organisch niet werkt. Uw concurrenten scoren beter. AI-zoeken verandert alles en u bent niet in beeld. We repareren het allemaal.",
-    "primaryCta": "Gratis Diagnose Uitvoeren",
-    "secondaryCta": "Bekijk Onze Werkwijze",
-    "secondaryLink": "Bekijk hoe wij een bedrijf zoals het uwe hebben gediagnosticeerd →"
-  },
-  "proofBar": {
-    "items": [
-      {
-        "value": "€0 → €12K",
-        "label": "Waarde organisch traffic per maand"
+  "home": {
+    "hero": {
+      "badge": "AI-first groeipartner voor het mkb",
+      "titleA": "Groeien zonder",
+      "titleB": "verspilling.",
+      "sub": "Organisch verkeer is er nauwelijks of het daalt, dus u betaalt voor elke klik. De bezoekers die wel komen, kopen zelden. En uw team besteedt uren aan werk dat AI kan doen.",
+      "promise": "Wij zoeken uit waar het lekt en dichten het. In die volgorde.",
+      "ctaPrimary": "Doe de gratis scan",
+      "ctaSecondary": "Zo pakken we het aan",
+      "trust": [
+        "Senior team",
+        "Een handvol klanten tegelijk",
+        "Na drie maanden opzegbaar"
+      ]
+    },
+    "leaks": {
+      "label": "Waar het lekt",
+      "question": "Herkent u er een?",
+      "order": "Drie lekken. Wij dichten ze in deze volgorde.",
+      "illustration": "Illustratie",
+      "clientData": "Klantdata",
+      "one": {
+        "tag": "01 · Zoekverkeer",
+        "title": "Organisch komt er weinig binnen",
+        "points": [
+          "Nauwelijks organisch verkeer",
+          "Organisch verkeer dat al maanden daalt",
+          "Bijna alles via advertenties: budget uit, telefoon stil"
+        ],
+        "chartOrganic": "organisch",
+        "chartAds": "via advertenties",
+        "chartAlt": "Illustratie: organisch verkeer daalt terwijl verkeer via advertenties stijgt"
       },
-      {
-        "value": "13.000",
-        "label": "Nieuwe bezoekers zonder reclame"
+      "two": {
+        "tag": "02 · Conversie",
+        "title": "Bezoekers die nooit kopen",
+        "text": "Het dashboard groeit, de omzet niet. En vraagt een klant ChatGPT om advies, dan noemt het uw concurrent.",
+        "figure": "van ~700 met koopintentie",
+        "legend": "1 stip ≈ 7 bezoekers · uitgeversgroep, 2026",
+        "dotsAlt": "Honderd stippen, waarvan vier groen: ongeveer 4 procent van de bezoekers had koopintentie"
       },
-      {
-        "value": "47",
-        "label": "Ongebruikte zoekwoorden per klant (gem.)"
-      },
-      {
-        "value": "3–5×",
-        "label": "ROI vs. gelijkwaardig advertentiebudget"
+      "three": {
+        "tag": "03 · Bedrijfsvoering",
+        "title": "Uren aan werk zonder waarde",
+        "text": "Gegevens overtypen tussen systemen, dezelfde mail voor de tiende keer, rapportages die niemand leest. Werk dat AI kan doen.",
+        "week": "Een werkweek",
+        "days": [
+          "ma",
+          "di",
+          "wo",
+          "do",
+          "vr"
+        ],
+        "value": "werk met waarde",
+        "waste": "werk zonder waarde",
+        "weekAlt": "Illustratie: een werkweek waarin een flink deel van elke dag opgaat aan werk zonder waarde"
       }
-    ]
-  },
-  "trustedBy": {
-    "label": "Vertrouwd in diverse sectoren",
-    "sectors": [
-      { "flag": "🇳🇱", "label": "Juridisch & Notariaat" },
-      { "flag": "🇳🇱", "label": "Uitgeverijen" },
-      { "flag": "🇮🇳", "label": "FinTech" },
-      { "flag": "🇳🇱", "label": "ESG & Duurzaamheid" },
-      { "flag": "🇳🇱", "label": "Specialty F&B" },
-      { "flag": "🇳🇱", "label": "Gezondheidszorg" }
-    ]
-  },
-  "pullQuote": {
-    "text": "We optimaliseren niet alleen uw rankings — we zorgen dat uw bedrijf het antwoord is wanneer AI over uw sector spreekt.",
-    "attribution": "— De AskBodhi-aanpak"
-  },
-  "services": {
-    "label": "Wat We Doen",
-    "title": "We maken bedrijven tot het topdigitale bezit in hun sector",
-    "description": "Vandaag de dag gaat 'gevonden worden' verder dan Google-rankings. Uw klanten zoeken op ChatGPT, Perplexity en AI Overviews. We zorgen ervoor dat u overal verschijnt waar het toe doet — en dat het verkeer dat u krijgt daadwerkelijk opbrengsten oplevert.",
-    "items": [
-      {
-        "title": "SEO & Generative Engine Optimization",
-        "description": "De meeste bedrijven betalen voor Google Ads omdat hun website niet in de ranking staat. Wij repareren dat — en gaan verder. We zorgen ervoor dat u wordt gevonden bij zoekopdrachten op ChatGPT, Perplexity en Google's AI-antwoorden. Want daar zoeken uw volgende klanten."
-      },
-      {
-        "title": "Traffic Architecture Diagnostics",
-        "description": "Voordat we iets veranderen, breken we exact uit waar uw traffic vandaan komt — en welk percentage echt tot inkomsten leidt. De meeste bedrijven ontdekken dat 80% van hun bezoekers nooit klant wordt. Dat gat dichten we."
-      },
-      {
-        "title": "Custom AI Engines",
-        "description": "Speciaal gebouwde AI-systemen voor uw domein — productaanbevelingsengines, intelligente contentgeneratie, geautomatiseerde workflows. Geen ChatGPT-wrappers, maar engines ontworpen rond uw specifieke bedrijfslogica en gegevens."
-      },
-      {
-        "title": "AI-First Transformation",
-        "description": "De grote stap. Zodra we impact op uw digitale aanwezigheid hebben bewezen, helpen we uw hele bedrijf om te zetten naar een AI-first architectuur — van hoe u klanten bedient tot hoe uw team werkt. Een fractionele AI-transformatielead, ingebed in uw bedrijf."
-      }
-    ]
-  },
-  "results": {
-    "label": "Bewezen Resultaten",
-    "title": "De sectoren zijn anders. Het patroon is identiek.",
-    "description": "Elke samenwerking start hetzelfde: een bedrijf dat adverteert, slecht presteert organisch en onzichtbaar is voor AI-zoeken. Dit gebeurt als u het fixt.",
-    "items": [
-      {
-        "flag": "🇳🇱",
-        "region": "Nederland · Uitgeverij",
-        "title": "Toonaangevende Nederlandse Uitgeverijgroep",
-        "description": "Adverteert over meerdere merken heen zonder organische strategie. We ontdekten dat slechts 25 van hun 700 maandelijkse bezoekers commerciële intent hebben. In 90 dagen herstructureerden we de hele organische architectuur en bouwden een custom AI-engine die de betaalde prestaties met 56% omhoog bracht.",
-        "stats": [
-          {
-            "value": "+56%",
-            "label": "Betaalde prestatieverbetering"
-          },
-          {
-            "value": "13K",
-            "label": "Organische klikken / 90 dagen"
-          }
-        ]
-      },
-      {
-        "flag": "🇮🇳",
-        "region": "India · Fintech",
-        "title": "EximPe",
-        "description": "11.000 maandelijkse bezoekers — en bijna geen potentiële klanten. Klassiek geval van content-traffic mismatch. We herbouwden de content-architectuur om traffic op inkomsten af te stemmen, vanity metrics omzetten in commerciële pijplijn."
-      },
-      {
-        "flag": "🇳🇱",
-        "region": "Nederland · ESG Intelligence",
-        "title": "KnowESG",
-        "description": "Concurreert tegen goed gefinancierde concurrenten zonder organische strategie. We lanceerden een AI-gedreven content-architectuur en entity-rich schema-strategie die organische autoriteit opbouwde in een regelzware sector — en maakte hen zichtbaar voor AI-zoekmachines."
-      }
-    ]
-  },
-  "mirror": {
-    "title": "Herkenbaar?",
-    "items": [
-      "U bent degene die marketing beheert (naast al het andere)",
-      "Google Ads voelt duur aan maar u kunt het niet uitzetten",
-      "Uw concurrenten scoren hoger voor uw kernservices",
-      "U hebt eerder een bureau geprobeerd en kreeg een PDF die niemand las",
-      "U hebt nog nooit van GEO gehoord en nu maakt u zich zorgen dat u het had moeten kennen",
-      "U weet dat uw website harder zou moeten werken — u weet alleen niet waar u moet beginnen"
-    ],
-    "cta": "Ontdek waar u staat — duurt maar 5 minuten →"
-  },
-  "approach": {
-    "label": "Hoe We Werken",
-    "title": "Diagnosticeer. Bouw. Schaal.",
-    "description": "We overhandigen geen strategiedeck en verdwijnen. We werken naast uw team en voeren uit — we bewijzen het model voordat we schalen.",
-    "items": [
-      {
-        "step": "01",
-        "title": "Diagnosticeer",
-        "timeframe": "Week 1–2",
-        "description": "Volledige digitale diagnose. Traffic architecture breakdown, technische SEO-audit, GEO-readiness assessment, AI visibility check, en concurrentschaplandschapanalyse. U krijgt een helder beeld van waar u staat — en exact wat u eerst moet repareren."
-      },
-      {
-        "step": "02",
-        "title": "Bouw",
-        "timeframe": "Maand 1–3",
-        "description": "Voer de geprioriteerde reparatielijst uit. Schema markup, content restructuring, AI engine optimization, GEO implementation. Eerst snelle wins, dan strategische stappen. Alles developer-ready met bestandspaden, code en exacte copy."
-      },
-      {
-        "step": "03",
-        "title": "Schaal",
-        "timeframe": "Maand 4–6+",
-        "description": "Wekelijkse scorecards, maandelijkse strategie, driemaandelijkse roadmap. Bewijs resultaten op één merk, repliceer over de hele groep. Breid uit van SEO/GEO naar bredere AI-first transformation naarmate vertrouwen en resultaten groeien."
-      }
-    ],
-    "callout": "U ziet gegevens in week één. Resultaten in maand één. ROI in maand drie. Als het niet werkt, weet u het — en wij ook. Geen 12-maands lockins. Geen vage beloften. Alleen transparante, meetbare voortgang."
-  },
-  "toolbar": {
-    "description": "We gokken niet. Elke aanbeveling wordt ondersteund door dezelfde dataplatforms die enterprise groeiteams gebruiken."
-  },
-  "who": {
-    "label": "Dit Is Voor U Als...",
-    "title": "U herkent het als u het ziet",
-    "description": "We werken niet met een sector. We werken met een situatie. Als de punten hieronder uw dinsdagochtend beschrijven, moeten we praten.",
-    "items": [
-      "U bent oprichter, directeur of partner — en marketing belandt op uw bureau omdat er niemand anders is",
-      "U geeft €2K–8K per maand uit aan Google Ads en u weet niet zeker of het werkt",
-      "Uw concurrenten scoren beter dan u voor de termen die het meest uitmaken",
-      "U hebt over AI-zoeken gehoord maar hebt geen idee hoe u erin verschijnt",
-      "U wilt een partner die ingebed is, niet nog een bureau dat rapporten stuurt die u niet leest",
-      "Uw bedrijf genereert €1M–20M inkomsten en groei hangt af van online gevonden worden"
-    ]
-  },
-  "vision": {
-    "label": "Waar Dit Naar Toe Gaat",
-    "title": "Het begint met gevonden worden. Het leidt tot iets groters.",
-    "description": "We beginnen met wat bewezen werkt: u tot het topdigitale bezit in uw sector maken. Maar de relatie stopt niet bij SEO. Als uw vertrouwde AI-partner helpen we uw bedrijf om echt AI-first te worden — in hoe u klanten bedient, beslissingen neemt en dagelijks werkt.",
-    "scale": "10–200",
-    "scaleSubtitle": "personen bedrijven waarvoor wij gebouwd zijn",
-    "tags": [
-      {
-        "label": "SEO & GEO",
-        "type": "active"
-      },
-      {
-        "label": "Content Architecture",
-        "type": "active"
-      },
-      {
-        "label": "AI Workflows",
-        "type": "next"
-      },
-      {
-        "label": "Custom AI Engines",
-        "type": "next"
-      },
-      {
-        "label": "AI-First Operations",
-        "type": "future"
-      },
-      {
-        "label": "Product AI",
-        "type": "future"
-      }
-    ]
-  },
-  "assessmentCta": {
-    "label": "AI-Gereedschapsrapport",
-    "title": "12 vragen. 5 minuten. We doen de rest.",
-    "highlight": "Wat als 40% van uw Google Ads-budget kon worden vervangen door organisch traffic?",
-    "description": "U beantwoordt 12 vragen over uw bedrijf. We analyseren uw website's traffic architecture, AI visibility, en concurrentiële positie met dezelfde tools waar enterprise-agentschappen €5K voor rekenen. U krijgt een scored rapport met specifieke aanbevelingen — geen sales pitch.",
-    "cta": "Gratis Diagnose Uitvoeren →",
-    "steps": [
-      {
-        "num": "1",
-        "text": "U investeert 5 minuten in het beantwoorden van 12 eerlijke vragen over uw bedrijf, traffic en groeichallenges."
-      },
-      {
-        "num": "2",
-        "text": "We analyseren uw digitale voetafdruk — traffic architecture, AI engine visibility, concurrentiële positie en content kwaliteit met enterprise-tools."
-      },
-      {
-        "num": "3",
-        "text": "U krijgt een scored AI-readiness rapport met specifieke, geprioriteerde aanbevelingen — geen sales pitch in vermomming."
-      }
-    ]
-  },
-  "faq": {
-    "label": "Veelgestelde Vragen",
-    "title": "Vragen die we in elk eerste gesprek horen",
-    "items": [
-      {
-        "q": "We hebben al een SEO-bureau. Waarom zouden we overstappen?",
-        "a": "De meeste SEO-bureaus optimaliseren alleen voor Google-rankings. We gaan verder — we optimaliseren voor AI-engine citaten (ChatGPT, Perplexity, Google AI Overviews) via Generative Engine Optimization. Bovendien starten we elke samenwerking met een traffic architecture diagnostic die laat zien welk percentage van uw traffic echt inkomsten oplevert. De meeste bureaus slaan deze stap helemaal over."
-      },
-      {
-        "q": "Hoe verschilt dit van het inhuren van een freelance SEO-consultant?",
-        "a": "Een freelance consultant geeft u advies. Wij geven u uitvoering. AskBodhi werkt als een fractioneel groeiteam ingebed in uw bedrijf, met enterprise-tools als Ahrefs, Google Search Console, GA4 en AI visibility monitoring. U krijgt de vuuurkracht van een volledig marketingdepartement zonder er een in te huren."
-      },
-      {
-        "q": "We zijn een klein team — we hebben geen capaciteit voor een groot project.",
-        "a": "Dat is precies wie we voor gebouwd hebben. De meeste van onze klanten hebben geen marketingdepartement — de oprichter of directeur beheert digitaal naast alles anders. We voeren uit, niet alleen advies geven. U investeert 5 minuten in een diagnose, wij doen de zware analytische tillen, en elk deliverable komt developer-ready met exacte bestandspaden, code en copy."
-      },
-      {
-        "q": "Wat is GEO en waarom zou ik erom geven?",
-        "a": "GEO staat voor Generative Engine Optimization — de discipline van gezien worden door AI-assistenten als ChatGPT, Perplexity en Google's AI Overviews. Deze platforms vervangen snel traditionele zoeken voor veel zoekopdrachten. Als uw bedrijf niet voor AI-engines is geoptimaliseerd, bent u onzichtbaar voor een groeiend deel van uw potentiële klanten."
-      },
-      {
-        "q": "Hoe snel zien we resultaten?",
-        "a": "U ziet gegevens in week één — onze diagnose toont exact waar u staat. Quick wins (technische fixes, schema markup, content restructuring) leveren in maand één. Meetbare ROI tegen uw advertentiebudget normaal gesproken in maand drie. We tracken alles transparant zodat u altijd weet wat werkt."
-      },
-      {
-        "q": "Werken jullie met bedrijven buiten Nederland?",
-        "a": "Ja. We zijn gevestigd in Nederland en werken met klanten in heel Europa en Azië. De methodologie werkt overal waar zoekmachines en AI-assistenten bestaan. Onze huidige portfolio beslaat Nederland, India en globale ESG-markten."
-      }
-    ]
+    },
+    "approach": {
+      "label": "Onze aanpak",
+      "title": "Drie stappen. Altijd in deze volgorde.",
+      "intro": "AskBodhi is een AI-first groeipartner voor Nederlandse mkb-bedrijven. We combineren SEO, GEO (vindbaarheid in ChatGPT, Perplexity en Google AI Overviews) en SEA met procesoptimalisatie. We beginnen waar het resultaat het snelst meetbaar is, en gaan pas een stap verder als dat werkt.",
+      "noticeLabel": "Wat u merkt",
+      "steps": [
+        {
+          "num": "01",
+          "when": "Maand 1–6",
+          "tag": "SEO · GEO · SEA",
+          "title": "Stop de verspilling in zoeken",
+          "text": "We brengen in kaart welk verkeer echt omzet oplevert. Daarna bouwen we uw vindbaarheid in Google en in AI-assistenten zoals ChatGPT en Perplexity opnieuw op. Advertenties houden we alleen waar ze zich terugverdienen.",
+          "notice": "Organisch verkeer dat weer groeit, minder afhankelijkheid van advertenties en meer aanvragen van de juiste klanten. Eerste beweging doorgaans in maand twee."
+        },
+        {
+          "num": "02",
+          "when": "Vanaf maand 7",
+          "tag": "De Bodhi Engine",
+          "title": "Draag het herhaalwerk over",
+          "text": "Staat het fundament, dan bouwen we een digitale collega op uw bedrijf. Die schrijft concepten, houdt uw markt in de gaten en rapporteert in gewone taal. Uw team keurt goed en houdt de regie.",
+          "notice": "Het marketingwerk loopt door, ook als uw team het druk heeft. Zonder extra mensen aan te nemen."
+        },
+        {
+          "num": "03",
+          "when": "Als groei bewezen is",
+          "tag": "Processen · AI-architectuur",
+          "title": "Schrap wat geen waarde toevoegt",
+          "text": "We lopen met u door de rest van het bedrijf: offertes, klantvragen, administratie, overdrachten tussen mensen en systemen. Wat geen waarde toevoegt, verdwijnt of gaat naar AI. Wat blijft, wordt eenvoudiger.",
+          "notice": "Uw mensen besteden hun tijd aan klanten en vakwerk, niet aan overtypen en najagen."
+        }
+      ]
+    },
+    "engine": {
+      "label": "De Bodhi Engine",
+      "titleA": "Een digitale collega.",
+      "titleB": "En hij is van u.",
+      "text": "Geen chatbot en geen abonnement op andermans software. We bouwen hem op uw gegevens, leren hem hoe uw bedrijf communiceert en geven u de sleutels. Stoppen we ooit met samenwerken, dan blijft hij bij u.",
+      "roles": [
+        {
+          "title": "Hij schrijft",
+          "text": "Pagina's, artikelen, veelgestelde vragen en de gestructureerde gegevens die AI-assistenten lezen. Niets gaat live zonder akkoord van uw team."
+        },
+        {
+          "title": "Hij houdt de wacht",
+          "text": "Elke week uw posities in Google, of ChatGPT en Perplexity u of een concurrent noemen, en één keer per maand een overzicht in gewone taal."
+        }
+      ]
+    },
+    "clients": {
+      "label": "Voor wie we werken",
+      "title": "Een handvol bedrijven tegelijk. Dit zijn ze.",
+      "intro": "Van tapijtgalerie tot financieel adviseur, lokaal en landelijk. Verschillende sectoren, steeds hetzelfde patroon.",
+      "note": "Klanten worden alleen bij naam genoemd met hun toestemming. Cijfers: AskBodhi-analyses, 2026.",
+      "items": [
+        {
+          "flag": "🇳🇱",
+          "sector": "Oosterse tapijten · 3 galeries",
+          "status": "Lopend",
+          "title": "Gevonden worden in Amstelveen, Hilversum en Groningen",
+          "text": "Lokale vindbaarheid per vestiging, in Google en in AI-assistenten. Content rond wat kopers zoeken voordat ze een galerie binnenlopen."
+        },
+        {
+          "flag": "🇳🇱",
+          "sector": "Wijnwebwinkel · Amsterdam",
+          "status": "Lopend",
+          "title": "Landelijk vindbaar met een gecureerd assortiment",
+          "text": "Een kleine, scherpe collectie Europese wijn. We bouwen de vindbaarheid op waar grote webwinkels niet op letten."
+        },
+        {
+          "flag": "🇳🇱",
+          "sector": "Uitgeverij- en drukkerijgroep",
+          "status": "Tweede opdracht",
+          "title": "Van plateau naar groei over meerdere merken",
+          "text": "Eerdere opdracht: structuur, content en betaald zoeken in samenhang. Nu loopt een tweede traject.",
+          "metric": "13K",
+          "metricLabel": "organische klikken in de eerdere opdracht"
+        },
+        {
+          "flag": "🇳🇱",
+          "sector": "Financieel adviseur · 't Gooi",
+          "status": "Lopend",
+          "title": "Nieuwe website in drie maanden",
+          "text": "Server-side gebouwd, lokale pagina's voor zes plaatsen, en een AFM-toets op elke pagina voordat die live gaat."
+        },
+        {
+          "flag": "🇮🇳",
+          "sector": "EximPe · internationale betalingen",
+          "status": "Eerdere opdracht",
+          "title": "Veel verkeer, bijna geen kopers",
+          "text": "Zo'n 13.000 bezoeken per maand op informatieve blogs, los van wat het bedrijf verkoopt. We hebben de blog geherstructureerd en de interne links naar de commerciële pagina's hersteld.",
+          "metric": "~13K",
+          "metricLabel": "bezoeken per maand, vrijwel zonder koopintentie"
+        }
+      ]
+    },
+    "working": {
+      "label": "Zo werken we samen",
+      "title": "Geen licenties. Geen kleine lettertjes. Na drie maanden kunt u stoppen.",
+      "steps": [
+        {
+          "when": "Maand 1",
+          "title": "Diagnose",
+          "text": "Waar uw geld en tijd naartoe gaan, en wat het oplevert. U krijgt het zwart op wit."
+        },
+        {
+          "when": "Maand 2–6",
+          "title": "Herstellen en bouwen",
+          "text": "De grootste lekken eerst. Elke maand ziet u wat er veranderd is en wat het oplevert."
+        },
+        {
+          "when": "Maand 3",
+          "title": "Evaluatie",
+          "text": "We bespreken de resultaten. Niet tevreden? Schriftelijk opzeggen en we stoppen. Zo staat het in het contract.",
+          "accent": true
+        },
+        {
+          "when": "Vanaf maand 7",
+          "title": "Doorbouwen",
+          "text": "Uw Bodhi Engine neemt het herhaalwerk over. Daarna pakken we de processen aan."
+        }
+      ],
+      "price": "Samenwerkingen vanaf ca. €2.450 per maand",
+      "priceNote": "Looptijd negen maanden, opzegbaar na drie. Bedragen excl. btw."
+    },
+    "notUs": {
+      "label": "Wat we niet doen",
+      "title": "Liever eerlijk vooraf.",
+      "text": "We werken met een handvol Nederlandse bedrijven tegelijk, vaak zonder eigen marketing- of IT-afdeling. Past het niet, dan zeggen we dat in het eerste gesprek.",
+      "items": [
+        "Geen SEO-bureau dat alleen op posities stuurt",
+        "Geen advertentiebureau dat verdient aan uw mediabudget",
+        "Geen softwareleverancier. We verkopen geen licenties",
+        "Geen losse audits die in een la verdwijnen",
+        "Geen automatisering voordat de groei staat",
+        "Geen social media, logo-ontwerp of losse artikelen"
+      ]
+    },
+    "faq": {
+      "label": "Vragen",
+      "title": "Wat ondernemers ons als eerste vragen",
+      "items": [
+        {
+          "q": "Wat doet AskBodhi precies?",
+          "a": "AskBodhi is een AI-first groeipartner voor het Nederlandse mkb. We zoeken uit waar uw bedrijf geld en tijd verliest en dichten dat in vaste volgorde: eerst vindbaarheid in Google en AI-assistenten (SEO, GEO en SEA), dan een eigen digitale collega voor het herhaalwerk, daarna het schrappen van werk zonder waarde."
+        },
+        {
+          "q": "Wat bedoelen jullie met verspilling?",
+          "a": "Alles waar u geld of tijd in steekt dat geen klanten of omzet oplevert. Een advertentiebudget dat het werk doet van organisch verkeer dat ontbreekt of wegzakt, bezoekers die nooit kopen, en handwerk dat een systeem of AI beter kan doen."
+        },
+        {
+          "q": "Wat is GEO?",
+          "a": "GEO staat voor Generative Engine Optimization: zorgen dat AI-assistenten zoals ChatGPT, Perplexity en Google AI Overviews uw bedrijf noemen als iemand om advies vraagt. Het bouwt voort op een goed SEO-fundament, daarom doen we die twee samen."
+        },
+        {
+          "q": "Is dit niet gewoon een SEO-bureau?",
+          "a": "We beginnen bij vindbaarheid, omdat daar het resultaat het snelst meetbaar is. Maar we stoppen daar niet: daarna nemen we het herhaalwerk over en kijken we naar uw processen."
+        },
+        {
+          "q": "Doen jullie ook Google Ads?",
+          "a": "We bepalen samen wanneer advertenties de moeite waard zijn en plannen ze naast organisch. Het doel is een lagere advertentierekening, niet een hogere."
+        },
+        {
+          "q": "We hebben geen CTO of marketingafdeling. Is dat een probleem?",
+          "a": "Nee, juist dan zijn we nuttig. We nemen de keuzes over groei en AI voor onze rekening die anders bij niemand liggen. Als externe partner, niet als interim-kracht."
+        },
+        {
+          "q": "Van wie is de Bodhi Engine?",
+          "a": "Van u. Uw content, uw gegevens, uw website en de engine die we daarop bouwen. Er is geen licentie die stopt als wij stoppen."
+        },
+        {
+          "q": "Wanneer zien we resultaat?",
+          "a": "De eerste meetbare beweging zien we doorgaans in maand twee. In maand één spreken we af wat we meten, in maand drie bespreken we samen of het werkt."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Waar lekt uw bedrijf geld?",
+      "text": "Twaalf vragen, ongeveer tien minuten. U ziet waar de grootste verspilling zit en wat u als eerste aanpakt. Gratis, en zonder verkoopgesprek achteraf.",
+      "primary": "Doe de gratis scan",
+      "secondary": "Plan een kennismaking"
+    }
   },
   "footer": {
-    "tagline": "Uw bedrijf verdient om gevonden te worden — door mensen én AI.",
-    "services": "Diensten",
+    "tagline": "Groeien zonder verspilling.",
+    "services": "Aanpak",
     "serviceLinks": [
       {
-        "name": "SEO & GEO Optimization",
-        "href": "/#services"
+        "name": "Stop de verspilling in zoeken",
+        "href": "/#approach"
       },
       {
-        "name": "Traffic Architecture Diagnostics",
-        "href": "/#services"
+        "name": "De Bodhi Engine",
+        "href": "/#engine"
       },
       {
-        "name": "Custom AI Engines",
-        "href": "/#services"
+        "name": "Schrap wat geen waarde toevoegt",
+        "href": "/#approach"
+      }
+    ],
+    "company": "Bedrijf",
+    "companyLinks": [
+      {
+        "name": "Klanten",
+        "href": "/#clients"
       },
       {
-        "name": "AI-First Transformation",
-        "href": "/#services"
+        "name": "Gratis scan",
+        "href": "/assessment"
+      },
+      {
+        "name": "Kennismaking",
+        "href": "/contact"
+      }
+    ],
+    "legal": "Juridisch",
+    "legalLinks": [
+      {
+        "name": "Privacy",
+        "href": "/privacy"
+      },
+      {
+        "name": "Voorwaarden",
+        "href": "/voorwaarden"
+      },
+      {
+        "name": "Colofon",
+        "href": "/colofon"
       }
     ],
     "contact": "Contact",
     "email": "info@askbodhi.ai",
-    "location": "Nederland · Wereldwijd actief",
-    "copyright": "© {year} AskBodhi. Alle rechten voorbehouden."
+    "location": "Hilversum, Nederland",
+    "companyLine": "AskBodhi.ai is een handelsnaam van 64 B.V. · KvK 42104155 · btw NL869749481B01",
+    "copyright": "© {year} 64 B.V. Alle rechten voorbehouden."
   },
   "contact": {
-    "label": "Gratis Diagnose",
-    "title": "Laten we uitzoeken waar uw traffic echt naar toe gaat",
-    "description": "Vul uw gegevens in en wij sturen u een gratis traffic architecture breakdown — met het percentage organisch traffic dat daadwerkelijk opbrengsten oplevert.",
-    "successTitle": "Dank u wel!",
-    "successMessage": "We hebben uw gegevens ontvangen. We zullen uw site controleren en u binnen 48 uur contacteren met uw traffic architecture breakdown.",
+    "label": "Kennismaking",
+    "title": "Plan een kennismaking",
+    "description": "Vertel kort waar uw bedrijf staat. We reageren met een voorstel voor een gesprek van 30 minuten. Geen verkooppraatje: past het niet, dan zeggen we dat.",
+    "successTitle": "Dank u wel.",
+    "successMessage": "We hebben uw bericht ontvangen en nemen contact met u op om een moment te plannen.",
     "form": {
       "nameLabel": "Uw naam",
       "namePlaceholder": "Uw naam",
       "emailLabel": "E-mailadres",
-      "emailPlaceholder": "u@bedrijf.com",
-      "websiteLabel": "Website URL",
-      "websitePlaceholder": "https://uwbedrijf.com",
-      "messageLabel": "Wat is uw grootste groeichallenge op dit moment?",
-      "messagePlaceholder": "Bijv. We krijgen verkeer maar het converteert niet, we zijn onzichtbaar in AI-zoekresultaten, onze concurrenten scoren beter...",
-      "submitButton": "Mijn Gratis Diagnose Aanvragen",
-      "submittingButton": "Verzenden...",
-      "disclaimer": "Geen spam, geen sales pitch. Alleen een data-gedreven breakdown van uw traffic architecture.",
-      "error": "Er is iets misgegaan. Probeer het opnieuw of stuur ons een e-mail naar info@askbodhi.ai."
+      "emailPlaceholder": "u@bedrijf.nl",
+      "websiteLabel": "Website",
+      "websitePlaceholder": "https://uwbedrijf.nl",
+      "messageLabel": "Waar wilt u het over hebben?",
+      "messagePlaceholder": "Bijvoorbeeld: ons organisch verkeer daalt, we zijn afhankelijk van advertenties, of we willen weten wat AI voor ons kan doen.",
+      "submitButton": "Verstuur",
+      "submittingButton": "Bezig met versturen…",
+      "disclaimer": "We gebruiken uw gegevens alleen om op uw bericht te reageren. Zie onze privacyverklaring.",
+      "error": "Er ging iets mis bij het versturen. Probeer het opnieuw of mail naar info@askbodhi.ai."
     }
   },
   "assessment": {
