@@ -1,16 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Lora, Geist_Mono, Instrument_Sans } from "next/font/google";
+import { notFound } from "next/navigation";
 import "../globals.css";
 import "../components.css";
-import { OrganizationJsonLd, WebSiteJsonLd, ServiceJsonLd } from "@/components/JsonLd";
+import { SiteJsonLd } from "@/components/JsonLd";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { Providers } from "./provider";
+import { SITE_URL } from "@/lib/seo";
 
 const lora = Lora({
   variable: "--font-lora",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -28,45 +30,28 @@ const instrumentSans = Instrument_Sans({
   display: "swap",
 });
 
+/*
+ * Site-wide defaults only. Canonical, hreflang, titles and Open Graph are set
+ * per page through pageMetadata() in src/lib/seo.ts, so no page inherits
+ * another page's canonical.
+ */
 export const metadata: Metadata = {
-  metadataBase: new URL("https://askbodhi.ai"),
-  title: {
-    default: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
-    template: "%s | AskBodhi",
-  },
-  description:
-    "AskBodhi helps companies grow through AI-led SEO, Generative Engine Optimization, custom AI engines, and digital diagnostics. Based in the Netherlands, serving globally.",
-  authors: [{ name: "RM", url: "https://askbodhi.ai" }],
+  metadataBase: new URL(SITE_URL),
+  title: { default: "AskBodhi", template: "%s | AskBodhi" },
+  applicationName: "AskBodhi",
   creator: "AskBodhi",
-  alternates: {
-    canonical: "https://askbodhi.ai",
-    languages: {
-      "en": "https://askbodhi.ai/en",
-      "nl": "https://askbodhi.ai/nl",
-      "x-default": "https://askbodhi.ai/nl",
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    alternateLocale: "nl_NL",
-    url: "https://askbodhi.ai",
-    siteName: "AskBodhi",
-    title: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
-    description:
-      "SEO & GEO optimization, custom AI engines, digital diagnostics, and growth strategy for companies that deserve to be found.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "AskBodhi — AI-Led Growth for Forward-Thinking Companies",
-    description:
-      "SEO & GEO optimization, custom AI engines, digital diagnostics, and growth strategy.",
-  },
+  publisher: "AskBodhi",
+  formatDetection: { telephone: false, email: false, address: false },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#FAFAF9",
+  colorScheme: "light",
 };
 
 export function generateStaticParams() {
@@ -81,32 +66,17 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) notFound();
   setRequestLocale(locale);
-  const messages = await getMessages();
-
-  const langAttribute = locale === "nl" ? "nl" : "en";
-  const alternateLinks = [
-    { hreflang: "nl", href: "https://askbodhi.ai/nl" },
-    { hreflang: "en", href: "https://askbodhi.ai/en" },
-    { hreflang: "x-default", href: "https://askbodhi.ai/nl" },
-  ];
+  // Server components read their own copy; only send client components what they use.
+  const { home: _home, meta: _meta, ...messages } = await getMessages();
+  void _home;
+  void _meta;
 
   return (
-    <html lang={langAttribute} className={`${lora.variable} ${geistMono.variable} ${instrumentSans.variable}`}>
-      <head>
-        {alternateLinks.map((link) => (
-          <link
-            key={link.hreflang}
-            rel="alternate"
-            hrefLang={link.hreflang}
-            href={link.href}
-          />
-        ))}
-      </head>
+    <html lang={locale} className={`${lora.variable} ${geistMono.variable} ${instrumentSans.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
-        <OrganizationJsonLd />
-        <WebSiteJsonLd />
-        <ServiceJsonLd />
+        <SiteJsonLd locale={locale} />
         <Providers locale={locale} messages={messages}>
           {children}
         </Providers>
