@@ -40,25 +40,25 @@ AI-Led Growth for Forward-Thinking Companies. Next.js website with the Luminous 
 
 - **Domain:** `askbodhi.ai` — all canonical URLs, OG tags, sitemap, robots reference this domain
 - **Hreflang:** `en` + `x-default` configured for Dutch market targeting
-- **Structured data:** Organization, WebSite, ProfessionalService, Person (founder), FAQPage
+- **Structured data:** Organization, WebSite, ProfessionalService, FAQPage (no Person/founder schema)
 - **AI crawlers:** Explicitly allowed in robots.txt (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
 - **OpenGraph:** Page-specific OG tags on all routes
 
 ## Development
 
 ```bash
-npm install
+npm ci
 npm run dev       # http://localhost:3000
 npm run build     # production build
 npm run lint      # eslint
-npx tsc --noEmit  # type-check without emitting
+npm run verify    # type-check + message keys + build (run before every push)
 ```
 
 ## Deployment
 
-Pushes to `main` auto-deploy to Vercel via the KnowESG team project (`prj_zAhLUV1bxka4lXI7a2zDDCZl1D6m`).
+Changes go through a branch and pull request; merging to `main` auto-deploys to Vercel (KnowESG team, project `askbodhi-site`). CI (`.github/workflows/ci.yml`) must be green before merging. Full process and rollback steps: [docs/WEBSITE-CHANGES.md](docs/WEBSITE-CHANGES.md).
 
-**Before pushing:** Always run `npx tsc --noEmit` and `npm run build` to catch TypeScript errors locally.
+**Before pushing:** always run `npm run verify` (type-check + NL/EN message keys + production build).
 
 ## Project Structure
 
@@ -83,7 +83,7 @@ src/
   components/
     Header.tsx              # Site header/navigation
     Footer.tsx              # Site footer
-    JsonLd.tsx              # Organization, WebSite, ProfessionalService, Person schemas
+    JsonLd.tsx              # Organization, WebSite, ProfessionalService schemas
     FAQ.tsx                 # Accordion FAQ (client component, imports faq-data)
     FaqJsonLd.tsx           # FAQPage JSON-LD schema (server component)
     MirrorCard.tsx          # "Sound familiar?" behavioral checklist
