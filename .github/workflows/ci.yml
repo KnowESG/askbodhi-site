@@ -1,0 +1,33 @@
+name: CI
+
+# Runs on every pull request and every push to main.
+# A red check here means "do not merge" — Vercel would fail the same build.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Type-check
+        run: npx tsc --noEmit
+      - name: NL/EN message keys match
+        run: node scripts/check-messages.mjs
+      - name: Production build
+        run: npm run build
+      - name: Lint (report only until the 6 existing errors are fixed)
+        run: npm run lint
+        continue-on-error: true

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:messages": "node scripts/check-messages.mjs",
+    "verify": "tsc --noEmit && node scripts/check-messages.mjs && next build"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",

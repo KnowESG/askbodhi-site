@@ -30,7 +30,7 @@ Lead with what’s proven: **SEO, GEO, organic digital growth, traffic diagnosti
 
 | Client | Public name | Flag | Sector |
 |--------|------------|------|--------|
-| Boekengilde / Gildeprint | "Leading Dutch Publishing Group" (NEVER name) | 🇳🇱 | Publishing |
+| Dutch publishing client | "Leading Dutch Publishing Group" (never name the client) | 🇳🇱 | Publishing |
 | EximPe | EximPe (can name) | 🇮🇳 | Fintech / Cross-border payments |
 | KnowESG | KnowESG (can name) | 🇳🇱 | ESG Intelligence / SaaS |
 
@@ -89,7 +89,7 @@ The `/assessment` is an 11-step interactive AI Readiness Assessment (10 focused 
 
 **Domain:** `askbodhi.ai` (all canonical URLs, OG tags, sitemap, robots.txt).
 
-**Structured data:** Organization, WebSite, ProfessionalService, Person (founder), FAQPage (6 Q&A pairs from `src/data/faq-data.ts` — shared between the FAQ accordion and FaqJsonLd server component).
+**Structured data:** Organization, WebSite, ProfessionalService, FAQPage — never Person, founder or employee schema (6 Q&A pairs from `src/data/faq-data.ts` — shared between the FAQ accordion and FaqJsonLd server component).
 
 **GEO:** robots.txt allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended. Organization schema with `knowsAbout` array. ProfessionalService schema with service catalog.
 
@@ -97,22 +97,16 @@ The `/assessment` is an 11-step interactive AI Readiness Assessment (10 focused 
 
 ## Workflow: Making Changes
 
+The full process — branching, `npm run verify`, PR review, merge, rollback — is in **[docs/WEBSITE-CHANGES.md](docs/WEBSITE-CHANGES.md)**. Short version:
+
 ```
-1. Clone repo:    git clone https://github.com/KnowESG/askbodhi-site.git
-2. Install:       cd askbodhi-site && npm install
-3. Edit files
-4. Type-check:    npx tsc --noEmit
-5. Build:         npx next build
-6. Push via MCP:  push_files to KnowESG/askbodhi-site, branch: main
-7. Verify:        list_deployments via Vercel MCP → wait for READY
+git checkout -b copy/my-change     # never work on main
+npm ci && npm run dev              # edit, check /nl and /en
+npm run verify                     # type-check + NL/EN keys + build — before every push
+git push -u origin copy/my-change  # open a PR; merge when CI is green and the preview is Ready
 ```
 
-### Known Limitations
-
-- **Files >8KB get truncated** during `push_files`. Split large files (this is why CSS is split and the assessment page is 10 component files, not one monolith).
-- **Unicode encoding bug:** `\uXXXX` escape sequences in the JSON content parameter get double-escaped, so `\u2014` renders as literal text instead of an em-dash. **Always use actual UTF-8 characters** (—, –, €, ’, ×, →) in file content, never JS escape sequences.
-- **`package-lock.json` (229KB) cannot be pushed via MCP.** Needs local `git push` or GitHub web UI.
-- **File deletion** not available via GitHub MCP. Use GitHub web UI.
+Do not push code with the GitHub MCP `push_files` tool — it truncates files over ~8KB, can't delete files and can't push `package-lock.json`. Use a real clone and `git push`.
 
 ### Repos
 - **Canonical:** `KnowESG/askbodhi-site` — connected to Vercel, production source
@@ -120,7 +114,7 @@ The `/assessment` is an 11-step interactive AI Readiness Assessment (10 focused 
 
 ## Future Pages (Roadmap)
 
-**Phase 1:** `/generative-engine-optimization` (GEO guide, 1500/mo KD 2), `/about` (founder, E-E-A-T), `/services/seo-geo`, `/services/ai-engines`
+**Phase 1:** `/generative-engine-optimization` (GEO guide, 1500/mo KD 2), `/about` (company, E-E-A-T), `/services/seo-geo`, `/services/ai-engines`
 **Phase 2:** `/nl/seo-advies` (Dutch, 1100/mo KD 5), `/case-studies`
 **Phase 3:** `/insights/` (blog), `/ai-readiness-assessment` (SEO landing for assessment)
 
